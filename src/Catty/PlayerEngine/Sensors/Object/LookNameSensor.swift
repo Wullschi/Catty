@@ -23,7 +23,7 @@
 @objc class LookNameSensor: NSObject, ObjectSensor {
 
     static let tag = "OBJECT_LOOK_NAME"
-    static let name = kUIFEObjectLookName
+    static let name = kUIFEObjectBackgroundName
     static let defaultValue = 0.0
     static let requiredResource = ResourceType.noResources
 

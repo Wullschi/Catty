@@ -28,9 +28,7 @@ class PositionYSensor: ObjectSensor {
     static let requiredResource = ResourceType.noResources
     
     func rawValue(for spriteObject: SpriteObject) -> Double {
-        guard let spriteNode = spriteObject.spriteNode else { return PositionYSensor.defaultValue }
-        
-        return Double(spriteNode.scenePosition.y)
+        return Double(spriteObject.spriteNode.scenePosition.y)
     }
     
     func standardizedValue(for spriteObject: SpriteObject) -> Double {
