@@ -55,6 +55,8 @@
     func addButtonToScrollView(scrollView: UIScrollView, sensor: CBSensor, topAnchorView: UIView?, buttonHeight: CGFloat) -> UIButton {
         let button = FormulaEditorSensorButton(type: .roundedRect)
         
+        button.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        
         button.sensor = sensor
         button.titleLabel?.font = .systemFont(ofSize: 18.0)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -73,5 +75,9 @@
         button.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0).isActive = true
         
         return button;
+    }
+    
+    func buttonPressed(sender: UIButton) {
+        // TODO
     }
 }
