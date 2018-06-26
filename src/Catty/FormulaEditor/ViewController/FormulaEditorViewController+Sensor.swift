@@ -24,7 +24,7 @@
  
     @objc func initObjectView(objectScrollView: UIScrollView, buttonHeight: CGFloat, normalTypeButton: [UIButton], calcButton: UIButton) {
         var buttonCount = 0
-        var topAnchorView = UIView()
+        var topAnchorView: UIView?
         
         for sensor in CBSensorManager.shared.objectSensors() {
             if (sensor.showInFormulaEditor(for: self.object)) {
@@ -39,9 +39,8 @@
     }
     
     @objc func initSensorView(sensorScrollView: UIScrollView, buttonHeight: CGFloat, normalTypeButton: [UIButton], calcButton: UIButton) {
-        
         var buttonCount = 0
-        var topAnchorView = UIView()
+        var topAnchorView: UIView?
         
         for sensor in CBSensorManager.shared.deviceSensors() {
             if (sensor.showInFormulaEditor()) {
