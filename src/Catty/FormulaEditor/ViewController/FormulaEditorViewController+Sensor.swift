@@ -56,7 +56,7 @@
         let button = FormulaEditorSensorButton(type: .roundedRect)
         
         button.sensor = sensor
-        button.titleLabel?.font.withSize(18)
+        button.titleLabel?.font = .systemFont(ofSize: 18.0)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(type(of: sensor).name, for: .normal)
         
