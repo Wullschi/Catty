@@ -20,7 +20,6 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-@available(iOS 11.0, *)
 @objc extension FormulaEditorViewController {
  
     @objc func initObjectView(objectScrollView: UIScrollView, buttonHeight: CGFloat, normalTypeButton: [UIButton], calcButton: UIButton) {
@@ -56,7 +55,7 @@
         
     }
     
-    @objc func addButtonToScrollView(scrollView: UIScrollView, sensor: CBSensor, topAnchorView: UIView?, calcButton: UIButton) -> UIButton {
+    func addButtonToScrollView(scrollView: UIScrollView, sensor: CBSensor, topAnchorView: UIView?, calcButton: UIButton) -> UIButton {
     
         let button = FormulaEditorSensorButton(type: .roundedRect)
         
@@ -66,10 +65,11 @@
         button.setTitle(type(of: sensor).name, for: .normal)
         
         scrollView.addSubview(button)
+        
         if (topAnchorView == nil) {
-            button.topAnchor.constraintEqualToSystemSpacingBelow(scrollView.topAnchor, multiplier: 0).isActive = true
+            button.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
         } else {
-            button.topAnchor.constraintEqualToSystemSpacingBelow((topAnchorView?.bottomAnchor)!, multiplier: 0).isActive = true
+            button.topAnchor.constraint(equalTo: (topAnchorView?.bottomAnchor)!, constant: 0).isActive = true
         }
         
         button.heightAnchor.constraint(equalTo: calcButton.heightAnchor, constant: 0).isActive = true
