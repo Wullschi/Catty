@@ -22,12 +22,12 @@
 
 @objc extension FormulaEditorViewController {
  
-    @objc func initObjectView(objectScrollView: UIScrollView, buttonHeight: CGFloat, calcButton: UIButton) -> [UIButton] {
+    @objc func initObjectView(objectScrollView: UIScrollView, buttonHeight: CGFloat) -> [UIButton] {
         var buttons = [UIButton]()
         
         for sensor in CBSensorManager.shared.objectSensors() {
             if (sensor.showInFormulaEditor(for: self.object)) {
-                buttons.append(self.addButtonToScrollView(scrollView: objectScrollView, sensor: sensor, topAnchorView: buttons.last, calcButton: calcButton))
+                buttons.append(self.addButtonToScrollView(scrollView: objectScrollView, sensor: sensor, topAnchorView: buttons.last, buttonHeight: buttonHeight))
             }
         }
         
@@ -37,12 +37,12 @@
         return buttons
     }
     
-    @objc func initSensorView(sensorScrollView: UIScrollView, buttonHeight: CGFloat, calcButton: UIButton) -> [UIButton] {
+    @objc func initSensorView(sensorScrollView: UIScrollView, buttonHeight: CGFloat) -> [UIButton] {
         var buttons = [UIButton]()
         
         for sensor in CBSensorManager.shared.deviceSensors() {
             if (sensor.showInFormulaEditor()) {
-                buttons.append(self.addButtonToScrollView(scrollView: sensorScrollView, sensor: sensor, topAnchorView: buttons.last, calcButton: calcButton))
+                buttons.append(self.addButtonToScrollView(scrollView: sensorScrollView, sensor: sensor, topAnchorView: buttons.last, buttonHeight: buttonHeight))
             }
         }
         
@@ -52,7 +52,7 @@
         return buttons
     }
     
-    func addButtonToScrollView(scrollView: UIScrollView, sensor: CBSensor, topAnchorView: UIView?, calcButton: UIButton) -> UIButton {
+    func addButtonToScrollView(scrollView: UIScrollView, sensor: CBSensor, topAnchorView: UIView?, buttonHeight: CGFloat) -> UIButton {
         let button = FormulaEditorSensorButton(type: .roundedRect)
         
         button.sensor = sensor
@@ -68,7 +68,7 @@
             button.topAnchor.constraint(equalTo: (topAnchorView?.bottomAnchor)!, constant: 0).isActive = true
         }
         
-        button.heightAnchor.constraint(equalTo: calcButton.heightAnchor, constant: 0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: 0).isActive = true
         button.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0).isActive = true
         

@@ -191,9 +191,8 @@ NS_ENUM(NSInteger, ButtonIndex) {
     self.view.backgroundColor = [UIColor backgroundColor];
     [self showFormulaEditor];
     
-    [self.normalTypeButton addObjectsFromArray:[self initObjectViewWithObjectScrollView:self.objectScrollView buttonHeight:self.calcButton.frame.size.height calcButton:self.calcButton]];
-    
-    [self.normalTypeButton addObjectsFromArray:[self initSensorViewWithSensorScrollView:self.objectScrollView buttonHeight:self.calcButton.frame.size.height calcButton:self.calcButton]];
+    [self.normalTypeButton addObjectsFromArray:[self initObjectViewWithObjectScrollView:self.objectScrollView buttonHeight:self.calcButton.frame.size.height]];
+    [self.normalTypeButton addObjectsFromArray:[self initSensorViewWithSensorScrollView:self.sensorScrollView buttonHeight:self.calcButton.frame.size.height]];
     
     //[self initSensorView];
     [self initSegmentedControls];
