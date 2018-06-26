@@ -22,40 +22,37 @@
 
 @objc extension FormulaEditorViewController {
  
-    @objc func initObjectView(objectScrollView: UIScrollView, buttonHeight: CGFloat, normalTypeButton: [UIButton], calcButton: UIButton) {
-        var buttonCount = 0
-        var topAnchorView: UIView?
+    @objc func initObjectView(objectScrollView: UIScrollView, buttonHeight: CGFloat, calcButton: UIButton) -> [UIButton] {
+        var buttons = [UIButton]()
         
         for sensor in CBSensorManager.shared.objectSensors() {
             if (sensor.showInFormulaEditor(for: self.object)) {
-                topAnchorView = self.addButtonToScrollView(scrollView: objectScrollView, sensor: sensor, topAnchorView: topAnchorView, calcButton: calcButton)
-                buttonCount += 1
+                buttons.append(self.addButtonToScrollView(scrollView: objectScrollView, sensor: sensor, topAnchorView: buttons.last, calcButton: calcButton))
             }
         }
         
-        objectScrollView.frame = CGRect(x: objectScrollView.frame.origin.x, y: objectScrollView.frame.origin.y, width: objectScrollView.frame.size.width, height: CGFloat(buttonCount) * buttonHeight)
-        objectScrollView.contentSize = CGSize(width: objectScrollView.frame.size.width, height: CGFloat(buttonCount) * buttonHeight)
+        objectScrollView.frame = CGRect(x: objectScrollView.frame.origin.x, y: objectScrollView.frame.origin.y, width: objectScrollView.frame.size.width, height: CGFloat(buttons.count) * buttonHeight)
+        objectScrollView.contentSize = CGSize(width: objectScrollView.frame.size.width, height: CGFloat(buttons.count) * buttonHeight)
         
+        return buttons
     }
     
-    @objc func initSensorView(sensorScrollView: UIScrollView, buttonHeight: CGFloat, normalTypeButton: [UIButton], calcButton: UIButton) {
-        var buttonCount = 0
-        var topAnchorView: UIView?
+    @objc func initSensorView(sensorScrollView: UIScrollView, buttonHeight: CGFloat, calcButton: UIButton) -> [UIButton] {
+        var buttons = [UIButton]()
         
         for sensor in CBSensorManager.shared.deviceSensors() {
             if (sensor.showInFormulaEditor()) {
-                topAnchorView = self.addButtonToScrollView(scrollView: sensorScrollView, sensor: sensor, topAnchorView: topAnchorView, calcButton: calcButton)
-                buttonCount += 1
+                buttons.append(self.addButtonToScrollView(scrollView: sensorScrollView, sensor: sensor, topAnchorView: buttons.last, calcButton: calcButton))
             }
         }
         
-        sensorScrollView.frame = CGRect(x: sensorScrollView.frame.origin.x, y: sensorScrollView.frame.origin.y, width: sensorScrollView.frame.size.width, height: CGFloat(buttonCount) * buttonHeight)
-        sensorScrollView.contentSize = CGSize(width: sensorScrollView.frame.size.width, height: CGFloat(buttonCount) * buttonHeight)
-        
+        sensorScrollView.frame = CGRect(x: sensorScrollView.frame.origin.x, y: sensorScrollView.frame.origin.y, width: sensorScrollView.frame.size.width, height: CGFloat(buttons.count) * buttonHeight)
+        sensorScrollView.contentSize = CGSize(width: sensorScrollView.frame.size.width, height: CGFloat(buttons.count) * buttonHeight)
+
+        return buttons
     }
     
     func addButtonToScrollView(scrollView: UIScrollView, sensor: CBSensor, topAnchorView: UIView?, calcButton: UIButton) -> UIButton {
-    
         let button = FormulaEditorSensorButton(type: .roundedRect)
         
         button.sensor = sensor
