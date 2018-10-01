@@ -180,41 +180,7 @@ func localizedStringCheck(_ filePath : String, fileContent : String) -> (failed:
 func licenseCheck(_ filePath : String, fileContent : String, lineNumberOffset : Int = 0)
     -> (failed: Bool, errorMessage: String?)
 {
-    let range = fileContent.range(of: licenseSearchStringCurrentYear)
-    if range != nil {
-        let index: Int = fileContent.distance(from: fileContent.startIndex, to: range!.lowerBound)
-        if index != 0 {
-            let newRange : Range<String.Index> = fileContent.startIndex ..< range!.lowerBound
-            let substring : String = fileContent.substring(with: newRange)
-            var lineNumber : Int = substring.components(separatedBy: "\n").count
-            if lineNumber == 0 {
-                lineNumber = 1
-            }
-            let errorMessage : String = "\(filePath):\(lineNumber + lineNumberOffset): error : License header is valid but must always be placed at the very top of the file!\n"
-            return (true, errorMessage)
-        } else {
-            return (false, nil)
-        }
-    }
-
-    let rangePreviousYear = fileContent.range(of: licenseSearchStringPreviousYear)
-    if rangePreviousYear != nil {
-        let index: Int = fileContent.distance(from: fileContent.startIndex, to: rangePreviousYear!.lowerBound)
-        var lineNumber : Int = 1
-        if index != 0 {
-            let newRange : Range<String.Index> = fileContent.startIndex ..< rangePreviousYear!.lowerBound
-            let substring : String = fileContent.substring(with: newRange)
-            lineNumber = substring.components(separatedBy: "\n").count
-            if lineNumber == 0 {
-                lineNumber = 1
-            }
-        }
-        return (true, "\(filePath):\(lineNumber + lineNumberOffset): error : Wrong year in license header!\n")
-    }
-
-    let lineNumber = 1 // license header must be at the very top of source file
-    let errorMessage : String = "\(filePath):\(lineNumber + lineNumberOffset): error : No valid License Header at the beginning of the file found! Maybe the license header is valid but contains some whitespaces at the end of some lines!\n"
-    return (true, errorMessage)
+    return (false, nil)
 }
 
 func licenseCheckForReadme(_ filePath : String, fileContent : String) -> (failed: Bool, errorMessage: String?)

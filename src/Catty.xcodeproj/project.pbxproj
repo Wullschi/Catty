@@ -1061,6 +1061,8 @@
 		AAF6D9DE1BC0C1F300686849 /* PlaceAtBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6D9DD1BC0C1F300686849 /* PlaceAtBrick+Instruction.swift */; };
 		AAF6D9E01BC0C2AA00686849 /* PointInDirectionBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6D9DF1BC0C2AA00686849 /* PointInDirectionBrick+Instruction.swift */; };
 		AAF6D9E21BC0C48300686849 /* PointToBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6D9E11BC0C48300686849 /* PointToBrick+Instruction.swift */; };
+		BA08F8B0215E7B9800D7FBB7 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08F8AF215E7B9700D7FBB7 /* AudioKit.framework */; };
+		BA10C48921600AED007CB55D /* AudioChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10C48821600AED007CB55D /* AudioChannel.swift */; };
 		BA1FA9941F02A1150084184D /* UserListFunctionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA9901F02A10C0084184D /* UserListFunctionsTest.m */; };
 		BA1FA9981F02AD770084184D /* InsertItemIntoUserListBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA9971F02AD770084184D /* InsertItemIntoUserListBrick+CBXMLHandler.m */; };
 		BA1FA99D1F02AEDC0084184D /* InsertItemIntoUserListBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA99C1F02AEDC0084184D /* InsertItemIntoUserListBrick.m */; };
@@ -1072,6 +1074,8 @@
 		BA9CAB5D1EC3839B00796056 /* AddItemToUserListBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB5C1EC3839B00796056 /* AddItemToUserListBrick+CBXMLHandler.m */; };
 		BA9CAB601EC383E800796056 /* AddItemToUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB5F1EC383E800796056 /* AddItemToUserListBrickCell.m */; };
 		BA9CAB621EC3853600796056 /* AddItemToUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB611EC3853600796056 /* AddItemToUserListBrick+Instruction.swift */; };
+		BAB07ED8215D24B000E70A29 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB07ED7215D24B000E70A29 /* AudioEngine.swift */; };
+		BAB07ED9215D24B000E70A29 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB07ED7215D24B000E70A29 /* AudioEngine.swift */; };
 		BACDF3521F1F9B7E00346167 /* DeleteItemOfUserListBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3511F1F9B7E00346167 /* DeleteItemOfUserListBrick.m */; };
 		BACDF3571F1F9BB000346167 /* DeleteItemOfUserListBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3561F1F9BB000346167 /* DeleteItemOfUserListBrick+CBXMLHandler.m */; };
 		BACDF35A1F1F9BD000346167 /* DeleteItemOfUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3591F1F9BD000346167 /* DeleteItemOfUserListBrickCell.m */; };
@@ -2824,6 +2828,8 @@
 		B46B270B17703F9400172837 /* CattyTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CattyTests-Prefix.pch"; sourceTree = "<group>"; };
 		B4F243CB170EBEF7007A071D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4F243CC170EBEF7007A071D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA08F8AF215E7B9700D7FBB7 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		BA10C48821600AED007CB55D /* AudioChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioChannel.swift; sourceTree = "<group>"; };
 		BA1FA9901F02A10C0084184D /* UserListFunctionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserListFunctionsTest.m; path = Formula/UserListFunctionsTest.m; sourceTree = "<group>"; };
 		BA1FA9961F02AD770084184D /* InsertItemIntoUserListBrick+CBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "InsertItemIntoUserListBrick+CBXMLHandler.h"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Data/InsertItemIntoUserListBrick+CBXMLHandler.h"; sourceTree = SOURCE_ROOT; };
 		BA1FA9971F02AD770084184D /* InsertItemIntoUserListBrick+CBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "InsertItemIntoUserListBrick+CBXMLHandler.m"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Data/InsertItemIntoUserListBrick+CBXMLHandler.m"; sourceTree = SOURCE_ROOT; };
@@ -2833,6 +2839,8 @@
 		BA1FA99F1F02B0020084184D /* InsertItemIntoUserListBrickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertItemIntoUserListBrickCell.m; sourceTree = "<group>"; };
 		BA1FA9A11F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "InsertItemIntoUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/InsertItemIntoUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
 		BA6805AD21303B48004F004F /* VariablesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariablesTests.swift; sourceTree = "<group>"; };
+		BA94CEFD215D30BB002B9AEC /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = "../../../Downloads/AudioKit-iOS 3/AudioKitUI.framework"; sourceTree = "<group>"; };
+		BA94CF00215D30BB002B9AEC /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../../Downloads/AudioKit-iOS 3/AudioKit.framework"; sourceTree = "<group>"; };
 		BA9CAB521EC380CA00796056 /* AddItemToUserListBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemToUserListBrick.h; sourceTree = "<group>"; };
 		BA9CAB531EC380CA00796056 /* AddItemToUserListBrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemToUserListBrick.m; sourceTree = "<group>"; };
 		BA9CAB571EC3811400796056 /* BrickListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickListProtocol.h; sourceTree = "<group>"; };
@@ -2843,6 +2851,7 @@
 		BA9CAB5E1EC383E800796056 /* AddItemToUserListBrickCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemToUserListBrickCell.h; sourceTree = "<group>"; };
 		BA9CAB5F1EC383E800796056 /* AddItemToUserListBrickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemToUserListBrickCell.m; sourceTree = "<group>"; };
 		BA9CAB611EC3853600796056 /* AddItemToUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AddItemToUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/AddItemToUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
+		BAB07ED7215D24B000E70A29 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		BACDF3501F1F9B7E00346167 /* DeleteItemOfUserListBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteItemOfUserListBrick.h; sourceTree = "<group>"; };
 		BACDF3511F1F9B7E00346167 /* DeleteItemOfUserListBrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteItemOfUserListBrick.m; sourceTree = "<group>"; };
 		BACDF3551F1F9BB000346167 /* DeleteItemOfUserListBrick+CBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DeleteItemOfUserListBrick+CBXMLHandler.h"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Data/DeleteItemOfUserListBrick+CBXMLHandler.h"; sourceTree = SOURCE_ROOT; };
@@ -3042,6 +3051,7 @@
 				59473A6F1F76F05000BD634F /* MXSegmentedPager.framework in Frameworks */,
 				59A0599D1F7512D200EB696D /* Siren.framework in Frameworks */,
 				59473A611F76F04B00BD634F /* TTTAttributedLabel.framework in Frameworks */,
+				BA08F8B0215E7B9800D7FBB7 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3094,6 +3104,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA94CF00215D30BB002B9AEC /* AudioKit.framework */,
+				BA08F8AF215E7B9700D7FBB7 /* AudioKit.framework */,
+				BA94CEFD215D30BB002B9AEC /* AudioKitUI.framework */,
 				B405BAC7175DD3F600B1A0FC /* libxml2.dylib */,
 				DE5C4E6D138ED109004892CA /* libz.dylib */,
 				59473A641F76F05000BD634F /* Bohr.framework */,
@@ -5699,6 +5712,8 @@
 				92FF2E511A24C7D800093DA7 /* CatrobatAudioPlayer.m */,
 				9276B7091C9EA68A008BC594 /* CatrobatPlayerItem.h */,
 				9276B70A1C9EA68A008BC594 /* CatrobatPlayerItem.m */,
+				BAB07ED7215D24B000E70A29 /* AudioEngine.swift */,
+				BA10C48821600AED007CB55D /* AudioChannel.swift */,
 			);
 			path = AudioManager;
 			sourceTree = "<group>";
@@ -7779,7 +7794,7 @@
 						TestTargetID = CADBD6D319B0E8C200C62836;
 					};
 					CADBD6D319B0E8C200C62836 = {
-						DevelopmentTeam = 8FL5R8726S;
+						DevelopmentTeam = 8SCUDFZ8M7;
 						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -8446,6 +8461,7 @@
 				4CB2CFAD1D7AD8A5009F3034 /* SetColorBrickTests.m in Sources */,
 				4C822683213FA7A400F3D750 /* SensorManagerTests.swift in Sources */,
 				4C82266F213FA7A400F3D750 /* DateMonthSensorTest.swift in Sources */,
+				BAB07ED9215D24B000E70A29 /* AudioEngine.swift in Sources */,
 				4C822670213FA7A400F3D750 /* AccelerationYSensorTest.swift in Sources */,
 				4C6FE16A212D2D2E0067B7D5 /* AtanFunctionTest.swift in Sources */,
 				4C647C8A1D48E1F70060E70D /* XMLParserBlackBoxTests098.m in Sources */,
@@ -8570,6 +8586,7 @@
 				F4E6E598210E03FE00D86FE6 /* ExpFunction.swift in Sources */,
 				4C0F9F25204ADBC800E71B2D /* IfThenLogicEndBrick.m in Sources */,
 				AA74EE221BC053FD00D1E954 /* BroadcastWaitBrick+Instruction.swift in Sources */,
+				BAB07ED8215D24B000E70A29 /* AudioEngine.swift in Sources */,
 				4C994E08207A3D4100C415FD /* SensorManager.swift in Sources */,
 				AABCB3DE1BB364F2009F67D2 /* CBBackend.swift in Sources */,
 				AABCB3DD1BB364DD009F67D2 /* CBIfConditionalSequence.swift in Sources */,
@@ -9181,6 +9198,7 @@
 				F411560320E7732D00E2F254 /* InternFormula+KeyboardAdapter.swift in Sources */,
 				AA74EF781BC0589700D1E954 /* SetVariableBrick+CBXMLHandler.m in Sources */,
 				9218B2151CC4AB75007B4C60 /* ColorPickerViewController.m in Sources */,
+				BA10C48921600AED007CB55D /* AudioChannel.swift in Sources */,
 				92FF2E981A24C7D800093DA7 /* unzip.c in Sources */,
 				AA74F0B91BC05FCE00D1E954 /* GlideToBrickCell.m in Sources */,
 				9218B2071CC4AB75007B4C60 /* SPUserResizableView.m in Sources */,
@@ -9630,10 +9648,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 8FL5R8726S;
+				DEVELOPMENT_TEAM = 8SCUDFZ8M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "Catty/App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9651,8 +9670,9 @@
 					"-all_load",
 					"-lxml2",
 					"$(inherited)",
+					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode;
+				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode.001;
 				PRODUCT_NAME = "Pocket Code";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catty/Catty-Bridging-Header.h";
@@ -9676,10 +9696,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = 8FL5R8726S;
+				DEVELOPMENT_TEAM = 8SCUDFZ8M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "Catty/App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9697,8 +9718,9 @@
 					"-all_load",
 					"-lxml2",
 					"$(inherited)",
+					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode;
+				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode.001;
 				PRODUCT_NAME = "Pocket Code";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catty/Catty-Bridging-Header.h";

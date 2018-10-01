@@ -49,7 +49,7 @@
     [self.scene stopProgram];
     
     // TODO remove Singletons
-    [[AudioManager sharedAudioManager] stopAllSounds];
+    [[AudioEngine sharedInstance] stopAllAudioPlayers];
     [[CameraPreviewHandler shared] stopCamera];
     
     [[FlashHelper sharedFlashHandler] reset];
@@ -330,7 +330,7 @@
 - (void)pauseAction
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        [[AudioManager sharedAudioManager] pauseAllSounds];
+        [[AudioEngine sharedInstance] pauseAllAudioPlayers];
         [[FlashHelper sharedFlashHandler] pause];
         [[BluetoothService sharedInstance] pauseBluetoothDevice];
     });
@@ -341,7 +341,7 @@
 - (void)resumeAction
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        [[AudioManager sharedAudioManager] resumeAllSounds];
+        [[AudioEngine sharedInstance] resumeAllAudioPlayers];
         [[BluetoothService sharedInstance] continueBluetoothDevice];
         if ([FlashHelper sharedFlashHandler].wasTurnedOn == FlashON) {
             [[FlashHelper sharedFlashHandler] resume];
@@ -484,7 +484,6 @@
     // pause Scene
     SKView *view = self.skView;
     view.paused = YES;
-    [[AudioManager sharedAudioManager] pauseAllSounds];
 }
 
 - (void)takeScreenshotAction:(UIButton*)sender
