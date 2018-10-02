@@ -85,4 +85,8 @@ import AudioKit
             audioPlayer.resume()
         }
     }
+    
+    func getOutputVolume() -> Double {
+        return channelOut.volume
+    }
 }

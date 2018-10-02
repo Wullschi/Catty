@@ -27,10 +27,12 @@ import AudioKit
     
     @objc static let sharedInstance = AudioEngine()
     
+    var speechSynth: AVSpeechSynthesizer
     var mainOut: AKMixer
     var channels: [String : AudioChannel]
 
     override init() {
+        speechSynth = AVSpeechSynthesizer()
         mainOut = AKMixer()
         AudioKit.output = mainOut
         channels = [String : AudioChannel]()
@@ -85,6 +87,14 @@ import AudioKit
         for (_, channel) in channels {
             channel.stopAllAudioPlayers()
         }
+    }
+    
+    func getSpeechSynth() -> AVSpeechSynthesizer {
+        return speechSynth;
+    }
+    
+    func getOutputVolumeOfChannel(objName: String) -> Double? {
+        return channels[objName]?.getOutputVolume()
     }
     
     private func getAudioChannel(key: String) -> AudioChannel {
