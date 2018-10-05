@@ -24,7 +24,10 @@
     
     @nonobjc func instruction() -> CBInstruction {
         
-        guard let object = self.script?.object else { fatalError("This should never happen!") }
+        guard let object = self.script?.object,
+            let objectName = self.script?.object?.name
+            else { fatalError("This should never happen!") }
+        
         let audioEngine = AudioEngine.sharedInstance
         
         return CBInstruction.waitExecClosure { (context, _) in
@@ -56,6 +59,11 @@
             let utterance = AVSpeechUtterance(string: speakText)
             utterance.rate = (floor(NSFoundationVersionNumber) < 1200 ? 0.15 : 0.5)
             
+            if let volume = AudioEngine.sharedInstance.getOutputVolumeOfChannel(objName: objectName) {
+                utterance.volume = Float(volume)
+            } else {
+                utterance.volume = 1.0
+            }
             
             let waitUntilTextSpoken = NSCondition()
             waitUntilTextSpoken.accessibilityHint = "0"

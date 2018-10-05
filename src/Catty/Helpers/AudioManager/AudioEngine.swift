@@ -30,7 +30,9 @@ import AudioKit
     var speechSynth: AVSpeechSynthesizer
     var mainOut: AKMixer
     var channels: [String : AudioChannel]
-
+    var recorder: AKNodeRecorder?
+    var tape: AKAudioFile?
+    
     override init() {
         speechSynth = AVSpeechSynthesizer()
         mainOut = AKMixer()
@@ -40,6 +42,21 @@ import AudioKit
             try AudioKit.start()
         } catch {
             print("could not start audio engine")
+        }
+        
+        do {
+            tape = try AKAudioFile()
+            recorder = try AKNodeRecorder(node: mainOut, file: tape)
+            AKLog((recorder?.audioFile?.directoryPath.absoluteString)!)
+            AKLog((recorder?.audioFile?.fileNamePlusExtension)!)
+        } catch {
+
+        }
+
+        do {
+            try recorder?.record()
+        } catch {
+            AKLog("Couldn't record")
         }
     }
     
@@ -106,5 +123,11 @@ import AudioKit
             channels[key] = channel
             return channel
         }
+    }
+
+    @objc func stopNodeRecorder(){
+        recorder?.stop()
+        tape?.exportAsynchronously(name: "test", baseDir: .documents, exportFormat: .caf){ [weak self] _, _ in}
+        AKLog(recorder?.recordedDuration)
     }
 }

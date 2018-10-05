@@ -331,6 +331,7 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         [[AudioEngine sharedInstance] pauseAllAudioPlayers];
+        [[AudioEngine sharedInstance] stopNodeRecorder];
         [[FlashHelper sharedFlashHandler] pause];
         [[BluetoothService sharedInstance] pauseBluetoothDevice];
     });
