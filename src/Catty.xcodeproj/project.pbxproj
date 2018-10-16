@@ -1069,6 +1069,10 @@
 		BA1FA9A01F02B0020084184D /* InsertItemIntoUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA99F1F02B0020084184D /* InsertItemIntoUserListBrickCell.m */; };
 		BA1FA9A21F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA9A11F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift */; };
 		BA220EC021669277009E618A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA220EBF21669277009E618A /* AudioRecorder.swift */; };
+		BA387BBE217399CE0098ED21 /* AudioEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA387BBA217399CA0098ED21 /* AudioEngineTests.swift */; };
+		BA387BC02173A0260098ED21 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08F8AF215E7B9700D7FBB7 /* AudioKit.framework */; };
+		BA387BC92173A1B00098ED21 /* russianfolk.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA387BC82173A1B00098ED21 /* russianfolk.wav */; };
+		BA387BCB2173A1FD0098ED21 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA387BCA2173A1FD0098ED21 /* explode.mp3 */; };
 		BA6805AE21303B48004F004F /* VariablesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6805AD21303B48004F004F /* VariablesTests.swift */; };
 		BA9CAB541EC380CA00796056 /* AddItemToUserListBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB531EC380CA00796056 /* AddItemToUserListBrick.m */; };
 		BA9CAB5A1EC382DB00796056 /* BrickCellListData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB591EC382DB00796056 /* BrickCellListData.m */; };
@@ -1077,6 +1081,8 @@
 		BA9CAB621EC3853600796056 /* AddItemToUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB611EC3853600796056 /* AddItemToUserListBrick+Instruction.swift */; };
 		BAB07ED8215D24B000E70A29 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB07ED7215D24B000E70A29 /* AudioEngine.swift */; };
 		BAB07ED9215D24B000E70A29 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB07ED7215D24B000E70A29 /* AudioEngine.swift */; };
+		BAB163B721725FAD00373FE9 /* AudioChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10C48821600AED007CB55D /* AudioChannel.swift */; };
+		BAB163BB21725FB900373FE9 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA220EBF21669277009E618A /* AudioRecorder.swift */; };
 		BACDF3521F1F9B7E00346167 /* DeleteItemOfUserListBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3511F1F9B7E00346167 /* DeleteItemOfUserListBrick.m */; };
 		BACDF3571F1F9BB000346167 /* DeleteItemOfUserListBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3561F1F9BB000346167 /* DeleteItemOfUserListBrick+CBXMLHandler.m */; };
 		BACDF35A1F1F9BD000346167 /* DeleteItemOfUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3591F1F9BD000346167 /* DeleteItemOfUserListBrickCell.m */; };
@@ -2840,6 +2846,9 @@
 		BA1FA99F1F02B0020084184D /* InsertItemIntoUserListBrickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertItemIntoUserListBrickCell.m; sourceTree = "<group>"; };
 		BA1FA9A11F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "InsertItemIntoUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/InsertItemIntoUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
 		BA220EBF21669277009E618A /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		BA387BBA217399CA0098ED21 /* AudioEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineTests.swift; sourceTree = "<group>"; };
+		BA387BC82173A1B00098ED21 /* russianfolk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = russianfolk.wav; sourceTree = "<group>"; };
+		BA387BCA2173A1FD0098ED21 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explode.mp3; sourceTree = "<group>"; };
 		BA6805AD21303B48004F004F /* VariablesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariablesTests.swift; sourceTree = "<group>"; };
 		BA94CEFD215D30BB002B9AEC /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = "../../../Downloads/AudioKit-iOS 3/AudioKitUI.framework"; sourceTree = "<group>"; };
 		BA94CF00215D30BB002B9AEC /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../../Downloads/AudioKit-iOS 3/AudioKit.framework"; sourceTree = "<group>"; };
@@ -3030,6 +3039,7 @@
 				59D9EC65206117000019EC10 /* DVR.framework in Frameworks */,
 				593624C61F76F374008A588D /* HMSegmentedControl.framework in Frameworks */,
 				593624C71F76F374008A588D /* M13ProgressSuite.framework in Frameworks */,
+				BA387BC02173A0260098ED21 /* AudioKit.framework in Frameworks */,
 				593624C81F76F374008A588D /* MXPagerView.framework in Frameworks */,
 				593624C91F76F374008A588D /* MXParallaxHeader.framework in Frameworks */,
 				593624CA1F76F374008A588D /* MXSegmentedPager.framework in Frameworks */,
@@ -3293,6 +3303,7 @@
 			isa = PBXGroup;
 			children = (
 				4C1329031CD9259900F16E48 /* AudioManagerTests.swift */,
+				BA387BBA217399CA0098ED21 /* AudioEngineTests.swift */,
 			);
 			path = AudioManager;
 			sourceTree = "<group>";
@@ -3300,6 +3311,8 @@
 		4C1329071CD9278E00F16E48 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				BA387BCA2173A1FD0098ED21 /* explode.mp3 */,
+				BA387BC82173A1B00098ED21 /* russianfolk.wav */,
 				4C13290A1CD92D5500F16E48 /* silence.mp3 */,
 			);
 			name = Sounds;
@@ -7897,6 +7910,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA387BCB2173A1FD0098ED21 /* explode.mp3 in Resources */,
+				BA387BC92173A1B00098ED21 /* russianfolk.wav in Resources */,
 				4CC85CD41B9C6EC80097E470 /* Word_balloon_demo_096.xml in Resources */,
 				CAE3E55E1B4C50B300CC88BD /* Tic_Tac_Toe_Master_091.xml in Resources */,
 				4CE2D3F91C294F3300938B5E /* Drink_more_water_097.xml in Resources */,
@@ -8386,6 +8401,7 @@
 				4C6FE15D212D2D2E0067B7D5 /* LogFunctionTest.swift in Sources */,
 				4CEB224E1B95E47500B3BE2F /* BrickMoveManagerAbstractTest.m in Sources */,
 				4C2A00C31B5546DF00CD4492 /* XMLParserObjectTests093.m in Sources */,
+				BAB163BB21725FB900373FE9 /* AudioRecorder.swift in Sources */,
 				4CAA66C221469C0400CCDD6E /* UserVariableTests.swift in Sources */,
 				4C37A0A7212E76C90074F417 /* ArduinoDigitalPingFunctionTest.swift in Sources */,
 				4C82265F213FA7A400F3D750 /* FingerTouchedSensorTest.swift in Sources */,
@@ -8495,6 +8511,7 @@
 				4C2EE3E61B5554D7006DE9B8 /* XMLParserHeaderTests095.m in Sources */,
 				4CC50A60213BE18F004BC914 /* SingleParameterDoubleFunctionMock.swift in Sources */,
 				4CEB22691B95E47500B3BE2F /* TurnLeftBrickTests.m in Sources */,
+				BAB163B721725FAD00373FE9 /* AudioChannel.swift in Sources */,
 				4C822682213FA7A400F3D750 /* PhiroSensorTest.swift in Sources */,
 				4C822669213FA7A400F3D750 /* TimeMinuteSensorTest.swift in Sources */,
 				4CEB22731B95E4BC00B3BE2F /* BrickInsertManagerAbstractTest.m in Sources */,
@@ -8519,6 +8536,7 @@
 				BA1FA9941F02A1150084184D /* UserListFunctionsTest.m in Sources */,
 				4C822656213FA7A400F3D750 /* DeviceSensorMock.swift in Sources */,
 				4C822655213FA7A400F3D750 /* SensorMock.swift in Sources */,
+				BA387BBE217399CE0098ED21 /* AudioEngineTests.swift in Sources */,
 				4C28D7912133BC0B00870CE2 /* FormulaManagerResourceTests.swift in Sources */,
 				4CEB22571B95E47500B3BE2F /* ChangeTransparencyByNBrickTests.m in Sources */,
 				599E64AA202DB3E8009494B5 /* MediaLibraryCollectionViewDataSourceTests.swift in Sources */,
@@ -9559,6 +9577,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -9581,6 +9600,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.catrobat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CattyTests/CattyTests-Bridging-Header.h";
@@ -9611,6 +9635,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -9631,6 +9656,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.catrobat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CattyTests/CattyTests-Bridging-Header.h";
