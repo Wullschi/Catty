@@ -25,8 +25,6 @@ import AudioKit
 
 @objc class AudioEngine:NSObject {
     
-    @objc static let sharedInstance = AudioEngine()
-    
     var speechSynth: AVSpeechSynthesizer
     var mainOut: AKMixer
     var channels: [String : AudioChannel]
@@ -46,15 +44,15 @@ import AudioKit
         
         do {
             tape = try AKAudioFile()
-            recorder = try AKNodeRecorder(node: mainOut, file: tape)
-            AKLog((recorder?.audioFile?.directoryPath.absoluteString)!)
-            AKLog((recorder?.audioFile?.fileNamePlusExtension)!)
+            //recorder = try AKNodeRecorder(node: mainOut, file: tape)
+            //AKLog((recorder?.audioFile?.directoryPath.absoluteString)!)
+            //AKLog((recorder?.audioFile?.fileNamePlusExtension)!)
         } catch {
 
         }
 
         do {
-            try recorder?.record()
+            //try recorder?.record()
         } catch {
             AKLog("Couldn't record")
         }

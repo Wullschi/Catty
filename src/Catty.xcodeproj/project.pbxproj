@@ -1069,10 +1069,11 @@
 		BA1FA9A01F02B0020084184D /* InsertItemIntoUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA99F1F02B0020084184D /* InsertItemIntoUserListBrickCell.m */; };
 		BA1FA9A21F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1FA9A11F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift */; };
 		BA220EC021669277009E618A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA220EBF21669277009E618A /* AudioRecorder.swift */; };
-		BA387BBE217399CE0098ED21 /* AudioEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA387BBA217399CA0098ED21 /* AudioEngineTests.swift */; };
 		BA387BC02173A0260098ED21 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08F8AF215E7B9700D7FBB7 /* AudioKit.framework */; };
 		BA387BC92173A1B00098ED21 /* russianfolk.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA387BC82173A1B00098ED21 /* russianfolk.wav */; };
 		BA387BCB2173A1FD0098ED21 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA387BCA2173A1FD0098ED21 /* explode.mp3 */; };
+		BA4815532178987000562BD3 /* AudioEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4815522178987000562BD3 /* AudioEngineTests.swift */; };
+		BA48155921789E8400562BD3 /* soundtest.xml in Resources */ = {isa = PBXBuildFile; fileRef = BA48155821789E8400562BD3 /* soundtest.xml */; };
 		BA6805AE21303B48004F004F /* VariablesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6805AD21303B48004F004F /* VariablesTests.swift */; };
 		BA9CAB541EC380CA00796056 /* AddItemToUserListBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB531EC380CA00796056 /* AddItemToUserListBrick.m */; };
 		BA9CAB5A1EC382DB00796056 /* BrickCellListData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB591EC382DB00796056 /* BrickCellListData.m */; };
@@ -1080,7 +1081,6 @@
 		BA9CAB601EC383E800796056 /* AddItemToUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB5F1EC383E800796056 /* AddItemToUserListBrickCell.m */; };
 		BA9CAB621EC3853600796056 /* AddItemToUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9CAB611EC3853600796056 /* AddItemToUserListBrick+Instruction.swift */; };
 		BAB07ED8215D24B000E70A29 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB07ED7215D24B000E70A29 /* AudioEngine.swift */; };
-		BAB07ED9215D24B000E70A29 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB07ED7215D24B000E70A29 /* AudioEngine.swift */; };
 		BAB163B721725FAD00373FE9 /* AudioChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA10C48821600AED007CB55D /* AudioChannel.swift */; };
 		BAB163BB21725FB900373FE9 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA220EBF21669277009E618A /* AudioRecorder.swift */; };
 		BACDF3521F1F9B7E00346167 /* DeleteItemOfUserListBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = BACDF3511F1F9B7E00346167 /* DeleteItemOfUserListBrick.m */; };
@@ -1091,6 +1091,7 @@
 		BAD47DC61F12938D001C38BC /* AddItemToUserListBrick098.xml in Resources */ = {isa = PBXBuildFile; fileRef = BAD47DC31F12938D001C38BC /* AddItemToUserListBrick098.xml */; };
 		BAD47DC71F12938D001C38BC /* InsertItemIntoUserListBrick098.xml in Resources */ = {isa = PBXBuildFile; fileRef = BAD47DC41F12938D001C38BC /* InsertItemIntoUserListBrick098.xml */; };
 		BAD47DC81F12938D001C38BC /* InsertItemIntoUserListBrick098.xml in Resources */ = {isa = PBXBuildFile; fileRef = BAD47DC41F12938D001C38BC /* InsertItemIntoUserListBrick098.xml */; };
+		BAD56F622177D72B002677D6 /* XMLAbstractTestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD56F612177D72B002677D6 /* XMLAbstractTestSwift.swift */; };
 		BAEAB294214BCD75000B2E4B /* WhenTouchDownScript.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEAB293214BCD75000B2E4B /* WhenTouchDownScript.m */; };
 		BAEAB29A214BCE8D000B2E4B /* WhenTouchDownScriptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEAB299214BCE8D000B2E4B /* WhenTouchDownScriptCell.m */; };
 		BAEE49B61F165C3100F06741 /* ReplaceItemInUserListBrickCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEE49B51F165C3100F06741 /* ReplaceItemInUserListBrickCell.m */; };
@@ -2846,9 +2847,10 @@
 		BA1FA99F1F02B0020084184D /* InsertItemIntoUserListBrickCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertItemIntoUserListBrickCell.m; sourceTree = "<group>"; };
 		BA1FA9A11F02B0C80084184D /* InsertItemIntoUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "InsertItemIntoUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/InsertItemIntoUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
 		BA220EBF21669277009E618A /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
-		BA387BBA217399CA0098ED21 /* AudioEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineTests.swift; sourceTree = "<group>"; };
 		BA387BC82173A1B00098ED21 /* russianfolk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = russianfolk.wav; sourceTree = "<group>"; };
 		BA387BCA2173A1FD0098ED21 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explode.mp3; sourceTree = "<group>"; };
+		BA4815522178987000562BD3 /* AudioEngineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngineTests.swift; sourceTree = "<group>"; };
+		BA48155821789E8400562BD3 /* soundtest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = soundtest.xml; path = CattyTests/Resources/AudioEngineTests/soundtest.xml; sourceTree = SOURCE_ROOT; };
 		BA6805AD21303B48004F004F /* VariablesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariablesTests.swift; sourceTree = "<group>"; };
 		BA94CEFD215D30BB002B9AEC /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = "../../../Downloads/AudioKit-iOS 3/AudioKitUI.framework"; sourceTree = "<group>"; };
 		BA94CF00215D30BB002B9AEC /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../../Downloads/AudioKit-iOS 3/AudioKit.framework"; sourceTree = "<group>"; };
@@ -2872,6 +2874,7 @@
 		BACDF35B1F1F9BFC00346167 /* DeleteItemOfUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DeleteItemOfUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/DeleteItemOfUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
 		BAD47DC31F12938D001C38BC /* AddItemToUserListBrick098.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AddItemToUserListBrick098.xml; path = CattyTests/Resources/ParserTests/ListBricks/AddItemToUserListBrick098.xml; sourceTree = SOURCE_ROOT; };
 		BAD47DC41F12938D001C38BC /* InsertItemIntoUserListBrick098.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = InsertItemIntoUserListBrick098.xml; path = CattyTests/Resources/ParserTests/ListBricks/InsertItemIntoUserListBrick098.xml; sourceTree = SOURCE_ROOT; };
+		BAD56F612177D72B002677D6 /* XMLAbstractTestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLAbstractTestSwift.swift; sourceTree = "<group>"; };
 		BAEAB293214BCD75000B2E4B /* WhenTouchDownScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhenTouchDownScript.m; sourceTree = "<group>"; };
 		BAEAB297214BCD95000B2E4B /* WhenTouchDownScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhenTouchDownScript.h; sourceTree = "<group>"; };
 		BAEAB298214BCE8C000B2E4B /* WhenTouchDownScriptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhenTouchDownScriptCell.h; sourceTree = "<group>"; };
@@ -3303,7 +3306,7 @@
 			isa = PBXGroup;
 			children = (
 				4C1329031CD9259900F16E48 /* AudioManagerTests.swift */,
-				BA387BBA217399CA0098ED21 /* AudioEngineTests.swift */,
+				BA4815522178987000562BD3 /* AudioEngineTests.swift */,
 			);
 			path = AudioManager;
 			sourceTree = "<group>";
@@ -3331,6 +3334,7 @@
 		4C1608A31A095480002C7032 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA48155721789E6B00562BD3 /* AudioEngineTests */,
 				4C1329071CD9278E00F16E48 /* Sounds */,
 				4C6A64B31AF7CC5A00D04559 /* Images */,
 				4C1608A41A09548F002C7032 /* ParserTests */,
@@ -3418,6 +3422,7 @@
 			children = (
 				4C2A00C51B5547EB00CD4492 /* XMLAbstractTest.h */,
 				4C2A00C61B5547EB00CD4492 /* XMLAbstractTest.m */,
+				BAD56F612177D72B002677D6 /* XMLAbstractTestSwift.swift */,
 			);
 			name = Abstract;
 			path = "Parser & Serialization/Abstract";
@@ -7108,6 +7113,14 @@
 			name = "Extensions & Delegates & Protocols";
 			sourceTree = "<group>";
 		};
+		BA48155721789E6B00562BD3 /* AudioEngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA48155821789E8400562BD3 /* soundtest.xml */,
+			);
+			name = AudioEngineTests;
+			sourceTree = "<group>";
+		};
 		BAD47DC01F12935F001C38BC /* ListBricks */ = {
 			isa = PBXGroup;
 			children = (
@@ -7979,6 +7992,7 @@
 				CAE3E5561B4C50B300CC88BD /* Pythagorean_Theorem_092.xml in Resources */,
 				CAE3E5491B4C50B300CC88BD /* Memory_09.xml in Resources */,
 				4CE2D3FF1C29500F00938B5E /* Galaxy_War_097.xml in Resources */,
+				BA48155921789E8400562BD3 /* soundtest.xml in Resources */,
 				4C6D15FA1D7AC63400CE53CD /* ValidHeader098.xml in Resources */,
 				4CE2D3F31C294F1700938B5E /* Airplane_with_shadow_097.xml in Resources */,
 				4CEF0CDE1B9C6434003C9B20 /* Pythagorean_Theorem_096.xml in Resources */,
@@ -8457,6 +8471,7 @@
 				4C82266B213FA7A400F3D750 /* DateYearSensorTest.swift in Sources */,
 				4CEB22761B95E4BC00B3BE2F /* BrickInsertManagerRepeatTests.m in Sources */,
 				4CAB10091ECF1A9A0019A67B /* HideTextBrickTests.swift in Sources */,
+				BA4815532178987000562BD3 /* AudioEngineTests.swift in Sources */,
 				4CE1D436213E5D700014DAF9 /* FormulaManagerCacheTests.swift in Sources */,
 				4CEB225F1B95E47500B3BE2F /* PlaceAtBrickTests.m in Sources */,
 				4C6FE171212D2D2E0067B7D5 /* CosFunctionTest.swift in Sources */,
@@ -8480,7 +8495,6 @@
 				4CB2CFAD1D7AD8A5009F3034 /* SetColorBrickTests.m in Sources */,
 				4C822683213FA7A400F3D750 /* SensorManagerTests.swift in Sources */,
 				4C82266F213FA7A400F3D750 /* DateMonthSensorTest.swift in Sources */,
-				BAB07ED9215D24B000E70A29 /* AudioEngine.swift in Sources */,
 				4C822670213FA7A400F3D750 /* AccelerationYSensorTest.swift in Sources */,
 				4C6FE16A212D2D2E0067B7D5 /* AtanFunctionTest.swift in Sources */,
 				4C647C8A1D48E1F70060E70D /* XMLParserBlackBoxTests098.m in Sources */,
@@ -8488,6 +8502,7 @@
 				4CEB224F1B95E47500B3BE2F /* BrickMoveManagerForeverTests.m in Sources */,
 				4C68FC951B25A00B00AB3EE8 /* InternFormulaTokenSelectionTest.m in Sources */,
 				4C68FC8C1B25A00B00AB3EE8 /* FormulaParserErrorDetectionTest.m in Sources */,
+				BAD56F622177D72B002677D6 /* XMLAbstractTestSwift.swift in Sources */,
 				4C82267D213FA7A400F3D750 /* PositionYSensorTest.swift in Sources */,
 				4CEB22681B95E47500B3BE2F /* ShowBrickTests.m in Sources */,
 				4C1C8B16213FE7F1003B3AA4 /* StoreProgramDownloaderMock.swift in Sources */,
@@ -8536,7 +8551,6 @@
 				BA1FA9941F02A1150084184D /* UserListFunctionsTest.m in Sources */,
 				4C822656213FA7A400F3D750 /* DeviceSensorMock.swift in Sources */,
 				4C822655213FA7A400F3D750 /* SensorMock.swift in Sources */,
-				BA387BBE217399CE0098ED21 /* AudioEngineTests.swift in Sources */,
 				4C28D7912133BC0B00870CE2 /* FormulaManagerResourceTests.swift in Sources */,
 				4CEB22571B95E47500B3BE2F /* ChangeTransparencyByNBrickTests.m in Sources */,
 				599E64AA202DB3E8009494B5 /* MediaLibraryCollectionViewDataSourceTests.swift in Sources */,

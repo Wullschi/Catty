@@ -39,7 +39,7 @@ import AudioKit
             }
             audioPlayer.play()
         } else {
-            let audioFileURL = URL.init(fileURLWithPath: filePath + "/" + fileName)
+            let audioFileURL = createFileUrl(filePath: filePath, fileName: fileName)
             do {
                 let file = try AKAudioFile(forReading: audioFileURL)
                 let akPlayer = try AKAudioPlayer(file: file)
@@ -51,6 +51,10 @@ import AudioKit
                 print("could not start audio engine")
             }
         }
+    }
+    
+    private func createFileUrl(filePath: String, fileName: String) -> URL {
+        return URL.init(fileURLWithPath: filePath + "/" + fileName)
     }
     
     func connectTo(node: AKInput) -> AKInput {

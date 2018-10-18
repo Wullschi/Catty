@@ -26,8 +26,7 @@ import CryptoSwift
 
 @testable import Pocket_Code
 
-class AudioEngineTests: XCTestCase {
-    
+final class AudioEngineTests: XMLAbstractTestSwift {
     
     override func setUp( ) {
         super.setUp()
@@ -38,11 +37,9 @@ class AudioEngineTests: XCTestCase {
     }
     
     func testHash() {
-        
         let testBundle = Bundle(for: type(of: self))
         let audioFileURL1 = testBundle.url(forResource: "russianfolk", withExtension: "wav")
         let audioFileURL2 = testBundle.url(forResource: "explode", withExtension: "mp3")
-        
         do {
             let file1 = try AKAudioFile(forReading: audioFileURL1!)
             let file2 = try AKAudioFile(forReading: audioFileURL2!)
@@ -75,8 +72,7 @@ class AudioEngineTests: XCTestCase {
                     akPlayer2.play(at: dspTime)
                 })
             }
-            
-            
+        
             let readTape = try AKAudioFile(forReading: tape.url)
             measure() {
                 let data1 = Data(buffer: UnsafeBufferPointer(start: readTape.pcmBuffer.floatChannelData![0], count:Int(readTape.pcmBuffer.frameLength))).bytes
@@ -98,4 +94,47 @@ class AudioEngineTests: XCTestCase {
             print("error")
         }
     }
+    
+    func testParseSoundProgram() {
+        let audioEngine = AudioEngine()
+        let formulaInterpreter = FormulaManager()
+        let logger = CBLogger(name: "Logger")
+        let broadcastHandler = CBBroadcastHandler(logger: logger)
+        let scheduler = CBScheduler(logger: logger, broadcastHandler: broadcastHandler, formulaInterpreter: formulaInterpreter)
+        
+        
+        let program = self.getProgramForXML(xmlFile: "soundtest")
+        let spriteObject = program?.objectList[0] as? SpriteObject
+        let script = spriteObject?.scriptList[0] as? WhenScript
+        let soundBrick = script?.brickList[0] as? PlaySoundBrick
+        let file = soundBrick?.sound.fileName
+        
+        let context = CBScriptContext(script: script!, spriteNode: CBSpriteNode(spriteObject: spriteObject!), formulaInterpreter: formulaInterpreter)
+        
+        let instruction = soundBrick!.instruction(audioEngine: audioEngine)
+        
+        switch instruction {
+        case let .execClosure(closure):
+            closure(context!, scheduler)
+        default:
+            XCTFail();
+        }
+
+       // let existsPredicate = NSPredicate(format: "exists == true")
+        
+        let existsPredicate = NSPredicate(block: { any, _ in
+            guard let engine = any as? AudioEngine else { return false }
+            let chn = engine.channels["Background"]
+            let player = chn?.audioPlayers[file!]
+            return chn != nil//&& player != nil
+        })
+
+
+        expectation(for: existsPredicate, evaluatedWith: audioEngine, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        let bla = ""
+    }
+    
+    
 }
