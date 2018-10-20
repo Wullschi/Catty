@@ -116,11 +116,15 @@ import AudioKit
         if let channel = channels[key] {
             return channel
         } else {
-            let channel = AudioChannel()
-            channel.connectTo(node: mainOut)
-            channels[key] = channel
-            return channel
+            return createNewAudioChannel(key: key)
         }
+    }
+    
+    internal func createNewAudioChannel(key: String) -> AudioChannel {
+        let channel = AudioChannel()
+        channel.connectTo(node: mainOut)
+        channels[key] = channel
+        return channel
     }
 
     @objc func stopNodeRecorder(){

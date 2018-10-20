@@ -39,7 +39,7 @@ import AudioKit
             }
             audioPlayer.play()
         } else {
-            let audioFileURL = createFileUrl(filePath: filePath, fileName: fileName)
+            let audioFileURL = createFileUrl(fileName: fileName, filePath: filePath)
             do {
                 let file = try AKAudioFile(forReading: audioFileURL)
                 let akPlayer = try AKAudioPlayer(file: file)
@@ -53,7 +53,7 @@ import AudioKit
         }
     }
     
-    private func createFileUrl(filePath: String, fileName: String) -> URL {
+    internal func createFileUrl(fileName: String, filePath: String) -> URL {
         return URL.init(fileURLWithPath: filePath + "/" + fileName)
     }
     
