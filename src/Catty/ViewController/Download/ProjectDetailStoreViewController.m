@@ -132,7 +132,7 @@
 - (UIView*)createViewForProject:(CatrobatProject*)project
 {
     UIView *view = [CreateView createProjectDetailView:project target:self];
-    if ([Project projectExistsWithProjectID:project.projectID]) {
+    if ([ProjectService projectExistsWithProjectID:project.projectID]) {
         [view viewWithTag:kDownloadButtonTag].hidden = YES;
         [view viewWithTag:kOpenButtonTag].hidden = NO;
         [view viewWithTag:kStopLoadingTag].hidden = YES;
@@ -175,7 +175,7 @@
     if ([identifier isEqualToString:segueToContinue]) {
         // The local project name with same project ID could differ from the original project name.
         // That's because the user could have renamed the downloaded project.
-        NSString *localProjectName = [Project projectNameForProjectID:self.project.projectID];
+        NSString *localProjectName = [ProjectService getProjectNameWithProjectID:self.project.projectID];
         
         // check if project loaded successfully -> not nil
         self.loadedProject = [Project projectWithLoadingInfo:[ProjectLoadingInfo projectLoadingInfoForProjectWithName:localProjectName projectID:self.project.projectID]];
@@ -324,8 +324,8 @@
     downloadAgainButton.enabled = NO;
     button.hidden = NO;
     button.progress = 0;
-    self.duplicateName = [Util uniqueName:self.project.name existingNames:[Project allProjectNames]];
-    NSDebug(@"%@",[Project allProjectNames]);
+    self.duplicateName = [Util uniqueName:self.project.name existingNames:[ProjectService getAllProjectNames]];
+    NSDebug(@"%@",[ProjectService getAllProjectNames]);
     [self downloadWithName:self.duplicateName];
 }
 

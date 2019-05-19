@@ -50,7 +50,7 @@
 #pragma mark - getter and setters
 - (void)setProject:(Project *)project
 {
-    [project setAsLastUsedProject];
+    [ProjectService setAsLastUsedProjectWithProject:project];
     _project = project;
 }
 
@@ -174,7 +174,7 @@
 
     [self showLoadingView];
     NSString *oldProjectName = self.project.header.programName;
-    newProjectName = [Util uniqueName:newProjectName existingNames:[Project allProjectNames]];
+    newProjectName = [Util uniqueName:newProjectName existingNames:[ProjectService getAllProjectNames]];
     [self.project renameToProjectName:newProjectName];
     [self.delegate renameOldProjectWithName:oldProjectName
                                   projectID:self.project.header.programID
@@ -238,7 +238,7 @@
     
     [[[[[actionSheet
          addDefaultActionWithTitle:kLocalizedRenameProject handler:^{
-             NSMutableArray *unavailableNames = [[Project allProjectNames] mutableCopy];
+             NSMutableArray *unavailableNames = [[ProjectService getAllProjectNames] mutableCopy];
              [unavailableNames removeString:self.project.header.programName];
              [Util askUserForUniqueNameAndPerformAction:@selector(renameProjectActionForProjectWithName:)
                                                  target:self

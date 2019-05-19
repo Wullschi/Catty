@@ -44,7 +44,7 @@
 - (void)testChangeColorByNBrickPositive
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -73,13 +73,13 @@
     
     XCTAssertEqualWithAccuracy(70.0f, spriteNode.catrobatColor, 0.1f, @"ChangeColorBrick - Color not correct");
     
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 - (void)testChangeColorByNBrickWrongInput
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -108,13 +108,13 @@
     
     XCTAssertEqualWithAccuracy(10.0f, spriteNode.catrobatColor, 0.1f, @"ChangeColorBrick - Color not correct");
     
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 - (void)testChangeColorByNBrickNegative
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -143,13 +143,13 @@
     
     XCTAssertEqualWithAccuracy(10.0f, spriteNode.catrobatColor, 0.1f, @"ChangeColorBrick - Color not correct");
     
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 - (void)testChangeColorByNBrickMoreThan2Pi
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -178,7 +178,7 @@
     
     XCTAssertEqualWithAccuracy(200-130.0f, spriteNode.catrobatColor, 0.1f, @"ChangeColorBrick - Color not correct");
     
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 @end

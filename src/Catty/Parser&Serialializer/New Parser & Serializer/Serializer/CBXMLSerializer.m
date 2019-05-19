@@ -27,6 +27,7 @@
 #import "CatrobatLanguageDefines.h"
 #import "CBXMLPositionStack.h"
 #import "CBFileManager.h"
+#import "Pocket_Code-Swift.h"
 
 @interface CBXMLSerializer()
 
@@ -93,8 +94,8 @@
         }
 
         // update last access time
-        [Project updateLastModificationTimeForProjectWithName:project.header.programName
-                                                    projectID:project.header.programID];
+        [ProjectService updateLastModificationTimeOfProjectWithProjectName: project.header.programName
+                                                                 projectID:project.header.programID];
         NSInfo(@"Saving finished...");
     } @catch(NSException *exception) {
         NSError(@"Project could not be serialized! %@", [exception description]);

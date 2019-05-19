@@ -45,7 +45,7 @@
 - (void)testSetBrightnessBrick
 {
     SpriteObject* object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -71,13 +71,13 @@
     action();
     
     XCTAssertEqualWithAccuracy(180.0f, spriteNode.catrobatBrightness, 0.1f, @"SetBrightnessBrick - Brightness not correct");
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 - (void)testSetBrightnessBrickNegative
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -103,13 +103,13 @@
     action();
     
     XCTAssertEqualWithAccuracy(0.0f, spriteNode.catrobatBrightness, 0.1f ,@"SetBrightnessBrick - Brightness not correct");
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 - (void)testSetBrightnessBrickTooBright
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -136,13 +136,13 @@
     action();
     
     XCTAssertEqualWithAccuracy(200.0f, spriteNode.catrobatBrightness, 0.1f, @"SetBrightnessBrick - Brightness not correct");
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 - (void)testSetBrightnessBrickWrongInput
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -171,7 +171,7 @@
     
     XCTAssertEqualWithAccuracy(0.0f, spriteNode.catrobatBrightness, 0.1f, @"SetBrightnessBrick - Brightness not correct");
     
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 @end

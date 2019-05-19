@@ -47,7 +47,6 @@
 - (void)removeReferences;
 - (void)saveToDiskWithNotification:(BOOL)notify;
 - (BOOL)isLastUsedProject;
-- (void)setAsLastUsedProject;
 - (void)translateDefaultProject;
 - (void)renameToProjectName:(NSString* _Nonnull)projectName;
 - (void)renameObject:(SpriteObject* _Nonnull)object toName:(NSString* _Nonnull)newObjectName;
@@ -55,33 +54,19 @@
 - (nonnull NSArray*)allObjectNames;
 - (BOOL)hasObject:(SpriteObject* _Nonnull)object;
 - (SpriteObject* _Nonnull)copyObject:(SpriteObject* _Nonnull)sourceObject
-    withNameForCopiedObject:(NSString* _Nonnull)nameOfCopiedObject;
+             withNameForCopiedObject:(NSString* _Nonnull)nameOfCopiedObject;
 - (BOOL)isEqualToProject:(Project* _Nonnull)project;
 - (NSInteger)getRequiredResources;
 
-+ (instancetype _Nonnull)defaultProjectWithName:(NSString* _Nonnull)projectName
-                                      projectID:(NSString* _Nullable)projectID;
-+ (instancetype _Nonnull)lastUsedProject;
-+ (void)updateLastModificationTimeForProjectWithName:(NSString* _Nonnull)projectName
-                                           projectID:(NSString* _Nonnull)projectID;
 + (nullable instancetype)projectWithLoadingInfo:(ProjectLoadingInfo* _Nonnull)loadingInfo;
-+ (BOOL)projectExistsWithProjectName:(NSString* _Nonnull)projectName
-                           projectID:(NSString* _Nonnull)projectID;
-+ (BOOL)projectExistsWithProjectID:(NSString* _Nonnull)projectID;
-+ (BOOL)areThereAnyProjects;
+//+ (instancetype _Nonnull)defaultProjectWithName:(NSString* _Nonnull)projectName
+//                                      projectID:(NSString* _Nullable)projectID;
++ (instancetype _Nonnull)lastUsedProject;
 + (void)copyProjectWithSourceProjectName:(NSString* _Nonnull)sourceProjectName
                          sourceProjectID:(NSString* _Nonnull)sourceProjectID
                   destinationProjectName:(NSString* _Nonnull)destinationProjectName;
-+ (void)removeProjectFromDiskWithProjectName:(NSString* _Nonnull)projectName
-                                   projectID:(NSString* _Nonnull)projectID;
-+ (BOOL)isLastUsedProject:(NSString* _Nonnull)projectName projectID:(NSString* _Nonnull)projectID;
-+ (void)setLastUsedProject:(Project* _Nonnull)project;
-+ (NSString* _Nonnull)basePath;
-+ (NSArray* _Nonnull)allProjectNames;
-+ (NSArray* _Nonnull)allProjectLoadingInfos;
-+ (NSString* _Nonnull)projectDirectoryNameForProjectName:(NSString* _Nonnull)projectName
-                                               projectID:(NSString* _Nullable)projectID;
-+ (nullable ProjectLoadingInfo *)projectLoadingInfoForProjectDirectoryName:(NSString* _Nonnull)projectDirectoryName;
-+ (nullable NSString *)projectNameForProjectID:(NSString* _Nonnull)projectID;
+//+ (NSString* _Nonnull)projectDirectoryNameForProjectName:(NSString* _Nonnull)projectName
+//                                               projectID:(NSString* _Nullable)projectID;
+//+ (nullable ProjectLoadingInfo *)projectLoadingInfoForProjectDirectoryName:(NSString* _Nonnull)projectDirectoryName;
 
 @end

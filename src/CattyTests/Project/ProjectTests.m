@@ -34,6 +34,7 @@
 #import "AppDelegate.h"
 #import "Util.h"
 #import "LanguageTranslationDefines.h"
+#import "Pocket_Code-Swift.h"
 
 @interface ProjectTests : XCTestCase
 
@@ -47,8 +48,8 @@
 - (void)setUp
 {
     [super setUp];
-    if (! [self.fileManager directoryExists:[Project basePath]]) {
-        [self.fileManager createDirectory:[Project basePath]];
+    if (! [self.fileManager directoryExists:[ProjectService basePath]]) {
+        [self.fileManager createDirectory:[ProjectService basePath]];
     }
 }
 
@@ -64,7 +65,7 @@
 
 - (void)setupForNewProject
 {
-    self.project = [Project defaultProjectWithName:kLocalizedNewProject projectID:nil];
+    self.project = [ProjectService defaultProjectWithProjectName:kLocalizedNewProject projectID:nil];
 }
 
 - (void)testNewProjectIfProjectFolderExists

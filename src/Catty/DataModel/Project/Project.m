@@ -65,7 +65,7 @@
     SpriteObject *object = [[SpriteObject alloc] init];
     //object.originalSize;
     object.spriteNode.currentLook = nil;
-
+    
     object.name = [Util uniqueName:objectName existingNames:[self allObjectNames]];
     object.project = self;
     [self.objectList addObject:object];
@@ -122,7 +122,7 @@
 - (NSMutableArray<SpriteObject*>*)objectList
 {
     if (! _objectList) {
-         _objectList = [NSMutableArray array];
+        _objectList = [NSMutableArray array];
     }
     return _objectList;
 }
@@ -147,12 +147,12 @@
 
 - (NSString*)projectPath
 {
-    return [Project projectPathForProjectWithName:[Util replaceBlockedCharactersForString:self.header.programName] projectID:self.header.programID];
+    return [ProjectService getProjectPathWithProjectName:[Util replaceBlockedCharactersForString:self.header.programName] projectID:self.header.programID];
 }
 
 - (void)removeFromDisk
 {
-    [Project removeProjectFromDiskWithProjectName:[Util enableBlockedCharactersForString:self.header.programName] projectID:self.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:[Util enableBlockedCharactersForString:self.header.programName] projectID:self.header.programID];
 }
 
 - (void)saveToDiskWithNotification:(BOOL)notify
@@ -172,7 +172,7 @@
         NSString *xmlPath = [NSString stringWithFormat:@"%@%@", [self projectPath], kProjectCodeFileName];
         id<CBSerializerProtocol> serializer = [[CBXMLSerializer alloc] initWithPath:xmlPath fileManager:fileManager];
         [serializer serializeProject:self];
-
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:kHideLoadingViewNotification object:self];
             [[NSNotificationCenter defaultCenter] postNotificationName:kReadyToUpload object:self];
@@ -182,14 +182,8 @@
 
 - (BOOL)isLastUsedProject
 {
-    return [Project isLastUsedProject:self.header.programName projectID:self.header.programID];
+    return [ProjectService isLastUsedProjectWithProjectName:self.header.programName projectID:self.header.programID];
 }
-
-- (void)setAsLastUsedProject
-{
-    [Project setLastUsedProject:self];
-}
-
 
 - (void)renameToProjectName:(NSString*)projectName
 {
@@ -198,7 +192,7 @@
     }
     BOOL isLastProject = [self isLastUsedProject];
     NSString *oldPath = [self projectPath];
-    self.header.programName = [Util uniqueName:projectName existingNames:[[self class] allProjectNames]];
+    self.header.programName = [Util uniqueName:projectName existingNames:[ProjectService getAllProjectNames]];
     NSString *newPath = [self projectPath];
     [[CBFileManager sharedManager] moveExistingDirectoryAtPath:oldPath toPath:newPath];
     if (isLastProject) {
@@ -316,7 +310,7 @@
         resources |= [obj getRequiredResources];
     }
     return resources;
-
+    
 }
 
 #pragma mark - helpers
@@ -350,121 +344,26 @@
     return [ret copy];
 }
 
-#pragma mark - Manager
-
-+ (NSString*)projectDirectoryNameForProjectName:(NSString*)projectName projectID:(NSString*)projectID
-{
-    return [NSString stringWithFormat:@"%@%@%@", projectName, kProjectIDSeparator,
-            (projectID ? projectID : kNoProjectIDYetPlaceholder)];
-}
-
-+ (nullable ProjectLoadingInfo*)projectLoadingInfoForProjectDirectoryName:(NSString*)directoryName
-{
-    CBAssert(directoryName);
-    NSArray *directoryNameParts = [directoryName componentsSeparatedByString:kProjectIDSeparator];
-    if (directoryNameParts.count < 2) {
-        return nil;
-    }
-    NSString *projectID = (NSString*)directoryNameParts.lastObject;
-    NSString *projectName = [directoryName substringToIndex:directoryName.length - projectID.length - 1];
-    return [ProjectLoadingInfo projectLoadingInfoForProjectWithName:projectName projectID:projectID];
-}
-
-+ (nullable NSString *)projectNameForProjectID:(NSString*)projectID
-{
-    if ((! projectID) || (! [projectID length])) {
-        return nil;
-    }
-    NSArray *allProjectLoadingInfos = [[self class] allProjectLoadingInfos];
-    for (ProjectLoadingInfo *projectLoadingInfo in allProjectLoadingInfos) {
-        if ([projectLoadingInfo.projectID isEqualToString:projectID]) {
-            return projectLoadingInfo.visibleName;
-        }
-    }
-    return nil;
-}
-
-// returns true if either same projectID and/or same projectName already exists
-+ (BOOL)projectExistsWithProjectName:(NSString*)projectName projectID:(NSString*)projectID
-{
-    NSArray *allProjectLoadingInfos = [[self class] allProjectLoadingInfos];
-
-    // check if project with same ID already exists
-    if (projectID && [projectID length]) {
-        if ([[self class] projectExistsWithProjectID:projectID]) {
-            return YES;
-        }
-    }
-
-    // no projectID match => check if project with same name already exists
-    for (ProjectLoadingInfo *projectLoadingInfo in allProjectLoadingInfos) {
-        if ([projectName isEqualToString:projectLoadingInfo.visibleName]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-// returns true if either same projectID and/or same projectName already exists
-+ (BOOL)projectExistsWithProjectID:(NSString*)projectID
-{
-    NSArray *allProjectLoadingInfos = [[self class] allProjectLoadingInfos];
-    for (ProjectLoadingInfo *projectLoadingInfo in allProjectLoadingInfos) {
-        if ([projectID isEqualToString:projectLoadingInfo.projectID]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-+ (instancetype)defaultProjectWithName:(NSString*)projectName projectID:(NSString*)projectID
-{
-    projectName = [Util uniqueName:projectName existingNames:[[self class] allProjectNames]];
-    Project *project = [[Project alloc] init];
-    project.header = [Header defaultHeader];
-    project.header.programName = projectName;
-    project.header.programID = projectID;
-
-    CBFileManager *fileManager = [CBFileManager sharedManager];
-    if (! [fileManager directoryExists:projectName]) {
-        [fileManager createDirectory:[project projectPath]];
-    }
-
-    NSString *imagesDirName = [NSString stringWithFormat:@"%@%@", [project projectPath], kProjectImagesDirName];
-    if (! [fileManager directoryExists:imagesDirName]) {
-        [fileManager createDirectory:imagesDirName];
-    }
-
-    NSString *soundsDirName = [NSString stringWithFormat:@"%@%@", [project projectPath], kProjectSoundsDirName];
-    if (! [fileManager directoryExists:soundsDirName]) {
-        [fileManager createDirectory:soundsDirName];
-    }
-
-    [project addObjectWithName:kLocalizedBackground];
-    NSDebug(@"%@", [project description]);
-    return project;
-}
-
 + (nullable instancetype)projectWithLoadingInfo:(ProjectLoadingInfo*)loadingInfo
 {
     NSDebug(@"Try to load project '%@'", loadingInfo.visibleName);
     NSDebug(@"Path: %@", loadingInfo.basePath);
     NSString *xmlPath = [NSString stringWithFormat:@"%@%@", loadingInfo.basePath, kProjectCodeFileName];
     NSDebug(@"XML-Path: %@", xmlPath);
-
+    
     //    //######### FIXME remove that later!! {
     //        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     //        xmlPath = [bundle pathForResource:@"ValidProjectAllBricks093" ofType:@"xml"];
     //    // }
-
+    
     Project *project = nil;
     CGFloat languageVersion = [Util detectCBLanguageVersionFromXMLWithPath:xmlPath];
-
+    
     if (languageVersion == kCatrobatInvalidVersion) {
         NSDebug(@"Invalid catrobat language version!");
         return nil;
     }
-
+    
     // detect right parser for correct catrobat language version
     CBXMLParser *catrobatParser = [[CBXMLParser alloc] initWithPath:xmlPath];
     if (! [catrobatParser isSupportedLanguageVersion:languageVersion]) {
@@ -474,68 +373,84 @@
         project = [catrobatParser parseAndCreateProject];
     }
     project.header.programID = loadingInfo.projectID;
-
+    
     if (! project)
         return nil;
-
+    
     NSDebug(@"%@", [project description]);
     NSDebug(@"ProjectResolution: width/height:  %f / %f", project.header.screenWidth.floatValue, project.header.screenHeight.floatValue);
-    [self updateLastModificationTimeForProjectWithName:loadingInfo.visibleName projectID:loadingInfo.projectID];
+    [ProjectService updateLastModificationTimeOfProjectWithProjectName: loadingInfo.visibleName projectID:loadingInfo.projectID];
     return project;
 }
+
+#pragma mark - Manager
+
+//+ (NSString*)projectDirectoryNameForProjectName:(NSString*)projectName projectID:(NSString*)projectID
+//{
+//    return [NSString stringWithFormat:@"%@%@%@", projectName, kProjectIDSeparator,
+//            (projectID ? projectID : kNoProjectIDYetPlaceholder)];
+//}
+
+//+ (nullable ProjectLoadingInfo*)projectLoadingInfoForProjectDirectoryName:(NSString*)directoryName
+//{
+//    CBAssert(directoryName);
+//    NSArray *directoryNameParts = [directoryName componentsSeparatedByString:kProjectIDSeparator];
+//    if (directoryNameParts.count < 2) {
+//        return nil;
+//    }
+//    NSString *projectID = (NSString*)directoryNameParts.lastObject;
+//    NSString *projectName = [directoryName substringToIndex:directoryName.length - projectID.length - 1];
+//    return [ProjectLoadingInfo projectLoadingInfoForProjectWithName:projectName projectID:projectID];
+//}
+
+//+ (instancetype)defaultProjectWithName:(NSString*)projectName projectID:(NSString*)projectID
+//{
+//    projectName = [Util uniqueName:projectName existingNames:[ProjectService getAllProjectNames]];
+//    Project *project = [[Project alloc] init];
+//    project.header = [Header defaultHeader];
+//    project.header.programName = projectName;
+//    project.header.programID = projectID;
+//
+//    CBFileManager *fileManager = [CBFileManager sharedManager];
+//    if (! [fileManager directoryExists:projectName]) {
+//        [fileManager createDirectory:[project projectPath]];
+//    }
+//
+//    NSString *imagesDirName = [NSString stringWithFormat:@"%@%@", [project projectPath], kProjectImagesDirName];
+//    if (! [fileManager directoryExists:imagesDirName]) {
+//        [fileManager createDirectory:imagesDirName];
+//    }
+//
+//    NSString *soundsDirName = [NSString stringWithFormat:@"%@%@", [project projectPath], kProjectSoundsDirName];
+//    if (! [fileManager directoryExists:soundsDirName]) {
+//        [fileManager createDirectory:soundsDirName];
+//    }
+//
+//    [project addObjectWithName:kLocalizedBackground];
+//    NSDebug(@"%@", [project description]);
+//    return project;
+//}
 
 + (instancetype)lastUsedProject
 {
     return [Project projectWithLoadingInfo:[Util lastUsedProjectLoadingInfo]];
 }
 
-+ (void)updateLastModificationTimeForProjectWithName:(NSString*)projectName projectID:(NSString*)projectID
-{
-    NSString *xmlPath = [NSString stringWithFormat:@"%@%@",
-                         [self projectPathForProjectWithName:projectName projectID:projectID],
-                         kProjectCodeFileName];
-    CBFileManager *fileManager = [CBFileManager sharedManager];
-    [fileManager changeModificationDate:[NSDate date] forFileAtPath:xmlPath];
-}
-
-+ (void)copyProjectWithSourceProjectName:(NSString*)sourceProjectName
-                         sourceProjectID:(NSString*)sourceProjectID
-                  destinationProjectName:(NSString*)destinationProjectName
-{
-    NSString *sourceProjectPath = [[self class] projectPathForProjectWithName:sourceProjectName projectID:sourceProjectID];
-    destinationProjectName = [Util uniqueName:destinationProjectName existingNames:[self allProjectNames]];
-    NSString *destinationProjectPath = [[self class] projectPathForProjectWithName:destinationProjectName projectID:nil];
-
-    CBFileManager *fileManager = [CBFileManager sharedManager];
-    [fileManager copyExistingDirectoryAtPath:sourceProjectPath toPath:destinationProjectPath];
-    ProjectLoadingInfo *destinationProjectLoadingInfo = [ProjectLoadingInfo projectLoadingInfoForProjectWithName:destinationProjectName projectID:nil];
-    Project *project = [Project projectWithLoadingInfo:destinationProjectLoadingInfo];
-    project.header.programName = destinationProjectLoadingInfo.visibleName;
-    [project saveToDiskWithNotification:YES];
-}
-
-+ (void)removeProjectFromDiskWithProjectName:(NSString*)projectName projectID:(NSString*)projectID
-{
-    CBFileManager *fileManager = [CBFileManager sharedManager];
-    NSString *projectPath = [self projectPathForProjectWithName:projectName projectID:projectID];
-    if ([fileManager directoryExists:projectPath]) {
-        [fileManager deleteDirectory:projectPath];
-    }
-
-    // if this is currently set as last used project, then look for next project to set it as
-    // the last used project
-    if ([Project isLastUsedProject:projectName projectID:projectID]) {
-        [Util setLastProjectWithName:nil projectID:nil];
-        NSArray *allProjectLoadingInfos = [[self class] allProjectLoadingInfos];
-        for (ProjectLoadingInfo *projectLoadingInfo in allProjectLoadingInfos) {
-            [Util setLastProjectWithName:projectLoadingInfo.visibleName projectID:projectLoadingInfo.projectID];
-            break;
-        }
-    }
-
-    // if there are no projects left, then automatically recreate default project
-    [fileManager addDefaultProjectToProjectsRootDirectoryIfNoProjectsExist];
-}
+//+ (void)copyProjectWithSourceProjectName:(NSString*)sourceProjectName
+//                         sourceProjectID:(NSString*)sourceProjectID
+//                  destinationProjectName:(NSString*)destinationProjectName
+//{
+//    NSString *sourceProjectPath = [ProjectService getProjectPathWithProjectName:sourceProjectName projectID:sourceProjectID];
+//    destinationProjectName = [Util uniqueName:destinationProjectName existingNames:[ProjectService getAllProjectNames]];
+//    NSString *destinationProjectPath = [ProjectService getProjectPathWithProjectName: destinationProjectName projectID: nil];
+//
+//    CBFileManager *fileManager = [CBFileManager sharedManager];
+//    [fileManager copyExistingDirectoryAtPath:sourceProjectPath toPath:destinationProjectPath];
+//    ProjectLoadingInfo *destinationProjectLoadingInfo = [ProjectLoadingInfo projectLoadingInfoForProjectWithName:destinationProjectName projectID:nil];
+//    Project *project = [ProjectService getProjectWithLoadingInfo:destinationProjectLoadingInfo];
+//    project.header.programName = destinationProjectLoadingInfo.visibleName;
+//    [project saveToDiskWithNotification:YES];
+//}
 
 - (void)translateDefaultProject
 {
@@ -554,71 +469,6 @@
         ++index;
     }
     [self renameToProjectName:kLocalizedMyFirstProject]; // saves to disk!
-}
-
-+ (NSString*)basePath
-{
-    return [NSString stringWithFormat:@"%@/%@/", [Util applicationDocumentsDirectory], kProjectsFolder];
-}
-
-
-+ (NSArray*)allProjectNames
-{
-    NSArray *allProjectLoadingInfos = [[self class] allProjectLoadingInfos];
-    NSMutableArray *projectNames = [[NSMutableArray alloc] initWithCapacity:[allProjectLoadingInfos count]];
-    for (ProjectLoadingInfo *loadingInfo in allProjectLoadingInfos) {
-        [projectNames addObject:loadingInfo.visibleName];
-    }
-    return [projectNames copy];
-}
-
-+ (NSArray*)allProjectLoadingInfos
-{
-    NSString *basePath = [Project basePath];
-    NSError *error;
-    NSArray *subdirNames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:basePath error:&error];
-    NSLogError(error);
-    subdirNames = [subdirNames sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-
-    NSMutableArray *projectLoadingInfos = [[NSMutableArray alloc] initWithCapacity:subdirNames.count];
-    for (NSString *subdirName in subdirNames) {
-        // exclude .DS_Store folder on MACOSX simulator
-        if ([subdirName isEqualToString:@".DS_Store"]) {
-            continue;
-        }
-
-        ProjectLoadingInfo *info = [[self class] projectLoadingInfoForProjectDirectoryName:subdirName];
-        if (! info) {
-            NSDebug(@"Unable to load project located in directory %@", subdirName);
-            continue;
-        }
-        NSDebug(@"Adding loaded project: %@", info.basePath);
-        [projectLoadingInfos addObject:info];
-    }
-    return projectLoadingInfos;
-}
-
-+ (BOOL)areThereAnyProjects
-{
-    return ((BOOL)[[self allProjectNames] count]);
-}
-
-+ (BOOL)isLastUsedProject:(NSString*)projectName projectID:(NSString*)projectID
-{
-    ProjectLoadingInfo *lastUsedInfo = [Util lastUsedProjectLoadingInfo];
-    ProjectLoadingInfo *info = [ProjectLoadingInfo projectLoadingInfoForProjectWithName:projectName
-                                                                              projectID:projectID];
-    return [lastUsedInfo isEqualToLoadingInfo:info];
-}
-
-+ (void)setLastUsedProject:(Project*)project
-{
-    [Util setLastProjectWithName:project.header.programName projectID:project.header.programID];
-}
-
-+ (NSString*)projectPathForProjectWithName:(NSString*)projectName projectID:(NSString*)projectID
-{
-    return [NSString stringWithFormat:@"%@%@/", [Project basePath], [[self class] projectDirectoryNameForProjectName:[Util replaceBlockedCharactersForString:projectName] projectID:projectID]];
 }
 
 @end

@@ -35,7 +35,7 @@ final class ScenePresenterViewControllerTest: XCTestCase {
         vc = ScenePresenterViewController()
         skView = SKView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 1000, height: 2500)))
 
-        project = Project.defaultProject(withName: "testProject", projectID: "")
+        project = ProjectService.defaultProject(projectName: "testProject", projectID: "")
     }
 
     func testAutomaticScreenshot() {

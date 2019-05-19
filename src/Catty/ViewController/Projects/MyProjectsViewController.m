@@ -147,14 +147,14 @@
                                 minInputLength:kMinNumOfProjectNameCharacters
                                 maxInputLength:kMaxNumOfProjectNameCharacters
                       invalidInputAlertMessage:kLocalizedProjectNameAlreadyExistsDescription
-                                 existingNames:[Project allProjectNames]];
+                                 existingNames:[ProjectService getAllProjectNames]];
 }
 
 - (void)addProjectAndSegueToItActionForProjectWithName:(NSString*)projectName
 {
     static NSString *segueToNewProjectIdentifier = kSegueToNewProject;
-    projectName = [Util uniqueName:projectName existingNames:[Project allProjectNames]];
-    self.defaultProject = [Project defaultProjectWithName:projectName projectID:nil];
+    projectName = [Util uniqueName:projectName existingNames:[ProjectService getAllProjectNames]];
+    self.defaultProject = [ProjectService defaultProjectWithProjectName: projectName projectID: nil];
     if ([self shouldPerformSegueWithIdentifier:segueToNewProjectIdentifier sender:self]) {
         [self addProject:self.defaultProject.header.programName];
         [self performSegueWithIdentifier:segueToNewProjectIdentifier sender:self];
@@ -164,7 +164,7 @@
 - (void)copyProjectActionForProjectWithName:(NSString*)projectName
                    sourceProjectLoadingInfo:(ProjectLoadingInfo*)sourceProjectLoadingInfo
 {
-    projectName = [Util uniqueName:projectName existingNames:[Project allProjectNames]];
+    projectName = [Util uniqueName:projectName existingNames:[ProjectService getAllProjectNames]];
     ProjectLoadingInfo *destinationProjectLoadingInfo = [self addProject:projectName];
     if (! destinationProjectLoadingInfo)
         return;
@@ -198,7 +198,7 @@
     
     [self showLoadingView];
     Project *project = [Project projectWithLoadingInfo:projectLoadingInfo];
-    newProjectName = [Util uniqueName:newProjectName existingNames:[Project allProjectNames]];
+    newProjectName = [Util uniqueName:newProjectName existingNames:[ProjectService getAllProjectNames]];
     [project renameToProjectName:newProjectName];
     [self renameOldProjectWithName:projectLoadingInfo.visibleName
                          projectID:projectLoadingInfo.projectID
@@ -392,10 +392,10 @@
                                          minInputLength:kMinNumOfProjectNameCharacters
                                          maxInputLength:kMaxNumOfProjectNameCharacters
                                invalidInputAlertMessage:kLocalizedProjectNameAlreadyExistsDescription
-                                          existingNames:[Project allProjectNames]];
+                                          existingNames:[ProjectService getAllProjectNames]];
          }]
          addDefaultActionWithTitle:kLocalizedRename handler:^{
-             NSMutableArray *unavailableNames = [[Project allProjectNames] mutableCopy];
+             NSMutableArray *unavailableNames = [[ProjectService getAllProjectNames] mutableCopy];
              [unavailableNames removeString:info.visibleName];
              [Util askUserForUniqueNameAndPerformAction:@selector(renameProjectActionToName:sourceProjectLoadingInfo:)
                                                  target:self
@@ -603,7 +603,7 @@
 {
     // check if project already exists, then update
     BOOL exists = NO;
-    NSMutableArray* projectLoadingInfos = [[Project allProjectLoadingInfos] mutableCopy];
+    NSMutableArray* projectLoadingInfos = [[ProjectService getAllProjectLoadingInfos] mutableCopy];
     for (ProjectLoadingInfo *projectLoadingInfo in projectLoadingInfos) {
         if ([projectLoadingInfo.visibleName isEqualToString:projectName])
             exists = YES;
@@ -627,10 +627,10 @@
 {
     ProjectLoadingInfo *oldProjectLoadingInfo = [ProjectLoadingInfo projectLoadingInfoForProjectWithName:projectName projectID:projectID];
     NSInteger rowIndex = 0;
-    NSMutableArray* projectLoadingInfos = [[Project allProjectLoadingInfos] mutableCopy];
+    NSMutableArray* projectLoadingInfos = [[ProjectService getAllProjectLoadingInfos] mutableCopy];
     for (ProjectLoadingInfo *info in projectLoadingInfos) {
         if ([info isEqualToLoadingInfo:oldProjectLoadingInfo]) {
-            [Project removeProjectFromDiskWithProjectName:projectName projectID:projectID];
+            [ProjectService removeProjectFromDiskWithProjectName:projectName projectID:projectID];
             NSIndexPath* indexPath = [self getPathForProjectLoadingInfo:info];
             
             if ([self.tableView numberOfRowsInSection:indexPath.section] > 1)
@@ -689,7 +689,7 @@
     ProjectLoadingInfo *oldProjectLoadingInfo = [ProjectLoadingInfo projectLoadingInfoForProjectWithName:oldProjectName
                                                                                                projectID:projectID];
     NSInteger rowIndex = 0;
-    NSMutableArray* projectLoadingInfos = [[Project allProjectLoadingInfos] mutableCopy];
+    NSMutableArray* projectLoadingInfos = [[ProjectService getAllProjectLoadingInfos] mutableCopy];
     for (ProjectLoadingInfo *info in projectLoadingInfos) {
         if ([info isEqualToLoadingInfo:oldProjectLoadingInfo]) {
             ProjectLoadingInfo *newInfo = [ProjectLoadingInfo projectLoadingInfoForProjectWithName:newProjectName
@@ -741,7 +741,7 @@
 {
     self.projectLoadingInfoDict = [NSMutableDictionary new];
     self.projectsCounter = 0;
-    NSArray* projectLoadingInfos = [[Project allProjectLoadingInfos] mutableCopy];
+    NSArray* projectLoadingInfos = [[ProjectService getAllProjectLoadingInfos] mutableCopy];
     for (ProjectLoadingInfo* info in projectLoadingInfos) {
         NSMutableArray* array = [self.projectLoadingInfoDict objectForKey:[[info.visibleName substringToIndex:1] uppercaseString]];
         if (!array.count) {

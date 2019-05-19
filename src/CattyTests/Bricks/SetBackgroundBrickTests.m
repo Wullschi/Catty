@@ -45,7 +45,7 @@
 - (void)testSetBackgroundBrick
 {
     SpriteObject *object = [[SpriteObject alloc] init];
-    Project *project = [Project defaultProjectWithName:@"a" projectID:nil];
+    Project *project = [ProjectService defaultProjectWithProjectName:@"a" projectID:nil];
     CBSpriteNode *spriteNode = [[CBSpriteNode alloc] initWithSpriteObject:object];
     object.spriteNode = spriteNode;
     object.project = project;
@@ -78,7 +78,7 @@
     action();
     
     XCTAssertEqual(backgroundObject.spriteNode.currentLook, look1, @"SetBackgroundBrick not correct");
-    [Project removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
+    [ProjectService removeProjectFromDiskWithProjectName:project.header.programName projectID:project.header.programID];
 }
 
 @end

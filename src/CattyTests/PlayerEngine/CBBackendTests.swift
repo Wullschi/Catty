@@ -337,7 +337,7 @@ final class CBBackendTests: XCTestCase {
     }
 
     func testIfElseConditionalInstruction() {
-        let project = Project.defaultProject(withName: "ProjectName", projectID: "123")
+        let project = ProjectService.defaultProject(projectName: "ProjectName", projectID: "123")
 
         let whenScript = WhenScript()
         whenScript.action = kWhenScriptDefaultAction

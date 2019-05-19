@@ -77,8 +77,9 @@ NS_ENUM(NSInteger, ViewControllerIndex) {
     self.lastUsedProject = nil;
     self.defaultProject = nil;
     CBFileManager *fileManager = [CBFileManager sharedManager];
-    if (! [fileManager directoryExists:[Project basePath]]) {
-        [fileManager createDirectory:[Project basePath]];
+    if (! [fileManager directoryExists:[ProjectService basePath]]) {
+        [fileManager createDirectory:[ProjectService basePath]];
+
     }
     [fileManager addDefaultProjectToProjectsRootDirectoryIfNoProjectsExist];
 
@@ -190,7 +191,7 @@ NS_ENUM(NSInteger, ViewControllerIndex) {
 {
     static NSString *segueToNewProjectIdentifier = kSegueToNewProject;
     [self showLoadingView];
-    self.defaultProject = [Project defaultProjectWithName:projectName projectID:nil];
+    self.defaultProject = [ProjectService defaultProjectWithProjectName:projectName projectID:nil];
     if ([self shouldPerformSegueWithIdentifier:segueToNewProjectIdentifier sender:self]) {
         [self hideLoadingView];
         [self performSegueWithIdentifier:segueToNewProjectIdentifier sender:self];
@@ -246,7 +247,7 @@ NS_ENUM(NSInteger, ViewControllerIndex) {
                                         minInputLength:kMinNumOfProjectNameCharacters
                                         maxInputLength:kMaxNumOfProjectNameCharacters
                               invalidInputAlertMessage:kLocalizedProjectNameAlreadyExistsDescription
-                                         existingNames:[Project allProjectNames]];
+                                         existingNames:[ProjectService getAllProjectNames]];
             break;
         case kContinueProjectVC:
         case kLocalProjectsVC:
@@ -410,7 +411,7 @@ NS_ENUM(NSInteger, ViewControllerIndex) {
                                 minInputLength:kMinNumOfProjectNameCharacters
                                 maxInputLength:kMaxNumOfProjectNameCharacters
                       invalidInputAlertMessage:kLocalizedProjectNameAlreadyExistsDescription
-                                 existingNames:[Project allProjectNames]];
+                                 existingNames:[ProjectService getAllProjectNames]];
 }
 
 @end
