@@ -32,6 +32,7 @@ import Foundation
     init(audioPlayerFactory: AudioPlayerFactory = StandardAudioPlayerFactory()) {
         self.audioPlayerFactory = audioPlayerFactory
         super.init()
+        self.start()
     }
 
     @objc func start() {
@@ -91,7 +92,7 @@ import Foundation
         }
     }
 
-    private func stopAllAudioPlayers() {
+    func stopAllAudioPlayers() {
         for (_, subtree) in subtrees {
             subtree.stopAllAudioPlayers()
         }
