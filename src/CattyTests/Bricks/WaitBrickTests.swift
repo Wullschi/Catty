@@ -48,9 +48,12 @@ final class WaitBrickTests: XCTestCase {
         script = Script()
         script.object = spriteObject
         formulaInterpreter = FormulaManager(sceneSize: Util.screenSize(true))
+        let audioEngine = AudioEngine(audioPlayerFactory: MockAudioPlayerFactory())
+
         scheduler = CBScheduler(logger: self.logger,
                                 broadcastHandler: CBBroadcastHandler(logger: self.logger),
-                                formulaInterpreter: formulaInterpreter)
+                                formulaInterpreter: formulaInterpreter,
+                                audioEngine: audioEngine)
     }
 
     func testWaitDuration() {

@@ -37,7 +37,11 @@ final class AudioPlayerTests: XCTestCase {
         } catch {
             print("Could not load audio file with url \(audioFileURL!.absoluteString)")
         }
+
+        let akPlayer = AKPlayer(audioFile: file!)
         player = AudioPlayer(soundFile: file!, addCompletionHandler: true)
+
+        player.akPlayer = akPlayer
         AudioKit.output = player.akPlayer
         do {
             try AudioKit.start()

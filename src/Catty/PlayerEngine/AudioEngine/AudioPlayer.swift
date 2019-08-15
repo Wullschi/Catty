@@ -25,7 +25,7 @@ import Foundation
 
 class AudioPlayer {
 
-    let akPlayer: AKPlayer
+    var akPlayer: AKPlayer
     var playerIsFinishedExpectation: Expectation?
     var fileName: String
     var soundCompletionHandler: (() -> Void)!

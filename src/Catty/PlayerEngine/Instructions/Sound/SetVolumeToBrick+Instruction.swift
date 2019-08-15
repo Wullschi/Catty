@@ -26,7 +26,6 @@
 
         guard let spriteObject = self.script?.object else { fatalError("This should never happen") }
 
-        let audioManager = AudioManager.shared()
         let spriteObjectName = spriteObject.name
 
         return CBInstruction.execClosure { context, scheduler in

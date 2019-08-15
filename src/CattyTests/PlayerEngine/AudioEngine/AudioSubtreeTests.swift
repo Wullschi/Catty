@@ -27,11 +27,13 @@ import XCTest
 
 final class AudioSubtreeTests: XCTestCase {
 
+    var audioEngine: AudioEngine!
     var audioSubtree: AudioSubtree!
 
     override func setUp() {
         super.setUp()
         audioSubtree = AudioSubtree(audioPlayerFactory: MockAudioPlayerFactory())
+        audioEngine = AudioEngine(audioPlayerFactory: MockAudioPlayerFactory())
     }
 
     func testInitialVolume_expectMax() {
@@ -39,7 +41,7 @@ final class AudioSubtreeTests: XCTestCase {
     }
 
     func testSetup_expectAllNodesToBeConnected() {
-        let mainOut = AKMixer()
+        let mainOut = audioEngine.mainOut
         audioSubtree.setup(mainOut: mainOut)
         XCTAssertEqual(audioSubtree.subtreeOutputMixer.connectionPoints.first!.node, mainOut.inputNode)
         XCTAssertEqual(audioSubtree.audioPlayerMixer.connectionPoints.first!.node, audioSubtree.subtreeOutputMixer.inputNode)
