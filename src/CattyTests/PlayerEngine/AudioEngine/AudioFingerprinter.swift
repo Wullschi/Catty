@@ -20,6 +20,9 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
+
+// Author: https://github.com/NeoTeo/fingerprinter-chromaprint
+
 import AVFoundation
 
 func generateFingerprint(fromSongAtUrl songUrl: URL) -> (String, Double)? {
