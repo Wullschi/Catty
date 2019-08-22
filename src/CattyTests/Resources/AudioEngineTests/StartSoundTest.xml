@@ -27,7 +27,7 @@
             <lookList/>
             <soundList>
                 <sound>
-                    <fileName>russianfolk.wav</fileName>
+                    <fileName>explode.mp3</fileName>
                     <name>GuitarChords2</name>
                 </sound>
             </soundList>
@@ -63,7 +63,7 @@
             </lookList>
             <soundList>
                 <sound>
-                    <fileName>russianfolk.wav</fileName>
+                    <fileName>explode.mp3</fileName>
                     <name>GuitarChords2</name>
                 </sound>
             </soundList>

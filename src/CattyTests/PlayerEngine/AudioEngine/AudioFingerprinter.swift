@@ -20,8 +20,30 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-
-// Author: https://github.com/NeoTeo/fingerprinter-chromaprint
+/**
+ *  The MIT License (MIT)
+ *
+ *  Copyright (c) 2016 David Dias
+ *  https://github.com/NeoTeo/fingerprinter-chromaprint
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ */
 
 import AVFoundation
 
@@ -30,22 +52,19 @@ func generateFingerprint(fromSongAtUrl songUrl: URL) -> (String, Double)? {
     /// Set the maximum number of seconds we're going to use for fingerprinting
     let maxLength = 120
 
-    /** Create a single instance of an unsafe mutable Int8 pointer so we can
-     pass it to chromaprint_get_fingerprint without errors.
+    /** Create an instance of an unsafe mutable pointer of unknown length so we can
+     pass it to chromaprint_get_raw_fingerprint without errors.
      The defer ensures it is not leaked if we drop out early.
      */
-    var fingerprint: UnsafeMutablePointer<Int8>? = UnsafeMutablePointer<Int8>.allocate(capacity: 1)
-    var hashInt: UnsafeMutablePointer<UInt32>? = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
     var rawFingerprint: UnsafeMutableRawPointer? = UnsafeMutableRawPointer.allocate(byteCount: 4, alignment: 1)
-    var fingerprintSize = Int32(bigEndian: 18)
+    var fingerprintSize = Int32(bigEndian: 0)
+    var simHash = UInt32(bigEndian: 0)
 
     defer {
-        fingerprint?.deinitialize()
-        fingerprint?.deallocate(capacity: 1)
+        rawFingerprint?.deallocate()
     }
 
-    /// Start by creating a chromaprint context.
-    /// Not sure why CHROMAPRINT_ALGORITHM_DEFAULT isn't defined here.
+    // Start by creating a chromaprint context.
     let algo = Int32(CHROMAPRINT_ALGORITHM_TEST2.rawValue)
     guard let chromaprintContext = chromaprint_new(algo) else { return nil }
 
@@ -53,38 +72,23 @@ func generateFingerprint(fromSongAtUrl songUrl: URL) -> (String, Double)? {
     /// The chromaprintContext will contain the fingerprint.
     let duration = decodeAudio(songUrl, withMaxLength: maxLength, forContext: chromaprintContext)
 
-    /** Make a fingerprint from the song data.
-     (Note we can also get a hash back with chromprint_get_fingerprint_hash)
-     */
-
-    if chromaprint_get_fingerprint(chromaprintContext, &fingerprint) == 0 {
-        print("Error: could not get fingerprint")
-        return nil
-    }
-
+    // Make a raw fingerprint from the song data.
     if chromaprint_get_raw_fingerprint(chromaprintContext, &rawFingerprint, &fingerprintSize) == 0 {
         print("Error: could not get fingerprint")
         return nil
     }
 
-    let x = rawFingerprint!.load(as: UInt32.self)
-    let offsetPointer = rawFingerprint! + 2
-    let y = offsetPointer.load(as: UInt16.self)
-
-    let num = 22
-    var str = String(x, radix: 2)
-    str = pad(string: str, toSize: 32)
-    print(str)
-
-    if chromaprint_get_fingerprint_hash(chromaprintContext, hashInt) == 0 {
-        print("Error: could not get fingerprint hash")
+    // Calculate the SimHash from the raw fingerprint
+    if chromaprint_hash_fingerprint(rawFingerprint, fingerprintSize, &simHash) == 0 {
+        print("Error: could not get similarity hash")
         return nil
     }
-    print("Hash is \(hashInt?.pointee)")
-    let fingerprintString = NSString(cString: fingerprint!, encoding: String.Encoding.ascii.rawValue)
+
+    var simHashString = String(simHash, radix: 2)
+    simHashString = pad(string: simHashString, toSize: 32)
 
     chromaprint_dealloc(chromaprintContext)
-    return (String(describing: fingerprintString), duration)
+    return (String(describing: simHashString), duration)
 }
 
 private func decodeAudio(
@@ -210,11 +214,9 @@ private func decodeAudio(
                         break
                     }
                 }
-
             }
         }
     }
-    //            sampleData.writeToFile(desktopPath+fileName+".raw", atomically: true)
 
     chromaprint_finish(context)
     return durationInSeconds
@@ -222,7 +224,7 @@ private func decodeAudio(
 
 private func pad(string: String, toSize: Int) -> String {
     var padded = string
-    for _ in 0..<(toSize - string.characters.count) {
+    for _ in 0..<(toSize - string.count) {
         padded = "0" + padded
     }
     return padded

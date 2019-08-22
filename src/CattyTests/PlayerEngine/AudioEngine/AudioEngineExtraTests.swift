@@ -170,13 +170,15 @@ final class AudioEngineExtraTests: XMLAbstractTest {
         do {
             let readTape = try AKAudioFile(forReading: tape.url)
 
-            guard let (fingerprintString, duration) = generateFingerprint(fromSongAtUrl: readTape.url) else {
+            guard let (simHashString, duration) = generateFingerprint(fromSongAtUrl: readTape.url) else {
                 print("No fingerprint was generated")
                 return
             }
 
             print("The song duration is \(duration)")
-            print("The fingerprint is: \(fingerprintString)")
+            print("The fingerprint is: \(simHashString)")
+
+            let simHashBinaryArray = Array(simHashString).map({ Int(String($0))! })
 //
 //            let data1 = Data(buffer: UnsafeBufferPointer(start: readTape.pcmBuffer.floatChannelData![0], count: Int(readTape.pcmBuffer.frameLength))).bytes
 //            let data2 = Data(buffer: UnsafeBufferPointer(start: readTape.pcmBuffer.floatChannelData![1], count: Int(readTape.pcmBuffer.frameLength))).bytes
