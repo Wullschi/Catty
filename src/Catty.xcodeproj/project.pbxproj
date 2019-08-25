@@ -900,6 +900,7 @@
 		9E0F741822B55E4D0030CD89 /* MockAudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F741722B55E4D0030CD89 /* MockAudioPlayerFactory.swift */; };
 		9E1444F6228B531400104F77 /* ExtendedTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1444F5228B531400104F77 /* ExtendedTimerTests.swift */; };
 		9E1BB3CD22BE515800CBC0B6 /* AudioEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */; };
+		9E1ED58D231332E000E36DED /* AudioEngineIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ED58C231332E000E36DED /* AudioEngineIntegrationTest.swift */; };
 		9E22655F22BFB3FC00898052 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */; };
 		9E4458842309FA4300222B14 /* libchromaprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4458812309FA4300222B14 /* libchromaprint.a */; };
 		9E4458862309FC7A00222B14 /* chromaprint.license in Resources */ = {isa = PBXBuildFile; fileRef = 9E4458852309FC7A00222B14 /* chromaprint.license */; };
@@ -2580,6 +2581,7 @@
 		9E0F741722B55E4D0030CD89 /* MockAudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioPlayerFactory.swift; sourceTree = "<group>"; };
 		9E1444F5228B531400104F77 /* ExtendedTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedTimerTests.swift; sourceTree = "<group>"; };
 		9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineTests.swift; sourceTree = "<group>"; };
+		9E1ED58C231332E000E36DED /* AudioEngineIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineIntegrationTest.swift; sourceTree = "<group>"; };
 		9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
 		9E4458812309FA4300222B14 /* libchromaprint.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchromaprint.a; path = ChromaprintLib/libchromaprint.a; sourceTree = "<group>"; };
 		9E4458852309FC7A00222B14 /* chromaprint.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = chromaprint.license; sourceTree = "<group>"; };
@@ -6646,6 +6648,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		9E1ED5892313327200E36DED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9E1ED58C231332E000E36DED /* AudioEngineIntegrationTest.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		9E8F729A22E12795005CDABE /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -6670,6 +6680,7 @@
 		9E8F729B22E12820005CDABE /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
+				9E1ED5892313327200E36DED /* Helpers */,
 				4C1329031CD9259900F16E48 /* AudioManagerTests.swift */,
 				9E0F740822B5179C0030CD89 /* AudioSubtreeTests.swift */,
 				9E4D5CB222B845F100848584 /* IterableCacheTests.swift */,
@@ -8891,6 +8902,7 @@
 				4CEB225C1B95E47500B3BE2F /* IfOnEdgeBounceBrickTests.m in Sources */,
 				9E44588A230A024600222B14 /* AudioEngineExtraTests.swift in Sources */,
 				4C6FE16C212D2D2E0067B7D5 /* AcosFunctionTest.swift in Sources */,
+				9E1ED58D231332E000E36DED /* AudioEngineIntegrationTest.swift in Sources */,
 				4C53E38D21D5241300F2EC76 /* SmallerOrEqualOperatorTest.swift in Sources */,
 				4C822688213FAC3C00F3D750 /* MultiFingerXFunctionTests.swift in Sources */,
 				4C53E39221D525F800F2EC76 /* OperatorManagerTest.swift in Sources */,
