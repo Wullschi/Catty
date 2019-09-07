@@ -25,26 +25,18 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class AudioSubtreeTests: XCTestCase {
+class AudioEngineMock: AudioEngine {
+    var recorder: AKNodeRecorder?
+    var tape: AKAudioFile?
 
-    var audioEngine: AudioEngine!
-    var audioSubtree: AudioSubtree!
+    func addNodeRecorderAtEngineOut(tape: AKAudioFile) -> AKNodeRecorder {
+        do {
+            postProcessingMixer.volume = 0
+            recorder = try AKNodeRecorder(node: engineOutputMixer, file: tape)
+        } catch {
+            print("Should not happen")
+        }
 
-    override func setUp() {
-        super.setUp()
-        audioSubtree = AudioSubtree(audioPlayerFactory: MockAudioPlayerFactory())
-        audioEngine = AudioEngine(audioPlayerFactory: MockAudioPlayerFactory())
+        return recorder!
     }
-
-    func testInitialVolume_expectMax() {
-        XCTAssertEqual(audioSubtree.subtreeOutputMixer.volume, 1)
-    }
-
-    func testSetup_expectAllNodesToBeConnected() {
-        let mainOut = audioEngine.mainOut
-        audioSubtree.setup(mainOut: mainOut)
-        XCTAssertEqual(audioSubtree.subtreeOutputMixer.connectionPoints.first!.node, mainOut.inputNode)
-        XCTAssertEqual(audioSubtree.audioPlayerMixer.connectionPoints.first!.node, audioSubtree.subtreeOutputMixer.inputNode)
-    }
-
 }

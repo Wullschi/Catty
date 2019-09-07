@@ -902,6 +902,8 @@
 		9E1BB3CD22BE515800CBC0B6 /* AudioEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */; };
 		9E1ED58D231332E000E36DED /* AudioEngineIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ED58C231332E000E36DED /* AudioEngineIntegrationTest.swift */; };
 		9E22655F22BFB3FC00898052 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */; };
+		9E22CC8D2323FC6700BA4CBA /* AudioEngineMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22CC8C2323FC6700BA4CBA /* AudioEngineMock.swift */; };
+		9E22CC932323FFEF00BA4CBA /* AudioDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22CC922323FFEF00BA4CBA /* AudioDecoder.swift */; };
 		9E4458842309FA4300222B14 /* libchromaprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4458812309FA4300222B14 /* libchromaprint.a */; };
 		9E4458862309FC7A00222B14 /* chromaprint.license in Resources */ = {isa = PBXBuildFile; fileRef = 9E4458852309FC7A00222B14 /* chromaprint.license */; };
 		9E445888230A021100222B14 /* AudioFingerprinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E445887230A021100222B14 /* AudioFingerprinter.swift */; };
@@ -2583,6 +2585,8 @@
 		9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineTests.swift; sourceTree = "<group>"; };
 		9E1ED58C231332E000E36DED /* AudioEngineIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineIntegrationTest.swift; sourceTree = "<group>"; };
 		9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
+		9E22CC8C2323FC6700BA4CBA /* AudioEngineMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineMock.swift; sourceTree = "<group>"; };
+		9E22CC922323FFEF00BA4CBA /* AudioDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDecoder.swift; sourceTree = "<group>"; };
 		9E4458812309FA4300222B14 /* libchromaprint.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchromaprint.a; path = ChromaprintLib/libchromaprint.a; sourceTree = "<group>"; };
 		9E4458852309FC7A00222B14 /* chromaprint.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = chromaprint.license; sourceTree = "<group>"; };
 		9E445887230A021100222B14 /* AudioFingerprinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFingerprinter.swift; sourceTree = "<group>"; };
@@ -6651,9 +6655,31 @@
 		9E1ED5892313327200E36DED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9E445887230A021100222B14 /* AudioFingerprinter.swift */,
 				9E1ED58C231332E000E36DED /* AudioEngineIntegrationTest.swift */,
+				9E22CC922323FFEF00BA4CBA /* AudioDecoder.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9E22CC902323FD0B00BA4CBA /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C1329031CD9259900F16E48 /* AudioManagerTests.swift */,
+				9E0F740822B5179C0030CD89 /* AudioSubtreeTests.swift */,
+				9E4D5CB222B845F100848584 /* IterableCacheTests.swift */,
+				9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */,
+				9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		9E22CC912323FD3200BA4CBA /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E445889230A024600222B14 /* AudioEngineExtraTests.swift */,
+			);
+			path = IntegrationTests;
 			sourceTree = "<group>";
 		};
 		9E8F729A22E12795005CDABE /* AudioEngine */ = {
@@ -6680,15 +6706,10 @@
 		9E8F729B22E12820005CDABE /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
+				9E22CC912323FD3200BA4CBA /* IntegrationTests */,
+				9E22CC902323FD0B00BA4CBA /* UnitTests */,
 				9E1ED5892313327200E36DED /* Helpers */,
-				4C1329031CD9259900F16E48 /* AudioManagerTests.swift */,
-				9E0F740822B5179C0030CD89 /* AudioSubtreeTests.swift */,
-				9E4D5CB222B845F100848584 /* IterableCacheTests.swift */,
-				9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */,
-				9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */,
 				9E8F729D22E12881005CDABE /* Mocks */,
-				9E445887230A021100222B14 /* AudioFingerprinter.swift */,
-				9E445889230A024600222B14 /* AudioEngineExtraTests.swift */,
 			);
 			name = AudioEngine;
 			path = PlayerEngine/AudioEngine;
@@ -6700,6 +6721,7 @@
 				9E0F740D22B53C9F0030CD89 /* AudioPlayerMock.swift */,
 				9E0F741722B55E4D0030CD89 /* MockAudioPlayerFactory.swift */,
 				9EBED5FC230C8E4800049BBC /* FingerprintingAudioPlayerFactory.swift */,
+				9E22CC8C2323FC6700BA4CBA /* AudioEngineMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -8826,6 +8848,7 @@
 				4CEB22651B95E47500B3BE2F /* SetTransparencyBrickTests.m in Sources */,
 				4CEB22611B95E47500B3BE2F /* PointToBrickTests.m in Sources */,
 				4CBDF1AA21CF830E00325338 /* BinaryOperatorMock.swift in Sources */,
+				9E22CC8D2323FC6700BA4CBA /* AudioEngineMock.swift in Sources */,
 				4C822668213FA7A400F3D750 /* CompassDirectionSensorTest.swift in Sources */,
 				4CE5C56F1E0AD71800FD021C /* ProjectTests.m in Sources */,
 				4C1D26611E84EFBD00BAA2D2 /* RepeatBrickTests.swift in Sources */,
@@ -8834,6 +8857,7 @@
 				4C82267A213FA7A400F3D750 /* LookNumberSensorTest.swift in Sources */,
 				4CEB22581B95E47500B3BE2F /* ClearGrafficEffectBrickTests.m in Sources */,
 				4C82267C213FA7A400F3D750 /* BackgroundNameSensorTest.swift in Sources */,
+				9E22CC932323FFEF00BA4CBA /* AudioDecoder.swift in Sources */,
 				4C822685213FA7CD00F3D750 /* FunctionManagerTests.swift in Sources */,
 				4CD487761ED2C2A3001BB80A /* ChangeVariableBrickTests.swift in Sources */,
 				4C82267B213FA7A400F3D750 /* BackgroundNumberSensorTest.swift in Sources */,

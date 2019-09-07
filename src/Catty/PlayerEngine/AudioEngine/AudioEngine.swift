@@ -24,7 +24,9 @@ import AudioKit
 import Foundation
 
 @objc class AudioEngine: NSObject, AVSpeechSynthesizerDelegate {
-    var mainOut = AKMixer()
+    var engineOutputMixer = AKMixer()
+    var postProcessingMixer = AKMixer()
+
     var subtrees = [String: AudioSubtree]()
     let subtreeCreationQueue = DispatchQueue(label: "SubtreeCreationQueue")
     let audioPlayerFactory: AudioPlayerFactory
@@ -36,7 +38,8 @@ import Foundation
     }
 
     @objc func start() {
-        AudioKit.output = mainOut
+        AudioKit.output = postProcessingMixer
+        engineOutputMixer.connect(to: postProcessingMixer)
         do {
             try AudioKit.start()
         } catch {
@@ -109,7 +112,7 @@ import Foundation
 
     internal func createNewAudioSubtree(key: String) -> AudioSubtree {
         let subtree = AudioSubtree(audioPlayerFactory: audioPlayerFactory)
-        subtree.setup(mainOut: mainOut)
+        subtree.setup(engineOut: engineOutputMixer)
         subtrees[key] = subtree
         return subtree
     }

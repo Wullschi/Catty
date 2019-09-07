@@ -90,8 +90,14 @@
         let audioEngine = getAudioEngine()
         let scheduler = getScheduler(broadcastHandler: broadcastHandler, formulaInterpreter: formulaManager, audioEngine: audioEngine)
 
-        return CBScene(size: size, logger: logger, scheduler: scheduler, frontend: frontend, backend: backend,
-                       broadcastHandler: broadcastHandler, formulaManager: formulaManager, soundEngine: audioEngine)
+        return CBScene(size: size,
+                       logger: logger,
+                       scheduler: scheduler,
+                       frontend: frontend,
+                       backend: backend,
+                       broadcastHandler: broadcastHandler,
+                       formulaManager: formulaManager,
+                       soundEngine: audioEngine)
     }
 
     private func getFormulaManager() -> FormulaManagerProtocol {

@@ -35,8 +35,8 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
         super.setUp()
         do {
             tape = try AKAudioFile()
-            audioEngine = AudioEngineMock()
-            recorder = audioEngine.addNodeRecorderAtMainOut(tape: tape)
+            audioEngine = AudioEngineMock(audioPlayerFactory: FingerprintingAudioPlayerFactory())
+            recorder = audioEngine.addNodeRecorderAtEngineOut(tape: tape)
 
         } catch {
             XCTFail("Could not initialize audio file occured")
@@ -48,8 +48,9 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
         audioEngine.shutdown()
     }
 
-    func runAndRecord(duration: Int, scene: CBScene) {
+    func runAndRecord(duration: Int, scene: CBScene, muted: Bool) {
         do {
+            audioEngine.postProcessingMixer.volume = muted ? 0 : 1
             try recorder.record()
             _ = scene.startProject()
             RunLoop.current.run(until: Date(timeIntervalSinceNow: 3))
@@ -60,8 +61,6 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
     }
 
     func calculateSimilarity(tape: AKAudioFile, referenceHash: String) -> Double {
-        print("The recorded \(recorder.recordedDuration) Seconds")
-
         let readTape: AKAudioFile
         do {
             readTape = try AKAudioFile(forReading: tape.url)
@@ -75,7 +74,7 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
             return 0
         }
 
-        print("The song duration is \(duration)")
+        print("The recorded duration is \(duration)")
         print("The binary fingerprint is: \(simHashString)")
 
         let currentSimHash = Array(simHashString).map({ Int(String($0))! })
@@ -86,10 +85,8 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
         }
 
         var matchingDigits = 0
-        for i in 0..<referenceSimHash.count {
-            if referenceSimHash[i] == currentSimHash[i] {
+        for i in 0..<referenceSimHash.count where referenceSimHash[i] == currentSimHash[i] {
                 matchingDigits += 1
-            }
         }
 
         let similarity: Double = matchingDigits / referenceSimHash.count
@@ -102,27 +99,5 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
         let project = self.getProjectForXML(xmlFile: xmlFile)
         let sceneBuilder = SceneBuilder(project: project).withFormulaManager(formulaManager: FormulaManager(sceneSize: Util.screenSize(true))).withAudioEngine(audioEngine: audioEngine)
         return sceneBuilder.build()
-    }
-}
-
-class AudioEngineMock: AudioEngine {
-    var recorder: AKNodeRecorder?
-    var tape: AKAudioFile?
-
-    override internal func createNewAudioSubtree(key: String) -> AudioSubtree {
-        let subtree = AudioSubtree(audioPlayerFactory: FingerprintingAudioPlayerFactory())
-        subtree.setup(mainOut: mainOut)
-        subtrees[key] = subtree
-        return subtree
-    }
-
-    func addNodeRecorderAtMainOut(tape: AKAudioFile) -> AKNodeRecorder {
-        do {
-            recorder = try AKNodeRecorder(node: mainOut, file: tape)
-        } catch {
-            print("Should not happen")
-        }
-
-        return recorder!
     }
 }

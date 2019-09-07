@@ -25,24 +25,26 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class AudioEngineExtraTests: AudioEngineIntegrationTest {
+final class AudioSubtreeTests: XCTestCase {
+
+    var audioEngine: AudioEngine!
+    var audioSubtree: AudioSubtree!
 
     override func setUp() {
         super.setUp()
+        audioSubtree = AudioSubtree(audioPlayerFactory: MockAudioPlayerFactory())
+        audioEngine = AudioEngine(audioPlayerFactory: MockAudioPlayerFactory())
     }
 
-    override func tearDown() {
-        super.tearDown()
+    func testInitialVolume_expectMax() {
+        XCTAssertEqual(audioSubtree.subtreeOutputMixer.volume, 1)
     }
 
-    func testStartSound() {
-        let referenceSimHash = "10100111111111111110010100001110"
-        let scene = self.createScene(xmlFile: "StartSoundTest")
-
-        // Run program and record
-        self.runAndRecord(duration: 3, scene: scene)
-
-        let similarity = calculateSimilarity(tape: tape, referenceHash: referenceSimHash)
-        XCTAssertGreaterThan(similarity, 0.8)
+    func testSetup_expectAllNodesToBeConnected() {
+        let engineOutputMixer = audioEngine.engineOutputMixer
+        audioSubtree.setup(engineOut: engineOutputMixer)
+        XCTAssertEqual(audioSubtree.subtreeOutputMixer.connectionPoints.first!.node, engineOutputMixer.inputNode)
+        XCTAssertEqual(audioSubtree.audioPlayerMixer.connectionPoints.first!.node, audioSubtree.subtreeOutputMixer.inputNode)
     }
+
 }
