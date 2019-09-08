@@ -20,7 +20,7 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-@objc final class SceneBuilder: NSObject {
+@objc class SceneBuilder: NSObject {
 
     private var project: Project
     private var logger: CBLogger
@@ -107,9 +107,9 @@
         return formulaManager
     }
 
-    private func getAudioEngine() -> AudioEngine {
+    internal func getAudioEngine() -> AudioEngine {
         guard let engine = self.audioEngine else {
-            return AudioEngine()
+            return AudioEngineMain()
         }
         return engine
     }

@@ -20,29 +20,12 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-import AudioKit
-import Foundation
-
 @testable import Pocket_Code
 
-@objc class AudioEngineMock: NSObject, AudioEngine {
+@objc class SceneBuilderMock: SceneBuilder {
 
-    func start() {}
-
-    func shutdown() {}
-
-    func pauseAudioEngine() {}
-
-    func resumeAudioEngine() {}
-
-    func stopAudioEngine() {}
-
-    func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?) {}
-
-    func setVolumeTo(percent: Double, key: String) {}
-
-    func changeVolumeBy(percent: Double, key: String) {}
-
-    func stopAllAudioPlayers() {}
+    override func getAudioEngine() -> AudioEngine {
+        return AudioEngineMock()
+    }
 
 }

@@ -68,7 +68,7 @@ final class CBSceneTouchTests: XCTestCase {
     var spriteNodeB: CBSpriteNode!
 
     override func setUp() {
-        scene = SceneBuilder(project: ProjectMock(width: 400, andHeight: 800)).build()
+        scene = SceneBuilderMock(project: ProjectMock(width: 400, andHeight: 800)).build()
         scene.scheduler.running = true
 
         let look = Look()

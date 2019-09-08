@@ -20,29 +20,23 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-import AudioKit
-import Foundation
+import XCTest
 
 @testable import Pocket_Code
 
-@objc class AudioEngineMock: NSObject, AudioEngine {
+class AbstractBrickTestSwift: XCTestCase {
 
-    func start() {}
+    var skView: SKView?
+    var scene: CBScene!
+    var formulaInterpreter: FormulaManager!
 
-    func shutdown() {}
+    override func setUp() {
+        super.setUp()
+        formulaInterpreter = FormulaManager(sceneSize: Util.screenSize(true))
+        scene = SceneBuilderMock(project: ProjectMock()).build()
+    }
 
-    func pauseAudioEngine() {}
-
-    func resumeAudioEngine() {}
-
-    func stopAudioEngine() {}
-
-    func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?) {}
-
-    func setVolumeTo(percent: Double, key: String) {}
-
-    func changeVolumeBy(percent: Double, key: String) {}
-
-    func stopAllAudioPlayers() {}
-
+    override func tearDown() {
+        super.tearDown()
+    }
 }

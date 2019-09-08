@@ -25,7 +25,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class AudioEngineExtraTests: AudioEngineIntegrationTest {
+final class AudioPlayerIntegrationTests: AudioEngineIntegrationTest {
 
     override func setUp() {
         super.setUp()

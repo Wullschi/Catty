@@ -42,7 +42,7 @@ final class FingerYSensorTest: XCTestCase {
 
         spriteObject = SpriteObject()
         spriteNode = CBSpriteNodeMock(spriteObject: spriteObject)
-        spriteNode.mockedScene = SceneBuilder(project: ProjectMock(width: CGFloat(screenWidth), andHeight: CGFloat(screenHeight))).build()
+        spriteNode.mockedScene = SceneBuilderMock(project: ProjectMock(width: CGFloat(screenWidth), andHeight: CGFloat(screenHeight))).build()
     }
 
     override func tearDown() {

@@ -21,28 +21,22 @@
  */
 
 import AudioKit
-import Foundation
+import XCTest
 
 @testable import Pocket_Code
 
-@objc class AudioEngineMock: NSObject, AudioEngine {
+class AudioEngineFingerprintingStub: AudioEngineMain {
+    var recorder: AKNodeRecorder?
+    var tape: AKAudioFile?
 
-    func start() {}
+    func addNodeRecorderAtEngineOut(tape: AKAudioFile) -> AKNodeRecorder {
+        do {
+            postProcessingMixer.volume = 0
+            recorder = try AKNodeRecorder(node: engineOutputMixer, file: tape)
+        } catch {
+            print("Should not happen")
+        }
 
-    func shutdown() {}
-
-    func pauseAudioEngine() {}
-
-    func resumeAudioEngine() {}
-
-    func stopAudioEngine() {}
-
-    func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?) {}
-
-    func setVolumeTo(percent: Double, key: String) {}
-
-    func changeVolumeBy(percent: Double, key: String) {}
-
-    func stopAllAudioPlayers() {}
-
+        return recorder!
+    }
 }

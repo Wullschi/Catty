@@ -28,14 +28,14 @@ import XCTest
 class AudioEngineIntegrationTest: XMLAbstractTest {
 
     var tape: AKAudioFile!
-    var audioEngine: AudioEngineMock!
+    var audioEngine: AudioEngineFingerprintingStub!
     var recorder: AKNodeRecorder!
 
     override func setUp() {
         super.setUp()
         do {
             tape = try AKAudioFile()
-            audioEngine = AudioEngineMock(audioPlayerFactory: FingerprintingAudioPlayerFactory())
+            audioEngine = AudioEngineFingerprintingStub(audioPlayerFactory: FingerprintingAudioPlayerFactory())
             recorder = audioEngine.addNodeRecorderAtEngineOut(tape: tape)
 
         } catch {
