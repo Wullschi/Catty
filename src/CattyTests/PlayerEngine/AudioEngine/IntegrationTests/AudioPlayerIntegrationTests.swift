@@ -40,7 +40,7 @@ final class AudioEngineExtraTests: AudioEngineIntegrationTest {
         let scene = self.createScene(xmlFile: "PlaySameSoundTwiceSameObject")
 
         // Run program and record
-        self.runAndRecord(duration: 3, scene: scene, muted: false)
+        self.runAndRecord(duration: 3, scene: scene, muted: true)
 
         let similarity = calculateSimilarity(tape: tape, referenceHash: referenceSimHash)
         XCTAssertGreaterThan(similarity, 0.8)
@@ -51,7 +51,7 @@ final class AudioEngineExtraTests: AudioEngineIntegrationTest {
         let scene = self.createScene(xmlFile: "PlaySameSoundTwiceDifferentObjects")
 
         // Run program and record
-        self.runAndRecord(duration: 3, scene: scene, muted: false)
+        self.runAndRecord(duration: 3, scene: scene, muted: true)
 
         let similarity = calculateSimilarity(tape: tape, referenceHash: referenceSimHash)
         XCTAssertGreaterThan(similarity, 0.85)
