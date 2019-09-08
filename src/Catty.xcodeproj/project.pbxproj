@@ -120,7 +120,6 @@
 		4C11795120AEBE38006C6E32 /* LongitudeSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C11795020AEBE38006C6E32 /* LongitudeSensor.swift */; };
 		4C11795420AEC36D006C6E32 /* ProtocolConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C11795320AEC36D006C6E32 /* ProtocolConformance.swift */; };
 		4C1329041CD9259900F16E48 /* AudioManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1329031CD9259900F16E48 /* AudioManagerTests.swift */; };
-		4C13290B1CD92D5500F16E48 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C13290A1CD92D5500F16E48 /* silence.mp3 */; };
 		4C15FE7F1D168C0D009C1A2B /* transparency-rgb.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C15FE7E1D168C0D009C1A2B /* transparency-rgb.png */; };
 		4C1604301F0025F6004525A5 /* AbstractBrickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C16042F1F0025F6004525A5 /* AbstractBrickTests.m */; };
 		4C1AA4AE21A1572700DAC589 /* MediaItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1AA4AD21A1572700DAC589 /* MediaItemTest.swift */; };
@@ -907,7 +906,7 @@
 		9E4458842309FA4300222B14 /* libchromaprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4458812309FA4300222B14 /* libchromaprint.a */; };
 		9E4458862309FC7A00222B14 /* chromaprint.license in Resources */ = {isa = PBXBuildFile; fileRef = 9E4458852309FC7A00222B14 /* chromaprint.license */; };
 		9E445888230A021100222B14 /* ChromaprintFingerprinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E445887230A021100222B14 /* ChromaprintFingerprinter.swift */; };
-		9E44588A230A024600222B14 /* AudioEngineExtraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E445889230A024600222B14 /* AudioEngineExtraTests.swift */; };
+		9E44588A230A024600222B14 /* AudioPlayerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E445889230A024600222B14 /* AudioPlayerIntegrationTests.swift */; };
 		9E4D5CB322B845F100848584 /* IterableCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D5CB222B845F100848584 /* IterableCacheTests.swift */; };
 		9E7564B222C7AB1A00D38A3B /* ObjectTVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988832B1BCA86FF005029E8 /* ObjectTVCTests.swift */; };
 		9E773797230B4EBC004F264D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E773796230B4EBC004F264D /* Accelerate.framework */; };
@@ -918,16 +917,15 @@
 		9EBAC31122A9B91C002E198D /* AudioKit.license in Resources */ = {isa = PBXBuildFile; fileRef = 9EBAC30E22A9B91B002E198D /* AudioKit.license */; };
 		9EBAC31422A9BF47002E198D /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBAC31222A9BE5A002E198D /* AudioKit.framework */; };
 		9EBED5FD230C8E4800049BBC /* FingerprintingAudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBED5FC230C8E4800049BBC /* FingerprintingAudioPlayerFactory.swift */; };
-		9EBED603230C918A00049BBC /* russianfolk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED601230C918A00049BBC /* russianfolk.wav */; };
-		9EBED604230C918A00049BBC /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED602230C918A00049BBC /* explode.mp3 */; };
-		9EBED60A230C919E00049BBC /* soundtest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED606230C919D00049BBC /* soundtest.xml */; };
-		9EBED60B230C919E00049BBC /* speakandwaittest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED607230C919D00049BBC /* speakandwaittest.xml */; };
-		9EBED60C230C919E00049BBC /* StartSoundTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED608230C919D00049BBC /* StartSoundTest.xml */; };
-		9EBED60D230C919E00049BBC /* ballon_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBED609230C919D00049BBC /* ballon_red.png */; };
 		9ED1150E22C56DEF0035DB63 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBAC31222A9BE5A002E198D /* AudioKit.framework */; };
 		9EDCD21F2288687A0040EFE3 /* ExtendedTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCD21E2288687A0040EFE3 /* ExtendedTimer.swift */; };
 		9EDCD22322886C870040EFE3 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCD22222886C870040EFE3 /* Expectation.swift */; };
 		9EDCD22522886FD90040EFE3 /* WaitBrickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDCD22422886FD90040EFE3 /* WaitBrickCell.swift */; };
+		9EE674D123252F510029D153 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9EE674CE23252F510029D153 /* silence.mp3 */; };
+		9EE674D62325319B0029D153 /* PlaySameSoundTwiceSameObject.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EE674D52325319B0029D153 /* PlaySameSoundTwiceSameObject.xml */; };
+		9EE674DA23253A5E0029D153 /* PlaySameSoundTwiceDifferentObjects.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EE674D923253A5D0029D153 /* PlaySameSoundTwiceDifferentObjects.xml */; };
+		9EE674E32325447C0029D153 /* half_seconds_patchwork.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9EE674E12325447C0029D153 /* half_seconds_patchwork.mp3 */; };
+		9EE674E42325447C0029D153 /* short_drum_long_sax.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9EE674E22325447C0029D153 /* short_drum_long_sax.mp3 */; };
 		A9F511831BE6A07A00B59540 /* SwiftBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F511821BE6A07A00B59540 /* SwiftBridge.swift */; };
 		AA3BD9091BBF4BFB002B34A0 /* WaitBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3BD9081BBF4BFB002B34A0 /* WaitBrickTests.swift */; };
 		AA401FE91BBEF6F9001BC49F /* CBInstructionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA401FE81BBEF6F9001BC49F /* CBInstructionProtocol.swift */; };
@@ -1529,7 +1527,6 @@
 		4C11795020AEBE38006C6E32 /* LongitudeSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongitudeSensor.swift; sourceTree = "<group>"; };
 		4C11795320AEC36D006C6E32 /* ProtocolConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolConformance.swift; sourceTree = "<group>"; };
 		4C1329031CD9259900F16E48 /* AudioManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManagerTests.swift; sourceTree = "<group>"; };
-		4C13290A1CD92D5500F16E48 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		4C15FE7E1D168C0D009C1A2B /* transparency-rgb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "transparency-rgb.png"; path = "CattyTests/Resources/Images/transparency-rgb.png"; sourceTree = SOURCE_ROOT; };
 		4C16042E1F0025F6004525A5 /* AbstractBrickTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractBrickTests.h; sourceTree = "<group>"; };
 		4C16042F1F0025F6004525A5 /* AbstractBrickTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractBrickTests.m; sourceTree = "<group>"; };
@@ -2590,7 +2587,7 @@
 		9E4458812309FA4300222B14 /* libchromaprint.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchromaprint.a; path = ChromaprintLib/libchromaprint.a; sourceTree = "<group>"; };
 		9E4458852309FC7A00222B14 /* chromaprint.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = chromaprint.license; sourceTree = "<group>"; };
 		9E445887230A021100222B14 /* ChromaprintFingerprinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaprintFingerprinter.swift; sourceTree = "<group>"; };
-		9E445889230A024600222B14 /* AudioEngineExtraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineExtraTests.swift; sourceTree = "<group>"; };
+		9E445889230A024600222B14 /* AudioPlayerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerIntegrationTests.swift; sourceTree = "<group>"; };
 		9E4D5CB222B845F100848584 /* IterableCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterableCacheTests.swift; sourceTree = "<group>"; };
 		9E773796230B4EBC004F264D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		9E78D88222A9AF8400948AC3 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
@@ -2600,15 +2597,14 @@
 		9EBAC30E22A9B91B002E198D /* AudioKit.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AudioKit.license; sourceTree = "<group>"; };
 		9EBAC31222A9BE5A002E198D /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EBED5FC230C8E4800049BBC /* FingerprintingAudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerprintingAudioPlayerFactory.swift; sourceTree = "<group>"; };
-		9EBED601230C918A00049BBC /* russianfolk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = russianfolk.wav; sourceTree = "<group>"; };
-		9EBED602230C918A00049BBC /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explode.mp3; sourceTree = "<group>"; };
-		9EBED606230C919D00049BBC /* soundtest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = soundtest.xml; sourceTree = "<group>"; };
-		9EBED607230C919D00049BBC /* speakandwaittest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = speakandwaittest.xml; sourceTree = "<group>"; };
-		9EBED608230C919D00049BBC /* StartSoundTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = StartSoundTest.xml; sourceTree = "<group>"; };
-		9EBED609230C919D00049BBC /* ballon_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballon_red.png; sourceTree = "<group>"; };
 		9EDCD21E2288687A0040EFE3 /* ExtendedTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedTimer.swift; sourceTree = "<group>"; };
 		9EDCD22222886C870040EFE3 /* Expectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
 		9EDCD22422886FD90040EFE3 /* WaitBrickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitBrickCell.swift; sourceTree = "<group>"; };
+		9EE674CE23252F510029D153 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
+		9EE674D52325319B0029D153 /* PlaySameSoundTwiceSameObject.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySameSoundTwiceSameObject.xml; sourceTree = "<group>"; };
+		9EE674D923253A5D0029D153 /* PlaySameSoundTwiceDifferentObjects.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySameSoundTwiceDifferentObjects.xml; sourceTree = "<group>"; };
+		9EE674E12325447C0029D153 /* half_seconds_patchwork.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = half_seconds_patchwork.mp3; sourceTree = "<group>"; };
+		9EE674E22325447C0029D153 /* short_drum_long_sax.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_drum_long_sax.mp3; sourceTree = "<group>"; };
 		A46D335B661B03F52135C789 /* gu */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = gu; path = gu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A6B80FF78CD540E39740C5D8 /* fi */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A988832B1BCA86FF005029E8 /* ObjectTVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTVCTests.swift; sourceTree = "<group>"; };
@@ -3459,17 +3455,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4C1329071CD9278E00F16E48 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				9EBED602230C918A00049BBC /* explode.mp3 */,
-				9EBED601230C918A00049BBC /* russianfolk.wav */,
-				4C13290A1CD92D5500F16E48 /* silence.mp3 */,
-			);
-			name = Sounds;
-			path = CattyTests/Resources/Sounds;
-			sourceTree = SOURCE_ROOT;
-		};
 		4C16042D1F0025F6004525A5 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
@@ -3482,8 +3467,7 @@
 		4C1608A31A095480002C7032 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9EBED605230C919D00049BBC /* AudioEngineTests */,
-				4C1329071CD9278E00F16E48 /* Sounds */,
+				9EBED605230C919D00049BBC /* Audio Engine Tests */,
 				4C6A64B31AF7CC5A00D04559 /* Images */,
 				4C1608A41A09548F002C7032 /* ParserTests */,
 			);
@@ -6677,7 +6661,7 @@
 		9E22CC912323FD3200BA4CBA /* IntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
-				9E445889230A024600222B14 /* AudioEngineExtraTests.swift */,
+				9E445889230A024600222B14 /* AudioPlayerIntegrationTests.swift */,
 			);
 			path = IntegrationTests;
 			sourceTree = "<group>";
@@ -6726,17 +6710,34 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		9EBED605230C919D00049BBC /* AudioEngineTests */ = {
+		9EBED605230C919D00049BBC /* Audio Engine Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9EBED606230C919D00049BBC /* soundtest.xml */,
-				9EBED607230C919D00049BBC /* speakandwaittest.xml */,
-				9EBED608230C919D00049BBC /* StartSoundTest.xml */,
-				9EBED609230C919D00049BBC /* ballon_red.png */,
+				9EE674CB23252ECE0029D153 /* Project Files */,
+				9EE674CC23252F510029D153 /* Sounds */,
 			);
-			name = AudioEngineTests;
-			path = CattyTests/Resources/AudioEngineTests;
+			name = "Audio Engine Tests";
+			path = "CattyTests/Resources/Audio Engine Tests";
 			sourceTree = SOURCE_ROOT;
+		};
+		9EE674CB23252ECE0029D153 /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				9EE674D923253A5D0029D153 /* PlaySameSoundTwiceDifferentObjects.xml */,
+				9EE674D52325319B0029D153 /* PlaySameSoundTwiceSameObject.xml */,
+			);
+			path = "Project Files";
+			sourceTree = "<group>";
+		};
+		9EE674CC23252F510029D153 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9EE674E12325447C0029D153 /* half_seconds_patchwork.mp3 */,
+				9EE674E22325447C0029D153 /* short_drum_long_sax.mp3 */,
+				9EE674CE23252F510029D153 /* silence.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
 		};
 		AA101E3F1B8D3A3900797DEF /* Encapsulated */ = {
 			isa = PBXGroup;
@@ -8282,7 +8283,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EBED60B230C919E00049BBC /* speakandwaittest.xml in Resources */,
 				4CC85CD41B9C6EC80097E470 /* Word_balloon_demo_096.xml in Resources */,
 				CAE3E55E1B4C50B300CC88BD /* Tic_Tac_Toe_Master_091.xml in Resources */,
 				4CE2D3F91C294F3300938B5E /* Drink_more_water_097.xml in Resources */,
@@ -8325,6 +8325,7 @@
 				4CEF0CD41B9C63F3003C9B20 /* Minecraft_Work_In_Progress_096.xml in Resources */,
 				4C0FA004204BD4FF00E71B2D /* Rock_paper_scissors_0991.xml in Resources */,
 				2DCB4922212EA251005E8E3D /* StoreProjectDownloader.fetchFeaturedProjects.fail.request.json in Resources */,
+				9EE674D123252F510029D153 /* silence.mp3 in Resources */,
 				4C994DD9207A26D700C415FD /* AddItemToUserListBrick0991.xml in Resources */,
 				4CE2D40B1C29504300938B5E /* Piano_097.xml in Resources */,
 				CAE3E5371B4C50B300CC88BD /* Air_fight_0.5_091.xml in Resources */,
@@ -8349,7 +8350,7 @@
 				CAE3E5561B4C50B300CC88BD /* Pythagorean_Theorem_092.xml in Resources */,
 				CAE3E5491B4C50B300CC88BD /* Memory_09.xml in Resources */,
 				4CE2D3FF1C29500F00938B5E /* Galaxy_War_097.xml in Resources */,
-				9EBED604230C918A00049BBC /* explode.mp3 in Resources */,
+				9EE674E42325447C0029D153 /* short_drum_long_sax.mp3 in Resources */,
 				4C6D15FA1D7AC63400CE53CD /* ValidHeader098.xml in Resources */,
 				4CE2D3F31C294F1700938B5E /* Airplane_with_shadow_097.xml in Resources */,
 				4CEF0CDE1B9C6434003C9B20 /* Pythagorean_Theorem_096.xml in Resources */,
@@ -8386,7 +8387,6 @@
 				4C0FA00B204BD52900E71B2D /* Solar_System_v1.0_0991.xml in Resources */,
 				CA2D44441B1231F900A3B53D /* Swell.plist in Resources */,
 				4C9F37A91D167630002C3B45 /* transparency-gray-alpha.png in Resources */,
-				9EBED60C230C919E00049BBC /* StartSoundTest.xml in Resources */,
 				4C6D15EA1D7AC60500CE53CD /* Pong_Starter_098.xml in Resources */,
 				4C2EE40F1B555871006DE9B8 /* Word_balloon_demo_095.xml in Resources */,
 				4C6D15E61D7AC5F900CE53CD /* Nyancat_1.0_098.xml in Resources */,
@@ -8409,7 +8409,6 @@
 				4CE2D4091C29503B00938B5E /* Nyancat_1.0_097.xml in Resources */,
 				4C0FA015204BD56800E71B2D /* Word_balloon_demo_0991.xml in Resources */,
 				4C6D16001D7AC65400CE53CD /* ValidProjectAllBricks093.xml in Resources */,
-				9EBED603230C918A00049BBC /* russianfolk.wav in Resources */,
 				4CF3BD6D21B1B72D006DB806 /* ValidFormulaList.xml in Resources */,
 				2DCB4924212EA31B005E8E3D /* StoreProjectDownloader.fetchMostDownloadedProjects.fail.request.json in Resources */,
 				2DCB4916212E9B56005E8E3D /* StoreProjectDownloader.fetchFeaturedProjects.success.json in Resources */,
@@ -8424,6 +8423,7 @@
 				CAE3E4EC1B4C509800CC88BD /* test2.png in Resources */,
 				4C0F9FED204BD47300E71B2D /* Galaxy_War_0991.xml in Resources */,
 				4CE2D4011C29501800938B5E /* Gossip_Girl_097.xml in Resources */,
+				9EE674D62325319B0029D153 /* PlaySameSoundTwiceSameObject.xml in Resources */,
 				CAE3E5551B4C50B300CC88BD /* Pong_Starter_093.xml in Resources */,
 				4C6D15D81D7AC5CB00CE53CD /* Flap_Pac_Man_098.xml in Resources */,
 				4CE2D4151C29507F00938B5E /* Tic_Tac_Toe_Master_097.xml in Resources */,
@@ -8431,14 +8431,13 @@
 				4CC85CE81B9C717C0097E470 /* ValidProject096.xml in Resources */,
 				CAE3E5481B4C50B300CC88BD /* Gossip_Girl_093.xml in Resources */,
 				4C2EE4071B555811006DE9B8 /* Pythagorean_Theorem_095.xml in Resources */,
+				9EE674E32325447C0029D153 /* half_seconds_patchwork.mp3 in Resources */,
 				CAE3E5601B4C50B300CC88BD /* Word_balloon_demo_09.xml in Resources */,
 				4C2EE3F71B55577C006DE9B8 /* Galaxy_War_095.xml in Resources */,
 				4C2EE40D1B55585B006DE9B8 /* Tic_Tac_Toe_Master_095.xml in Resources */,
 				4CC85CD21B9C6E6F0097E470 /* Tic_Tac_Toe_Master_096.xml in Resources */,
 				4C6D15CE1D7AC59A00CE53CD /* Airplane_with_shadow_098.xml in Resources */,
-				9EBED60D230C919E00049BBC /* ballon_red.png in Resources */,
 				4CC85CD61B9C6F220097E470 /* X_Ray_phone_096.xml in Resources */,
-				9EBED60A230C919E00049BBC /* soundtest.xml in Resources */,
 				4C6D15D41D7AC5BD00CE53CD /* Drink_more_water_098.xml in Resources */,
 				2DCB4936212EAAEF005E8E3D /* StoreProjectDownloader.downloadData.success.json in Resources */,
 				4CEF0CCC1B9C63BA003C9B20 /* Flappy_v3.0_096.xml in Resources */,
@@ -8490,7 +8489,6 @@
 				4CF3BD6C21B1B72D006DB806 /* InvalidBricksAndScripts.xml in Resources */,
 				4C0FA000204BD4E900E71B2D /* Pong_Starter_0991.xml in Resources */,
 				4C0F9FE1204BD42700E71B2D /* Compass_0.1_0991.xml in Resources */,
-				4C13290B1CD92D5500F16E48 /* silence.mp3 in Resources */,
 				4C994DDB207A26DC00C415FD /* DeleteItemOfUserListBrick0991.xml in Resources */,
 				4CFAD3611CFAB9AA0019C636 /* transparency-rgba.png in Resources */,
 				599E64A0202DACCB009494B5 /* MediaLibraryDownloader.downloadData.fail.request.json in Resources */,
@@ -8503,6 +8501,7 @@
 				4C2EE3F51B555766006DE9B8 /* Flappy_v3.0_095.xml in Resources */,
 				CAE3E53C1B4C50B300CC88BD /* Compass_0.1_093.xml in Resources */,
 				CAE3E5521B4C50B300CC88BD /* Piano_093.xml in Resources */,
+				9EE674DA23253A5E0029D153 /* PlaySameSoundTwiceDifferentObjects.xml in Resources */,
 				4CC85CE51B9C717C0097E470 /* ValidHeader096.xml in Resources */,
 				BAD47DC81F12938D001C38BC /* InsertItemIntoUserListBrick098.xml in Resources */,
 				BACD9480219E22FF0061D81C /* WaitUntilBrick0991.xml in Resources */,
@@ -8924,7 +8923,7 @@
 				BAAA6BED21A4C02100A46563 /* XMLParserHeaderTests095.swift in Sources */,
 				4CF4CB7521E64BEE009D6DD9 /* InsertItemIntoUserListBrickTests.swift in Sources */,
 				4CEB225C1B95E47500B3BE2F /* IfOnEdgeBounceBrickTests.m in Sources */,
-				9E44588A230A024600222B14 /* AudioEngineExtraTests.swift in Sources */,
+				9E44588A230A024600222B14 /* AudioPlayerIntegrationTests.swift in Sources */,
 				4C6FE16C212D2D2E0067B7D5 /* AcosFunctionTest.swift in Sources */,
 				9E1ED58D231332E000E36DED /* AudioEngineIntegrationTest.swift in Sources */,
 				4C53E38D21D5241300F2EC76 /* SmallerOrEqualOperatorTest.swift in Sources */,
