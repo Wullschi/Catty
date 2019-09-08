@@ -52,7 +52,6 @@
 		4C0F9F46204ADC7900E71B2D /* SpeakAndWaitBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F44204ADC7800E71B2D /* SpeakAndWaitBrick.m */; };
 		4C0F9F49204ADD0C00E71B2D /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F48204ADD0C00E71B2D /* OrderedDictionary.swift */; };
 		4C0F9F4F204BD0B400E71B2D /* CameraPreviewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F4D204BD0B400E71B2D /* CameraPreviewHandler.m */; };
-		4C0F9F50204BD0B400E71B2D /* BubbleBrickHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F4E204BD0B400E71B2D /* BubbleBrickHelper.m */; };
 		4C0F9F5A204BD16300E71B2D /* CameraBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F59204BD16300E71B2D /* CameraBrick+CBXMLHandler.m */; };
 		4C0F9F5D204BD16F00E71B2D /* ChooseCameraBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F5C204BD16F00E71B2D /* ChooseCameraBrick+CBXMLHandler.m */; };
 		4C0F9F64204BD18600E71B2D /* SayForBubbleBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F9F60204BD18500E71B2D /* SayForBubbleBrick+CBXMLHandler.m */; };
@@ -181,6 +180,7 @@
 		4C4A71921B52733C00BBE32B /* CBXMLAbstractContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A71911B52733C00BBE32B /* CBXMLAbstractContext.m */; };
 		4C4A71A11B527E2F00BBE32B /* CBXMLParserContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A71A01B527E2F00BBE32B /* CBXMLParserContext.m */; };
 		4C4EE29D210901E70045F890 /* FormulaEditorSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4EE29A210901E70045F890 /* FormulaEditorSection.swift */; };
+		4C4F21702314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F216D2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.m */; };
 		4C53E38821D5238900F2EC76 /* GreaterOrEqualOperatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53E38721D5238900F2EC76 /* GreaterOrEqualOperatorTest.swift */; };
 		4C53E38D21D5241300F2EC76 /* SmallerOrEqualOperatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53E38C21D5241300F2EC76 /* SmallerOrEqualOperatorTest.swift */; };
 		4C53E39021D5247C00F2EC76 /* NotOperatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53E38F21D5247C00F2EC76 /* NotOperatorTest.swift */; };
@@ -244,6 +244,7 @@
 		4C6D15FC1D7AC63A00CE53CD /* ValidProject098.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15FB1D7AC63A00CE53CD /* ValidProject098.xml */; };
 		4C6D15FE1D7AC64000CE53CD /* ValidProjectAllBricks098.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15FD1D7AC64000CE53CD /* ValidProjectAllBricks098.xml */; };
 		4C6D16001D7AC65400CE53CD /* ValidProjectAllBricks093.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4C6D15FF1D7AC65400CE53CD /* ValidProjectAllBricks093.xml */; };
+		4C6FA80722F17F89000A72F6 /* SpriteBubbleConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FA80622F17F89000A72F6 /* SpriteBubbleConstraint.swift */; };
 		4C6FE15B212D2D2E0067B7D5 /* CeilFunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FE13B212D2D2E0067B7D5 /* CeilFunctionTest.swift */; };
 		4C6FE15C212D2D2E0067B7D5 /* FloorFunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FE13C212D2D2E0067B7D5 /* FloorFunctionTest.swift */; };
 		4C6FE15D212D2D2E0067B7D5 /* LogFunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6FE13D212D2D2E0067B7D5 /* LogFunctionTest.swift */; };
@@ -377,6 +378,9 @@
 		4C9F37A91D167630002C3B45 /* transparency-gray-alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F37A81D167630002C3B45 /* transparency-gray-alpha.png */; };
 		4CA1574D1C4695E50019D319 /* Encapsulated_097.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4CA1574C1C4695E50019D319 /* Encapsulated_097.xml */; };
 		4CA658ED21EBA5BD000E5797 /* CBFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA658EC21EBA5BD000E5797 /* CBFileManagerTests.swift */; };
+		4CA6DFB92306919C003A729B /* FormulaCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6DFB82306919C003A729B /* FormulaCache.swift */; };
+		4CA6DFBF23069204003A729B /* FormulaCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6DFBE23069204003A729B /* FormulaCacheTests.swift */; };
+		4CA6DFC123069337003A729B /* FormulaManagerCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6DFC023069336003A729B /* FormulaManagerCacheTests.swift */; };
 		4CA98E8821C8F1D400B2D9CA /* LooksTVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA98E8521C8F1D400B2D9CA /* LooksTVCTests.swift */; };
 		4CAA66C221469C0400CCDD6E /* UserVariableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAA66C121469C0400CCDD6E /* UserVariableTests.swift */; };
 		4CAB10091ECF1A9A0019A67B /* HideTextBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB10081ECF1A9A0019A67B /* HideTextBrickTests.swift */; };
@@ -459,7 +463,6 @@
 		4CDF7BBE213875A900FFF7F4 /* ProjectMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF7BBD213875A900FFF7F4 /* ProjectMock.m */; };
 		4CE1D431213E5C130014DAF9 /* CBSpriteNodeMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1D430213E5C130014DAF9 /* CBSpriteNodeMock.swift */; };
 		4CE1D433213E5C6E0014DAF9 /* SpriteObjectMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1D432213E5C6E0014DAF9 /* SpriteObjectMock.swift */; };
-		4CE1D436213E5D700014DAF9 /* FormulaManagerCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1D435213E5D700014DAF9 /* FormulaManagerCacheTests.swift */; };
 		4CE2D3EF1C294F0D00938B5E /* Air_fight_0.5_097.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4CE2D3EE1C294F0D00938B5E /* Air_fight_0.5_097.xml */; };
 		4CE2D3F31C294F1700938B5E /* Airplane_with_shadow_097.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4CE2D3F21C294F1700938B5E /* Airplane_with_shadow_097.xml */; };
 		4CE2D3F51C294F2000938B5E /* Compass_0.1_097.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4CE2D3F41C294F2000938B5E /* Compass_0.1_097.xml */; };
@@ -597,7 +600,6 @@
 		593624CA1F76F374008A588D /* MXSegmentedPager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59473A691F76F05000BD634F /* MXSegmentedPager.framework */; };
 		5936893C2021979A00FC3115 /* SoundsTableViewController+MediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5936893B2021979A00FC3115 /* SoundsTableViewController+MediaLibrary.swift */; };
 		593E4DDE1FE11D410016DCB9 /* CatrobatReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 593E4DDD1FE11D410016DCB9 /* CatrobatReorderableCollectionViewFlowLayout.m */; };
-		593E4DE41FE120780016DCB9 /* LXReorderableCollectionViewFlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593E4DE31FE120780016DCB9 /* LXReorderableCollectionViewFlowLayout.framework */; };
 		59473A611F76F04B00BD634F /* TTTAttributedLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59473A601F76F04B00BD634F /* TTTAttributedLabel.framework */; };
 		59473A6A1F76F05000BD634F /* Bohr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59473A641F76F05000BD634F /* Bohr.framework */; };
 		59473A6B1F76F05000BD634F /* HMSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59473A651F76F05000BD634F /* HMSegmentedControl.framework */; };
@@ -1176,6 +1178,8 @@
 		BAEE49BE1F165CBA00F06741 /* ReplaceItemInUserListBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEE49BD1F165CBA00F06741 /* ReplaceItemInUserListBrick+CBXMLHandler.m */; };
 		BAEE49C01F165D1300F06741 /* ReplaceItemInUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE49BF1F165D1300F06741 /* ReplaceItemInUserListBrick+Instruction.swift */; };
 		BC19327F21186504009DE43A /* CreateProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC19327E21186504009DE43A /* CreateProjectTests.swift */; };
+		BC35168C231D00B90090872A /* SpriteBubbleConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC35168B231D00B90090872A /* SpriteBubbleConstraintsTests.swift */; };
+		BCF2787F22F4354200B6D337 /* BubbleBrickHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF2787E22F4354200B6D337 /* BubbleBrickHelper.swift */; };
 		BCFED6ED2111C04000BE57BF /* BackgroundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFED6EC2111C04000BE57BF /* BackgroundsTests.swift */; };
 		BCFED6F12111CA5D00BE57BF /* PocketCodeMainScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFED6EE2111C54100BE57BF /* PocketCodeMainScreenTests.swift */; };
 		BCFED6F62113188700BE57BF /* MyFirstProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFED6F52113188700BE57BF /* MyFirstProjectTests.swift */; };
@@ -1439,9 +1443,7 @@
 		4C0F9F45204ADC7900E71B2D /* SpeakAndWaitBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakAndWaitBrick.h; sourceTree = "<group>"; };
 		4C0F9F48204ADD0C00E71B2D /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		4C0F9F4B204BD0B400E71B2D /* CameraPreviewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPreviewHandler.h; sourceTree = "<group>"; };
-		4C0F9F4C204BD0B400E71B2D /* BubbleBrickHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleBrickHelper.h; sourceTree = "<group>"; };
 		4C0F9F4D204BD0B400E71B2D /* CameraPreviewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPreviewHandler.m; sourceTree = "<group>"; };
-		4C0F9F4E204BD0B400E71B2D /* BubbleBrickHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleBrickHelper.m; sourceTree = "<group>"; };
 		4C0F9F58204BD16300E71B2D /* CameraBrick+CBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CameraBrick+CBXMLHandler.h"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Look/CameraBrick+CBXMLHandler.h"; sourceTree = SOURCE_ROOT; };
 		4C0F9F59204BD16300E71B2D /* CameraBrick+CBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CameraBrick+CBXMLHandler.m"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Look/CameraBrick+CBXMLHandler.m"; sourceTree = SOURCE_ROOT; };
 		4C0F9F5B204BD16F00E71B2D /* ChooseCameraBrick+CBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ChooseCameraBrick+CBXMLHandler.h"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Look/ChooseCameraBrick+CBXMLHandler.h"; sourceTree = SOURCE_ROOT; };
@@ -1604,6 +1606,8 @@
 		4C4A719F1B527E2F00BBE32B /* CBXMLParserContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBXMLParserContext.h; sourceTree = "<group>"; };
 		4C4A71A01B527E2F00BBE32B /* CBXMLParserContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBXMLParserContext.m; sourceTree = "<group>"; };
 		4C4EE29A210901E70045F890 /* FormulaEditorSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaEditorSection.swift; sourceTree = "<group>"; };
+		4C4F216C2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		4C4F216D2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		4C53E38721D5238900F2EC76 /* GreaterOrEqualOperatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreaterOrEqualOperatorTest.swift; sourceTree = "<group>"; };
 		4C53E38C21D5241300F2EC76 /* SmallerOrEqualOperatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallerOrEqualOperatorTest.swift; sourceTree = "<group>"; };
 		4C53E38F21D5247C00F2EC76 /* NotOperatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotOperatorTest.swift; sourceTree = "<group>"; };
@@ -1676,6 +1680,7 @@
 		4C6D15FB1D7AC63A00CE53CD /* ValidProject098.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidProject098.xml; sourceTree = "<group>"; };
 		4C6D15FD1D7AC64000CE53CD /* ValidProjectAllBricks098.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidProjectAllBricks098.xml; sourceTree = "<group>"; };
 		4C6D15FF1D7AC65400CE53CD /* ValidProjectAllBricks093.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ValidProjectAllBricks093.xml; sourceTree = "<group>"; };
+		4C6FA80622F17F89000A72F6 /* SpriteBubbleConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteBubbleConstraint.swift; sourceTree = "<group>"; };
 		4C6FE13B212D2D2E0067B7D5 /* CeilFunctionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CeilFunctionTest.swift; sourceTree = "<group>"; };
 		4C6FE13C212D2D2E0067B7D5 /* FloorFunctionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloorFunctionTest.swift; sourceTree = "<group>"; };
 		4C6FE13D212D2D2E0067B7D5 /* LogFunctionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFunctionTest.swift; sourceTree = "<group>"; };
@@ -1831,6 +1836,9 @@
 		4C9F37A81D167630002C3B45 /* transparency-gray-alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "transparency-gray-alpha.png"; path = "CattyTests/Resources/Images/transparency-gray-alpha.png"; sourceTree = SOURCE_ROOT; };
 		4CA1574C1C4695E50019D319 /* Encapsulated_097.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Encapsulated_097.xml; sourceTree = "<group>"; };
 		4CA658EC21EBA5BD000E5797 /* CBFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBFileManagerTests.swift; sourceTree = "<group>"; };
+		4CA6DFB82306919C003A729B /* FormulaCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaCache.swift; sourceTree = "<group>"; };
+		4CA6DFBE23069204003A729B /* FormulaCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaCacheTests.swift; sourceTree = "<group>"; };
+		4CA6DFC023069336003A729B /* FormulaManagerCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaManagerCacheTests.swift; sourceTree = "<group>"; };
 		4CA98E8521C8F1D400B2D9CA /* LooksTVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooksTVCTests.swift; sourceTree = "<group>"; };
 		4CAA66C121469C0400CCDD6E /* UserVariableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVariableTests.swift; sourceTree = "<group>"; };
 		4CAB10081ECF1A9A0019A67B /* HideTextBrickTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideTextBrickTests.swift; sourceTree = "<group>"; };
@@ -1921,7 +1929,6 @@
 		4CDF7BBD213875A900FFF7F4 /* ProjectMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectMock.m; sourceTree = "<group>"; };
 		4CE1D430213E5C130014DAF9 /* CBSpriteNodeMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSpriteNodeMock.swift; sourceTree = "<group>"; };
 		4CE1D432213E5C6E0014DAF9 /* SpriteObjectMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteObjectMock.swift; sourceTree = "<group>"; };
-		4CE1D435213E5D700014DAF9 /* FormulaManagerCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaManagerCacheTests.swift; sourceTree = "<group>"; };
 		4CE2D3EE1C294F0D00938B5E /* Air_fight_0.5_097.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Air_fight_0.5_097.xml; sourceTree = "<group>"; };
 		4CE2D3F21C294F1700938B5E /* Airplane_with_shadow_097.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Airplane_with_shadow_097.xml; sourceTree = "<group>"; };
 		4CE2D3F41C294F2000938B5E /* Compass_0.1_097.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Compass_0.1_097.xml; sourceTree = "<group>"; };
@@ -3030,6 +3037,8 @@
 		BAEE49BD1F165CBA00F06741 /* ReplaceItemInUserListBrick+CBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ReplaceItemInUserListBrick+CBXMLHandler.m"; path = "Catty/Parser&Serialializer/New Parser & Serializer/XMLHandler/Bricks/Data/ReplaceItemInUserListBrick+CBXMLHandler.m"; sourceTree = SOURCE_ROOT; };
 		BAEE49BF1F165D1300F06741 /* ReplaceItemInUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ReplaceItemInUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/ReplaceItemInUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
 		BC19327E21186504009DE43A /* CreateProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectTests.swift; sourceTree = "<group>"; };
+		BC35168B231D00B90090872A /* SpriteBubbleConstraintsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteBubbleConstraintsTests.swift; sourceTree = "<group>"; };
+		BCF2787E22F4354200B6D337 /* BubbleBrickHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleBrickHelper.swift; sourceTree = "<group>"; };
 		BCFED6EC2111C04000BE57BF /* BackgroundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundsTests.swift; sourceTree = "<group>"; };
 		BCFED6EE2111C54100BE57BF /* PocketCodeMainScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketCodeMainScreenTests.swift; sourceTree = "<group>"; };
 		BCFED6F52113188700BE57BF /* MyFirstProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFirstProjectTests.swift; sourceTree = "<group>"; };
@@ -3215,7 +3224,6 @@
 				59473A6A1F76F05000BD634F /* Bohr.framework in Frameworks */,
 				59473A6B1F76F05000BD634F /* HMSegmentedControl.framework in Frameworks */,
 				59697DAC201F631700A0071A /* Kingfisher.framework in Frameworks */,
-				593E4DE41FE120780016DCB9 /* LXReorderableCollectionViewFlowLayout.framework in Frameworks */,
 				59473A6C1F76F05000BD634F /* M13ProgressSuite.framework in Frameworks */,
 				59473A6D1F76F05000BD634F /* MXPagerView.framework in Frameworks */,
 				59473A6E1F76F05000BD634F /* MXParallaxHeader.framework in Frameworks */,
@@ -3249,6 +3257,7 @@
 				AAADA0051B9B29D500E0CA9A /* Catty UITests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				BCC25E28231A874200DB639C /* Recovered References */,
 			);
 			indentWidth = 4;
 			name = CustomTemplate;
@@ -3357,10 +3366,9 @@
 		4C0F9F4A204BD0B400E71B2D /* BrickHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				4C0F9F4C204BD0B400E71B2D /* BubbleBrickHelper.h */,
-				4C0F9F4E204BD0B400E71B2D /* BubbleBrickHelper.m */,
 				4C0F9F4B204BD0B400E71B2D /* CameraPreviewHandler.h */,
 				4C0F9F4D204BD0B400E71B2D /* CameraPreviewHandler.m */,
+				BCF2787E22F4354200B6D337 /* BubbleBrickHelper.swift */,
 			);
 			path = BrickHelpers;
 			sourceTree = "<group>";
@@ -3719,6 +3727,15 @@
 			path = Context;
 			sourceTree = "<group>";
 		};
+		4C4F216B2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4C4F216C2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.h */,
+				4C4F216D2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.m */,
+			);
+			path = LXReorderableCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
 		4C53E38B21D523ED00F2EC76 /* Binary */ = {
 			isa = PBXGroup;
 			children = (
@@ -3906,6 +3923,14 @@
 				CAE3E4EA1B4C509800CC88BD /* test2.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		4C6FA80522F17F89000A72F6 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				4C6FA80622F17F89000A72F6 /* SpriteBubbleConstraint.swift */,
+			);
+			path = Constraints;
 			sourceTree = "<group>";
 		};
 		4C6FE139212D2D2E0067B7D5 /* Functions */ = {
@@ -4636,9 +4661,27 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
+		4CA6DFB72306919C003A729B /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				4CA6DFB82306919C003A729B /* FormulaCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		4CA6DFBA230691CA003A729B /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				4CA6DFBE23069204003A729B /* FormulaCacheTests.swift */,
+				4CA6DFC023069336003A729B /* FormulaManagerCacheTests.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		4CAB93382132753A00AEB86D /* Formula */ = {
 			isa = PBXGroup;
 			children = (
+				4CA6DFB72306919C003A729B /* Cache */,
 				4CAB93392132753A00AEB86D /* FormulaManager.swift */,
 				4C03A4BD2133FD05007BFFD2 /* FormulaManager+Resources.swift */,
 				4C03A4C12133FDE7007BFFD2 /* FormulaManager+Editor.swift */,
@@ -4821,9 +4864,9 @@
 		4CE1D434213E5D110014DAF9 /* Formula */ = {
 			isa = PBXGroup;
 			children = (
+				4CA6DFBA230691CA003A729B /* Cache */,
 				4C28D7942133BC1D00870CE2 /* FormulaManagerTests.swift */,
 				4C28D7902133BC0B00870CE2 /* FormulaManagerResourceTests.swift */,
-				4CE1D435213E5D700014DAF9 /* FormulaManagerCacheTests.swift */,
 				4CC50A52213AE385004BC914 /* FormulaManagerIdempotenceTests.swift */,
 				4CC50A5B213BBD7D004BC914 /* FormulaManagerInterpreterTests.swift */,
 			);
@@ -5141,6 +5184,7 @@
 		593E4DDC1FE11D410016DCB9 /* CatrobatReorderableCollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				4C4F216B2314F73C0036E245 /* LXReorderableCollectionViewFlowLayout */,
 				593E4DDF1FE11D5F0016DCB9 /* CatrobatReorderableCollectionViewFlowLayout.h */,
 				593E4DDD1FE11D410016DCB9 /* CatrobatReorderableCollectionViewFlowLayout.m */,
 			);
@@ -6245,6 +6289,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDF7BB42138735700FFF7F4 /* Builder */,
+				4C6FA80522F17F89000A72F6 /* Constraints */,
 				AABCB3CC1BB36131009F67D2 /* CBScene.swift */,
 			);
 			name = Scene;
@@ -6779,6 +6824,7 @@
 				4C2732A81CE4F30F00CA61AC /* CBSpriteNodeTests.swift */,
 				4CE1D434213E5D110014DAF9 /* Formula */,
 				4C6FE139212D2D2E0067B7D5 /* Functions */,
+				BC351689231D00B90090872A /* Scene */,
 				4CE1D42F213E5C130014DAF9 /* Mocks */,
 				4C669E4221CE9B4C00563EAD /* Operators */,
 				4C822615213FA7A300F3D750 /* Sensors */,
@@ -7471,6 +7517,23 @@
 			name = ListBricks;
 			sourceTree = "<group>";
 		};
+		BC351689231D00B90090872A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				BC35168A231D00B90090872A /* Constraints */,
+			);
+			name = Scene;
+			path = CattyTests/PlayerEngine/Scene;
+			sourceTree = SOURCE_ROOT;
+		};
+		BC35168A231D00B90090872A /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				BC35168B231D00B90090872A /* SpriteBubbleConstraintsTests.swift */,
+			);
+			path = Constraints;
+			sourceTree = "<group>";
+		};
 		C34B44FB17F3403400624730 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -8117,7 +8180,6 @@
 				CADBD70119B0E8C200C62836 /* Sources */,
 				CADBD7E419B0E8C200C62836 /* Frameworks */,
 				CA0BB4151AA7709900E5A88D /* Add version number to Root.plist */,
-				AACFFF611B7FE5F50002F899 /* Automatic Version Tracking */,
 				929DC44A1BCB9C5000421443 /* License Validator */,
 				92C6319D1BC5180B00486958 /* CopyFiles */,
 				BCE07DCC213D427900154E4C /* Display TODO and FIXME comments */,
@@ -8145,12 +8207,12 @@
 				TargetAttributes = {
 					AAADA0031B9B29D500E0CA9A = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						TestTargetID = CADBD6D319B0E8C200C62836;
 					};
 					CA7698A91B0E4A97000D0340 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CADBD6D319B0E8C200C62836;
 					};
@@ -8167,13 +8229,9 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Catty" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				en,
 				de,
 				af,
@@ -8238,6 +8296,9 @@
 				id,
 				nb,
 				"sr-RS",
+				ha,
+				si,
+				ak,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
@@ -8600,7 +8661,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MXSegmentedPager.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Siren.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TTTAttributedLabel.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/LXReorderableCollectionViewFlowLayout.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			name = "Carthage Copy Frameworks Run Script";
@@ -8613,7 +8673,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MXSegmentedPager.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Siren.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TTTAttributedLabel.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/LXReorderableCollectionViewFlowLayout.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -8651,20 +8710,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/bin/env xcrun swift -sdk $(/usr/bin/env xcrun --show-sdk-path --sdk macosx) RunScripts/license-validator.swift\nOUT=$?\nif [ $OUT -ne 0 ];then\nexit $OUT\nfi\n";
-		};
-		AACFFF611B7FE5F50002F899 /* Automatic Version Tracking */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Automatic Version Tracking";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/bash;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n";
 		};
 		BCE07DCC213D427900154E4C /* Display TODO and FIXME comments */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -8706,7 +8751,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "/usr/bin/env xcrun swift -sdk $(/usr/bin/env xcrun --show-sdk-path --sdk macosx) -swift-version 3 RunScripts/precompile-tests.swift\nOUT=$?\nif [ $OUT -ne 0 ];then\nexit $OUT\nfi\n\npython RunScripts/synchronize-localization.py && ./RunScripts/update-localized-strings.sh\n";
+			shellScript = "/usr/bin/env xcrun swift -sdk $(/usr/bin/env xcrun --show-sdk-path --sdk macosx) -swift-version 5 RunScripts/precompile-tests.swift\nOUT=$?\nif [ $OUT -ne 0 ];then\nexit $OUT\nfi\n\npython RunScripts/synchronize-localization.py && ./RunScripts/update-localized-strings.sh\n";
 		};
 		CADBD6D719B0E8C200C62836 /* Add Licenses To Acknowledgements.plist */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -8778,6 +8823,7 @@
 				4C822672213FA7A400F3D750 /* InclinationYSensorTest.swift in Sources */,
 				4C822657213FA7A400F3D750 /* MotionManagerMock.swift in Sources */,
 				9E2C2D8C23256C92004B66C6 /* SceneBuilderMock.swift in Sources */,
+				4CA6DFC123069337003A729B /* FormulaManagerCacheTests.swift in Sources */,
 				4C822658213FA7A400F3D750 /* FaceDetectionManagerMock.swift in Sources */,
 				4C1F6FA5213CF6BE00C20BEB /* SingleParameterStringFunctionMock.swift in Sources */,
 				4CEB22591B95E47500B3BE2F /* ComeToFrontBrickTests.m in Sources */,
@@ -8791,6 +8837,7 @@
 				4CB412202198635900FC4594 /* VariablesContainerTest.swift in Sources */,
 				4C3A5CA121D3B4DF008FD83F /* OrOperatorTest.swift in Sources */,
 				4C6FE178212D2D2E0067B7D5 /* JoinFunctionTest.swift in Sources */,
+				4CA6DFBF23069204003A729B /* FormulaCacheTests.swift in Sources */,
 				4C6FE174212D2D2E0067B7D5 /* ElementFunctionTest.swift in Sources */,
 				4C0F9FD5204BD3C200E71B2D /* ChooseCameraBrickTests.swift in Sources */,
 				4C1604301F0025F6004525A5 /* AbstractBrickTests.m in Sources */,
@@ -8882,7 +8929,6 @@
 				BA38081121A1FE750075B831 /* XMLParserTests098.swift in Sources */,
 				4CEB22761B95E4BC00B3BE2F /* BrickInsertManagerRepeatTests.m in Sources */,
 				4CAB10091ECF1A9A0019A67B /* HideTextBrickTests.swift in Sources */,
-				4CE1D436213E5D700014DAF9 /* FormulaManagerCacheTests.swift in Sources */,
 				BA38080521A1C8DA0075B831 /* XMLParserBlackBoxTests098.swift in Sources */,
 				4CEB225F1B95E47500B3BE2F /* PlaceAtBrickTests.m in Sources */,
 				4C6FE171212D2D2E0067B7D5 /* CosFunctionTest.swift in Sources */,
@@ -8953,6 +8999,7 @@
 				4C822669213FA7A400F3D750 /* TimeMinuteSensorTest.swift in Sources */,
 				4CEB22731B95E4BC00B3BE2F /* BrickInsertManagerAbstractTest.m in Sources */,
 				4C822673213FA7A400F3D750 /* AccelerationZSensorTest.swift in Sources */,
+				BC35168C231D00B90090872A /* SpriteBubbleConstraintsTests.swift in Sources */,
 				4C6FE15E212D2D2E0067B7D5 /* MaxFunctionTest.swift in Sources */,
 				4C822674213FA7A400F3D750 /* InclinationXSensorTest.swift in Sources */,
 				4C68FC8F1B25A00B00AB3EE8 /* FormulaParserTest.m in Sources */,
@@ -9185,6 +9232,7 @@
 				AA74F00A1BC05B5F00D1E954 /* ChangeVolumeByNBrick.m in Sources */,
 				9218B2081CC4AB75007B4C60 /* UIImage+FloodFill.m in Sources */,
 				AA74F0A11BC05FCE00D1E954 /* IfLogicEndBrickCell.m in Sources */,
+				BCF2787F22F4354200B6D337 /* BubbleBrickHelper.swift in Sources */,
 				BACDF35C1F1F9BFC00346167 /* DeleteItemOfUserListBrick+Instruction.swift in Sources */,
 				AA74F0B51BC05FCE00D1E954 /* ChangeSizeByNBrickCell.m in Sources */,
 				4CE67888210C4B1D00D90B5D /* Function.swift in Sources */,
@@ -9239,12 +9287,14 @@
 				AA74F0961BC05FCE00D1E954 /* BrickCellObjectData.m in Sources */,
 				4C595F6021CAF9050097D850 /* OperatorManagerProtocol.swift in Sources */,
 				929CC0CC1BC39B0A0027DEC0 /* PhiroMotorMoveBackwardBrick.m in Sources */,
+				4C6FA80722F17F89000A72F6 /* SpriteBubbleConstraint.swift in Sources */,
 				92FF32B61A24E2F400093DA7 /* CatrobatBaseCell.m in Sources */,
 				AA74F0051BC05B5F00D1E954 /* PointToBrick.m in Sources */,
 				4C724E571B4D3E8C00E27479 /* FormulaElement+CBXMLHandler.m in Sources */,
 				4C37A0A0212DBDB40074F417 /* ArduinoAnalogPinFunction.swift in Sources */,
 				5947F6DE200D20040079DBCE /* MediaLibraryCollectionViewDataSource.swift in Sources */,
 				92FF2E991A24C7D800093DA7 /* zip.c in Sources */,
+				4CA6DFB92306919C003A729B /* FormulaCache.swift in Sources */,
 				59697DB0201F855C00A0071A /* LibraryCategoryCollectionReusableView.swift in Sources */,
 				92B46FA81BC7C2A5004980C1 /* ArduinoSendPWMValueBrick+Instruction.swift in Sources */,
 				F4201CF920D79CA80030181B /* TimeHourSensor.swift in Sources */,
@@ -9300,7 +9350,6 @@
 				5977B2A620298BD0008753ED /* MediaLibraryDownloader.swift in Sources */,
 				4C0F9F3D204ADC5900E71B2D /* SetBackgroundBrick.m in Sources */,
 				AA74EEE21BC057B900D1E954 /* LoopEndBrick+CBXMLHandler.m in Sources */,
-				4C0F9F50204BD0B400E71B2D /* BubbleBrickHelper.m in Sources */,
 				92FF32BF1A24E2F400093DA7 /* BrickTransition.m in Sources */,
 				4CEFFADB2105E46500DC5CFE /* ObjectDoubleSensor.swift in Sources */,
 				921D46871BDF698A0086AD20 /* ChangeBrightnessByNBrick+Instruction.swift in Sources */,
@@ -9692,6 +9741,7 @@
 				4CB0F9F620A1741400D1BE2F /* LayerSensor.swift in Sources */,
 				4C2EE4201B555B55006DE9B8 /* CBXMLPropertyMapping.m in Sources */,
 				92C631881BC502CB00486958 /* BluetoothPopupVC.swift in Sources */,
+				4C4F21702314F73C0036E245 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
 				4C26506A1A6538710050775B /* CBMutableCopyContext.m in Sources */,
 				92FF2E8D1A24C7D800093DA7 /* CatrobatAudioPlayer.m in Sources */,
 				92D56C341BF202E700A54750 /* FirmataDevice.swift in Sources */,
@@ -9863,7 +9913,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpirates.Catty-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Catty;
 				USES_XCTRUNNER = YES;
 			};
@@ -9893,7 +9943,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tigerpirates.Catty-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Catty;
 				USES_XCTRUNNER = YES;
 			};
@@ -10105,7 +10155,7 @@
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/ChromaprintLib";
 				SWIFT_OBJC_BRIDGING_HEADER = "CattyTests/CattyTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocket Code.app/Pocket Code";
 			};
 			name = Debug;
@@ -10163,7 +10213,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/ChromaprintLib";
 				SWIFT_OBJC_BRIDGING_HEADER = "CattyTests/CattyTests-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocket Code.app/Pocket Code";
 			};
 			name = Release;
@@ -10207,7 +10257,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catty/Catty-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SPARROW_SRC}";
 			};
@@ -10252,7 +10302,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catty/Catty-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SPARROW_SRC}";
 			};

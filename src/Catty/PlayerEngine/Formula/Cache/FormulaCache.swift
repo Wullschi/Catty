@@ -20,26 +20,48 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
-@objc extension PlaySoundBrick: CBInstructionProtocol {
+import Foundation
 
-    @nonobjc func instruction() -> CBInstruction {
+class FormulaCache {
 
-        guard let objectName = self.script?.object?.name,
-            let projectPath = self.script?.object?.projectPath()
-            else { fatalError("This should never happen!") }
+    private var cachedResults = [FormulaElement: AnyObject]()
+    private let cacheQueue = DispatchQueue(label: "cache")
 
-        guard let sound = self.sound,
-            let fileName = sound.fileName
-            else { return .invalidInstruction }
-
-        let filePath = projectPath + kProjectSoundsDirName
-
-        return CBInstruction.execClosure { context, scheduler in
-            let audioEngine = (scheduler as! CBScheduler).getAudioEngine()
-            audioEngine.playSound(fileName: fileName, key: objectName, filePath: filePath, expectation: nil)
-            context.state = .runnable
+    func insert(object: AnyObject, forKey key: FormulaElement) {
+        cacheQueue.sync {
+            cachedResults[key] = object
         }
-
     }
 
+    func retrieve(forKey key: FormulaElement) -> AnyObject? {
+        var result: AnyObject?
+
+        _ = cacheQueue.sync {
+            result = cachedResults[key]
+        }
+
+        return result
+    }
+
+    func remove(forKey key: FormulaElement) {
+        _ = cacheQueue.sync {
+            cachedResults.removeValue(forKey: key)
+        }
+    }
+
+    func clear() {
+        cacheQueue.sync {
+            cachedResults.removeAll()
+        }
+    }
+
+    func count() -> Int {
+        var result = Int()
+
+        cacheQueue.sync {
+            result = cachedResults.count
+        }
+
+        return result
+    }
 }

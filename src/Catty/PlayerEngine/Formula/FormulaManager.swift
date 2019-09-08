@@ -34,9 +34,7 @@ import CoreMotion
     let audioManager: AudioManagerProtocol
     let touchManager: TouchManagerProtocol
     let bluetoothService: BluetoothService
-
-    var cachedResults = [FormulaElement: AnyObject]()
-    let cacheQueue = DispatchQueue(label: "CacheQueue")
+    let formulaCache: FormulaCache
 
     @objc(initWithSceneSize:)
     convenience init(sceneSize: CGSize) {
@@ -105,6 +103,8 @@ import CoreMotion
         self.audioManager = audioManager
         self.touchManager = touchManager
         self.bluetoothService = bluetoothService
+
+        self.formulaCache = FormulaCache()
     }
 
     @objc func functionExists(tag: String) -> Bool {
