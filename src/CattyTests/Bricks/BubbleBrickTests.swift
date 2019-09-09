@@ -53,7 +53,7 @@ final class BubbleBrickTests: XMLAbstractTest {
         spriteObject.project = project
 
         project.objectList.add(spriteObject)
-        spriteNode.mockedScene = SceneBuilder(project: ProjectMock(width: CGFloat(kIphoneXSceneWidth), andHeight: CGFloat(kIphoneXSceneHeight))).build()
+        spriteNode.mockedScene = SceneBuilderMock(project: ProjectMock(width: CGFloat(kIphoneXSceneWidth), andHeight: CGFloat(kIphoneXSceneHeight))).build()
 
         BubbleBrickHelper.addBubble(to: spriteNode, withText: sentence, andType: CBBubbleType.thought)
         spriteNode.catrobatPosition = CGPoint(x: 0, y: 0)

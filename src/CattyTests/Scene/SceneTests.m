@@ -65,24 +65,7 @@
     [super tearDown];
 }
 
-#pragma mark Touch to Pocked Code
-- (void)testTouchConversionCenter
-{
-    CBScene *scaledScene = [[[SceneBuilder alloc] initWithProject:[[ProjectMock alloc] initWithWidth:self.screenSize.width * 2 andHeight: self.screenSize.height * 2]] build];
-    CGPoint scaledSceneCenter = CGPointMake(self.screenSize.width/2, self.screenSize.height/2);
-    CGPoint convertedCenter = [CBSceneHelper convertTouchCoordinateToPointWithCoordinate:scaledSceneCenter sceneSize:scaledScene.size];
-    
-    XCTAssertTrue(CGPointEqualToPoint(convertedCenter, self.pocketCodeCenter), @"The Scene Center is not correctly calculated");
-}
 
-- (void)testTouchConversionCenterNoScale
-{
-    CBScene *scaledScene = [[[SceneBuilder alloc] initWithProject:[[ProjectMock alloc] initWithWidth:self.screenSize.width andHeight: self.screenSize.height]] build];
-    CGPoint scaledSceneCenter = CGPointMake(self.screenSize.width/2, self.screenSize.height/2);
-    CGPoint convertedCenter = [CBSceneHelper convertTouchCoordinateToPointWithCoordinate:scaledSceneCenter sceneSize:scaledScene.size];
-    
-    XCTAssertTrue(CGPointEqualToPoint(convertedCenter, self.pocketCodeCenter), @"The Scene Center is not correctly calculated");
-}
 
 - (void)testTouchConversionBottomLeft
 {

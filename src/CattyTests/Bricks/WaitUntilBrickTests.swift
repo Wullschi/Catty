@@ -96,7 +96,7 @@ final class WaitUntilBrickTests: XMLAbstractTest {
     }
 
     private func createScene() -> CBScene {
-        let sceneBuilder = SceneBuilder(project: project).withFormulaManager(formulaManager: FormulaManager(sceneSize: Util.screenSize(true)))
+        let sceneBuilder = SceneBuilderMock(project: project).withFormulaManager(formulaManager: FormulaManager(sceneSize: Util.screenSize(true)))
         return sceneBuilder.build()
     }
 }
