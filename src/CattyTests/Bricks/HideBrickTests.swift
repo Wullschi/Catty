@@ -20,9 +20,29 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
+import XCTest
 
-#import <XCTest/XCTest.h>
+@testable import Pocket_Code
 
-@interface SceneTests : XCTestCase
+final class HideBrickTests: AbstractBrickTestSwift {
 
-@end
+    func testHideBrick() {
+        let object = SpriteObject()
+        let spriteNode = CBSpriteNode(spriteObject: object)
+        object.spriteNode = spriteNode
+
+        self.scene.addChild(spriteNode)
+        spriteNode.catrobatPosition = CGPoint(x: 0, y: 0)
+
+        let script = WhenScript()
+        script.object = object
+
+        let brick = HideBrick()
+        brick.script = script
+
+        let action = brick.actionBlock()
+        action()
+        XCTAssertTrue(spriteNode.isHidden, "HideBrick is not correctly calculated")
+    }
+
+}
