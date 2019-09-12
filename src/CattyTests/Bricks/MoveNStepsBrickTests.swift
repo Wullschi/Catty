@@ -75,8 +75,8 @@ final class MoveNStepsBrickTests: AbstractBrickTestSwift {
         setPosition(position: CGPoint(x: 20, y: 20), rotation: 180, steps: -10)
         checkPosition(position: CGPoint(x: 20, y: 30))
 
-        setPosition(position: CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2), rotation: 180, steps: 10)
-        checkPosition(position: CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2-10))
+        setPosition(position: CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2), rotation: 180, steps: 10)
+        checkPosition(position: CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2 - 10))
     }
 
     func testMoveNStepsBrickLeft() {
@@ -86,8 +86,8 @@ final class MoveNStepsBrickTests: AbstractBrickTestSwift {
         setPosition(position: CGPoint(x: 20, y: 20), rotation: 270, steps: -10)
         checkPosition(position: CGPoint(x: 30, y: 20))
 
-        setPosition(position: CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2), rotation: 270, steps: 10)
-        checkPosition(position: CGPoint(x: SCREEN_WIDTH/2-10, y: SCREEN_HEIGHT/2))
+        setPosition(position: CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2), rotation: 270, steps: 10)
+        checkPosition(position: CGPoint(x: SCREEN_WIDTH / 2 - 10, y: SCREEN_HEIGHT / 2))
     }
 
     func testMoveNStepsBrickRight() {
@@ -97,12 +97,12 @@ final class MoveNStepsBrickTests: AbstractBrickTestSwift {
         setPosition(position: CGPoint(x: 20, y: 20), rotation: 90, steps: -10)
         checkPosition(position: CGPoint(x: 10, y: 20))
 
-        setPosition(position: CGPoint(x: -SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2), rotation: 90, steps: 10)
-        checkPosition(position: CGPoint(x: -SCREEN_WIDTH/2+10, y: SCREEN_HEIGHT/2))
+        setPosition(position: CGPoint(x: -SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2), rotation: 90, steps: 10)
+        checkPosition(position: CGPoint(x: -SCREEN_WIDTH / 2 + 10, y: SCREEN_HEIGHT / 2 ))
     }
 
     func testMoveNStepsBrickLeftUp() {
-        setPosition(position: CGPoint(x: SCREEN_WIDTH/2, y: -SCREEN_HEIGHT/2), rotation: 280, steps: 10)
+        setPosition(position: CGPoint(x: SCREEN_WIDTH / 2, y: -SCREEN_HEIGHT / 2), rotation: 280, steps: 10)
 
         let rotation = Util.degree(toRadians: 280)
         let xPosition = SCREEN_WIDTH / 2 + 10 * sin(rotation)
@@ -112,31 +112,31 @@ final class MoveNStepsBrickTests: AbstractBrickTestSwift {
     }
 
     func testMoveNStepsBrickRightUp() {
-        setPosition(position: CGPoint(x: -SCREEN_WIDTH/2, y: -SCREEN_HEIGHT/2), rotation: 80, steps: 10)
+        setPosition(position: CGPoint(x: -SCREEN_WIDTH / 2, y: -SCREEN_HEIGHT / 2), rotation: 80, steps: 10)
 
         let rotation = Util.degree(toRadians: 80)
-        let xPosition = -SCREEN_WIDTH/2 + 10 * sin(rotation)
-        let yPosition = -SCREEN_HEIGHT/2 + 10 * cos(rotation)
+        let xPosition = -SCREEN_WIDTH / 2 + 10 * sin(rotation)
+        let yPosition = -SCREEN_HEIGHT / 2 + 10 * cos(rotation)
 
         checkPosition(position: CGPoint(x: xPosition, y: yPosition))
     }
 
     func testMoveNStepsBrickLeftDown() {
-        setPosition(position: CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2), rotation: 200, steps: 10)
+        setPosition(position: CGPoint(x: SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2), rotation: 200, steps: 10)
 
         let rotation = Util.degree(toRadians: 200)
-        let xPosition = SCREEN_WIDTH/2 + 10 * sin(rotation)
-        let yPosition = SCREEN_HEIGHT/2 + 10 * cos(rotation)
+        let xPosition = SCREEN_WIDTH / 2 + 10 * sin(rotation)
+        let yPosition = SCREEN_HEIGHT / 2 + 10 * cos(rotation)
 
         checkPosition(position: CGPoint(x: xPosition, y: yPosition))
     }
 
     func testMoveNStepsBrickRightDown() {
-        setPosition(position: CGPoint(x: -SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2), rotation: 110, steps: 10)
+        setPosition(position: CGPoint(x: -SCREEN_WIDTH / 2, y: SCREEN_HEIGHT / 2), rotation: 110, steps: 10)
 
         let rotation = Util.degree(toRadians: 110)
-        let xPosition = -SCREEN_WIDTH/2 + 10 * sin(rotation)
-        let yPosition = SCREEN_HEIGHT/2 + 10 * cos(rotation)
+        let xPosition = -SCREEN_WIDTH / 2 + 10 * sin(rotation)
+        let yPosition = SCREEN_HEIGHT / 2 + 10 * cos(rotation)
 
         checkPosition(position: CGPoint(x: xPosition, y: yPosition))
     }

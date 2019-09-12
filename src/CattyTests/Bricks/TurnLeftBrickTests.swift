@@ -40,13 +40,12 @@ final class TurnLeftBrickTests: AbstractBrickTestSwift {
         turnLeft(initialRotation: 90, rotation: -400)
     }
 
-    private func turnLeft(initialRotation: Double, rotation: Double)
-    {
+    private func turnLeft(initialRotation: Double, rotation: Double) {
         let object = SpriteObject()
         let spriteNode = CBSpriteNode.init(spriteObject: object)
         object.spriteNode = spriteNode
 
-        spriteNode.catrobatRotation = initialRotation;
+        spriteNode.catrobatRotation = initialRotation
 
         let script = WhenScript()
         script.object = object

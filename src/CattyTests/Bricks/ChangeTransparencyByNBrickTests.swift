@@ -72,7 +72,7 @@ final class ChangeTransparencyByNBrickTests: AbstractBrickTestSwift {
     }
 
     func testChangeTransparencyByNBrickOutOfRange() {
-        spriteNode.catrobatTransparency = 0.0;
+        spriteNode.catrobatTransparency = 0.0
 
         formulaTree.value = "150"
 
@@ -83,7 +83,7 @@ final class ChangeTransparencyByNBrickTests: AbstractBrickTestSwift {
     }
 
     func testChangeTransparencyByNBrickWrongInput() {
-        spriteNode.catrobatTransparency = 0.0;
+        spriteNode.catrobatTransparency = 0.0
         formulaTree.value = "a"
 
         let action = brick.actionBlock(self.formulaInterpreter)

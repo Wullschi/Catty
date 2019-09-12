@@ -70,8 +70,7 @@ final class PlaceAtBrickTests: AbstractBrickTestSwift {
         XCTAssertEqual( testPoint, spriteNode.catrobatPosition, "PlaceAtBrick is not correctly calculated")
     }
 
-    func testPlaceAtBrickOutOfRange()
-    {
+    func testPlaceAtBrickOutOfRange() {
         brick.yPosition = Formula(integer: -20000)
         brick.xPosition = Formula(integer: -20000)
 
@@ -91,7 +90,7 @@ final class PlaceAtBrickTests: AbstractBrickTestSwift {
         let action = brick.actionBlock(self.formulaInterpreter)
         action()
 
-        let testPoint = CGPoint(x: 0, y: 0);
+        let testPoint = CGPoint(x: 0, y: 0)
         XCTAssertEqual(spriteNode.catrobatPosition, testPoint, "PlaceAtBrick is not correctly calculated")
     }
 

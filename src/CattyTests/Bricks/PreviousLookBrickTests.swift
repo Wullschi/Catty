@@ -61,7 +61,7 @@ final class PreviousLookBrickTests: AbstractBrickTestSwift {
         let action = brick.actionBlock()
         action()
 
-        XCTAssertEqual(spriteNode.currentLook, look, "PreviousLookBrick not correct");
+        XCTAssertEqual(spriteNode.currentLook, look, "PreviousLookBrick not correct")
         Project.removeProjectFromDisk(withProjectName: project.header.programName, projectID: project.header.programID)
     }
 }

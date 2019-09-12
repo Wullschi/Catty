@@ -23,7 +23,7 @@
 import AudioKit
 import Foundation
 
-@objc class AudioEngineMain:NSObject, AudioEngine, AVSpeechSynthesizerDelegate {
+@objc class AudioEngineMain: NSObject, AudioEngine, AVSpeechSynthesizerDelegate {
     var engineOutputMixer = AKMixer()
     var postProcessingMixer = AKMixer()
 

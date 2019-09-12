@@ -24,9 +24,9 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class ClearGraphicEffectBrickTests: AbstractBrickTestSwift {
+final class SetBrightnessBrickTests: AbstractBrickTestSwift {
 
-    var brick: SetTransparencyBrick!
+    var brick: SetBrightnessBrick!
     var spriteNode: CBSpriteNode!
     var project: Project!
     var object: SpriteObject!
@@ -34,14 +34,15 @@ final class ClearGraphicEffectBrickTests: AbstractBrickTestSwift {
 
     override func setUp() {
         super.setUp()
+        brick = SetBrightnessBrick()
+        script = WhenScript()
 
         object = SpriteObject()
         project = Project.defaultProject(withName: "a", projectID: "1")
         spriteNode = CBSpriteNode.init(spriteObject: object)
+
         object.spriteNode = spriteNode
         object.project = project
-        self.scene.addChild(spriteNode)
-        spriteNode.catrobatPosition = CGPoint(x: 0.0, y: 0.0)
 
         let bundle = Bundle(for: type(of: self))
         let filePath = bundle.path(forResource: "test.png", ofType: nil)
@@ -54,19 +55,13 @@ final class ClearGraphicEffectBrickTests: AbstractBrickTestSwift {
             XCTFail("Error when writing image data")
         }
 
-        script = WhenScript()
-        script.object = object
-
-        brick = SetTransparencyBrick()
-        brick.script = script
-
         object.lookList.add(look!)
         object.lookList.add(look!)
         object.spriteNode.currentLook = look
         object.spriteNode.currentUIImageLook = UIImage(contentsOfFile: filePath!)
 
-        object.spriteNode.catrobatBrightness = 10
-        object.spriteNode.catrobatTransparency = 10
+        script.object = object
+        brick.script = script
     }
 
     override func tearDown() {
@@ -74,47 +69,39 @@ final class ClearGraphicEffectBrickTests: AbstractBrickTestSwift {
         Project.removeProjectFromDisk(withProjectName: project.header.programName, projectID: project.header.programID)
     }
 
-    func testClearGraphicEffectBrick() {
-        brick.transparency = Formula(integer: 20)
+    func testSetBrightnessBrick() {
+        brick.brightness = Formula(integer: 180)
 
-        XCTAssertNotEqual(Double(spriteNode.ciBrightness), BrightnessSensor.defaultRawValue, accuracy: 0.0001)
-        XCTAssertNotEqual(Double(spriteNode.alpha), TransparencySensor.defaultRawValue, accuracy: 0.0001)
-
-        var action = brick.actionBlock(self.formulaInterpreter)
+        let action = brick.actionBlock(self.formulaInterpreter)
         action()
 
-        let clearBrick = ClearGraphicEffectBrick()
-        clearBrick.script = script
-
-        action = clearBrick.actionBlock()
-        action()
-
-        XCTAssertEqual(Double(spriteNode.alpha), TransparencySensor.defaultRawValue, accuracy: 0.0001, "ClearGraphic alpha is not correctly calculated")
-        XCTAssertEqual(Double(spriteNode.ciBrightness), BrightnessSensor.defaultRawValue, accuracy: 0.0001, "ClearGraphic brightness is not correctly calculated")
+        XCTAssertEqual(180.0, spriteNode.catrobatBrightness, accuracy: 0.1, "SetBrightnessBrick - Brightness not correct")
     }
 
-    func testClearGraphicEffectBrick2() {
-        let transparency = Formula()
-        let formulaTree = FormulaElement()
-        formulaTree.type = ElementType.NUMBER
-        formulaTree.value = "-20"
-        transparency.formulaTree = formulaTree
+    func testSetBrightnessBrickNegative() {
+        brick.brightness = Formula(integer: -10)
 
-        brick.transparency = transparency
-
-        XCTAssertNotEqual(Double(spriteNode.alpha), TransparencySensor.defaultRawValue, accuracy: 0.001)
-        XCTAssertNotEqual(Double(spriteNode.ciBrightness), BrightnessSensor.defaultRawValue, accuracy: 0.001)
-
-        var action = brick.actionBlock(self.formulaInterpreter)
+        let action = brick.actionBlock(self.formulaInterpreter)
         action()
 
-        let clearBrick = ClearGraphicEffectBrick()
-        clearBrick.script = script
+        XCTAssertEqual(0.0, spriteNode.catrobatBrightness, accuracy: 0.1, "SetBrightnessBrick - Brightness not correct")
+    }
 
-        action = clearBrick.actionBlock()
+    func testSetBrightnessBrickTooBright() {
+        brick.brightness = Formula(integer: 210)
+
+        let action = brick.actionBlock(self.formulaInterpreter)
         action()
 
-        XCTAssertEqual(Double(spriteNode.alpha), TransparencySensor.defaultRawValue, accuracy: 0.0001, "ClearGraphic is not correctly calculated")
-        XCTAssertEqual(Double(spriteNode.ciBrightness), BrightnessSensor.defaultRawValue, accuracy: 0.0001, "ClearGraphic brightness is not correctly calculated")
+        XCTAssertEqual(200.0, spriteNode.catrobatBrightness, accuracy: 0.1, "SetBrightnessBrick - Brightness not correct")
+    }
+
+    func testSetBrightnessBrickWrongInput() {
+        brick.brightness = Formula(string: "a")
+
+        let action = brick.actionBlock(self.formulaInterpreter)
+        action()
+
+        XCTAssertEqual(0.0, spriteNode.catrobatBrightness, accuracy: 0.1, "SetBrightnessBrick - Brightness not correct")
     }
 }

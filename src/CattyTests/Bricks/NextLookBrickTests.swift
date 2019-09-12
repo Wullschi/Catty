@@ -59,9 +59,9 @@ final class NextLookBrickTests: AbstractBrickTestSwift {
         object.spriteNode.currentUIImageLook = UIImage(contentsOfFile: filePath!)
 
         let action = brick.actionBlock()
-        action();
+        action()
 
-        XCTAssertEqual(spriteNode.currentLook, look2, "NextLookBrick not correct");
+        XCTAssertEqual(spriteNode.currentLook, look2, "NextLookBrick not correct")
         Project.removeProjectFromDisk(withProjectName: project.header.programName, projectID: project.header.programID)
     }
 

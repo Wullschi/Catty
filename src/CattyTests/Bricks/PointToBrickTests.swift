@@ -59,7 +59,7 @@ final class PointToBrickTests: AbstractBrickTestSwift {
         let dispatchBlock = brick.actionBlock()
         dispatchBlock()
 
-        XCTAssertEqual(0, firstSpriteNode.catrobatRotation, accuracy: 0.1, "PointToBrick not correct");
+        XCTAssertEqual(0, firstSpriteNode.catrobatRotation, accuracy: 0.1, "PointToBrick not correct")
     }
 
     func testPointToBrickSamePosition() {
@@ -69,7 +69,7 @@ final class PointToBrickTests: AbstractBrickTestSwift {
         let dispatchBlock = brick.actionBlock()
         dispatchBlock()
 
-        XCTAssertEqual(0, firstSpriteNode.catrobatRotation, accuracy: 0.1, "PointToBrick not correct");
+        XCTAssertEqual(0, firstSpriteNode.catrobatRotation, accuracy: 0.1, "PointToBrick not correct")
     }
 
     func testPointToBrick45Degrees() {

@@ -133,7 +133,7 @@ final class IfOnEdgeBounceBrickTests: AbstractBrickTestSwift {
         setPosition(position: CGPoint(x: IfOnEdgeBounceBrickTests.RIGHT_BORDER_POSITION, y: IfOnEdgeBounceBrickTests.TOP_BORDER_POSITION), rotation: -135)
         checkPosition(position: CGPoint(x: IfOnEdgeBounceBrickTests.BOUNCE_RIGHT_POSITION, y: IfOnEdgeBounceBrickTests.BOUNCE_TOP_POSITION), rotation: -135)
 
-        setPosition(position: CGPoint(x: IfOnEdgeBounceBrickTests.RIGHT_BORDER_POSITION, y: IfOnEdgeBounceBrickTests.TOP_BORDER_POSITION), rotation:-45)
+        setPosition(position: CGPoint(x: IfOnEdgeBounceBrickTests.RIGHT_BORDER_POSITION, y: IfOnEdgeBounceBrickTests.TOP_BORDER_POSITION), rotation: -45)
         checkPosition(position: CGPoint(x: IfOnEdgeBounceBrickTests.BOUNCE_RIGHT_POSITION, y: IfOnEdgeBounceBrickTests.BOUNCE_TOP_POSITION), rotation: -135)
     }
 

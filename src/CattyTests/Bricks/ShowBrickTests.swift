@@ -29,7 +29,7 @@ final class ShowBrickTests: AbstractBrickTestSwift {
     func testShowBrick() {
         let object = SpriteObject()
         let spriteNode = CBSpriteNode(spriteObject: object)
-        object.spriteNode = spriteNode;
+        object.spriteNode = spriteNode
 
         self.scene.addChild(spriteNode)
         spriteNode.catrobatPosition = CGPoint(x: 0, y: 0)
