@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class NextLookBrickTests: AbstractBrickTestSwift {
+final class NextLookBrickTests: AbstractBrickTest {
 
     func testNextLookBrick() {
         let object = SpriteObject()

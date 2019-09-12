@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class GoNStepsBackBrickTests: AbstractBrickTestSwift {
+final class GoNStepsBackBrickTests: AbstractBrickTest {
 
     var spriteNode1: CBSpriteNode!
     var spriteNode2: CBSpriteNode!

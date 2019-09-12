@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class TurnLeftBrickTests: AbstractBrickTestSwift {
+final class TurnLeftBrickTests: AbstractBrickTest {
 
     func testTurnLeftBrick() {
         turnLeft(initialRotation: 90, rotation: 60)

@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class SetBrightnessBrickTests: AbstractBrickTestSwift {
+final class SetBrightnessBrickTests: AbstractBrickTest {
 
     var brick: SetBrightnessBrick!
     var spriteNode: CBSpriteNode!

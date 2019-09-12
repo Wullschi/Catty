@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class PointToBrickTests: AbstractBrickTestSwift {
+final class PointToBrickTests: AbstractBrickTest {
 
     var firstSpriteNode: CBSpriteNode!
     var secondSpriteNode: CBSpriteNode!

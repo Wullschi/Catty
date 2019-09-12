@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class TurnRightBrickTests: AbstractBrickTestSwift {
+final class TurnRightBrickTests: AbstractBrickTest {
 
     var brick: TurnRightBrick!
     var spriteNode: CBSpriteNode!

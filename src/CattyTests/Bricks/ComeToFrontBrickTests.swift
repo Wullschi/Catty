@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class ComeToFrontBrickTests: AbstractBrickTestSwift {
+final class ComeToFrontBrickTests: AbstractBrickTest {
 
     func testComeToFrontBrick() {
         let project = Project()

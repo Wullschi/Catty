@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-class AbstractBrickTestSwift: XCTestCase {
+class AbstractBrickTest: XCTestCase {
 
     var skView: SKView?
     var scene: CBScene!

@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class SetSizeToBrickTests: AbstractBrickTestSwift {
+final class SetSizeToBrickTests: AbstractBrickTest {
 
     var brick: SetSizeToBrick!
     var spriteNode: CBSpriteNode!

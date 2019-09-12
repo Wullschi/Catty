@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class SetBackgroundBrickTests: AbstractBrickTestSwift {
+final class SetBackgroundBrickTests: AbstractBrickTest {
 
     func testSetBackgroundBrick() {
         let object = SpriteObject()

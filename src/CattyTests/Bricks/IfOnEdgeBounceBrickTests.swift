@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class IfOnEdgeBounceBrickTests: AbstractBrickTestSwift {
+final class IfOnEdgeBounceBrickTests: AbstractBrickTest {
 
     var spriteObject: SpriteObject!
     var script: Script!

@@ -24,7 +24,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-final class SetTransparencyToBrickTests: AbstractBrickTestSwift {
+final class SetTransparencyToBrickTests: AbstractBrickTest {
 
     var brick: SetTransparencyBrick!
     var spriteNode: CBSpriteNode!
