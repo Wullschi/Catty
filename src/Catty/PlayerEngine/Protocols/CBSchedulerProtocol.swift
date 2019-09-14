@@ -50,6 +50,6 @@ protocol CBSchedulerProtocol: AnyObject {
     func removeTimer(_ timer: ExtendedTimer)
 
     // audio engine
-    func getAudioEngine() -> AudioEngine
+    func getAudioEngine() -> AudioEngineProtocol
 
 }

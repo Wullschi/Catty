@@ -25,7 +25,7 @@ import Foundation
 
 @testable import Pocket_Code
 
-@objc class AudioEngineMock: NSObject, AudioEngine {
+@objc class AudioEngineMock: NSObject, AudioEngineProtocol {
 
     func start() {}
 

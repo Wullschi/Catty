@@ -23,22 +23,97 @@
 import AudioKit
 import Foundation
 
-@objc protocol AudioEngine {
-    @objc func start()
+@objc class AudioEngine: NSObject, AudioEngineProtocol, AVSpeechSynthesizerDelegate {
+    var engineOutputMixer = AKMixer()
+    var postProcessingMixer = AKMixer()
 
-    @objc func shutdown()
+    var subtrees = [String: AudioSubtree]()
+    let subtreeCreationQueue = DispatchQueue(label: "SubtreeCreationQueue")
+    let audioPlayerFactory: AudioPlayerFactory
 
-    @objc func pauseAudioEngine()
+    init(audioPlayerFactory: AudioPlayerFactory = StandardAudioPlayerFactory()) {
+        self.audioPlayerFactory = audioPlayerFactory
+        super.init()
+        self.start()
+    }
 
-    @objc func resumeAudioEngine()
+    @objc func start() {
+        AudioKit.output = postProcessingMixer
+        engineOutputMixer.connect(to: postProcessingMixer)
+        do {
+            try AudioKit.start()
+        } catch {
+            print("could not start audio engine")
+        }
+    }
 
-    @objc func stopAudioEngine()
+    @objc func shutdown() {
+        do {
+            try AudioKit.stop()
+            try AudioKit.shutdown()
+        } catch {
+            print("Something went wrong when stopping the audio engine!")
+        }
+    }
 
-    func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?)
+    @objc func pauseAudioEngine() {
+        pauseAllAudioPlayers()
+    }
 
-    func setVolumeTo(percent: Double, key: String)
+    @objc func resumeAudioEngine() {
+        resumeAllAudioPlayers()
+    }
 
-    func changeVolumeBy(percent: Double, key: String)
+    @objc func stopAudioEngine() {
+        stopAllAudioPlayers()
+    }
 
-    func stopAllAudioPlayers()
+    func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?) {
+        let subtree = getSubtree(key: key)
+        subtree.playSound(fileName: fileName, filePath: filePath, expectation: expectation)
+    }
+
+    func setVolumeTo(percent: Double, key: String) {
+        let subtree = getSubtree(key: key)
+        subtree.setVolumeTo(percent: percent)
+    }
+
+    func changeVolumeBy(percent: Double, key: String) {
+        let subtree = getSubtree(key: key)
+        subtree.changeVolumeBy(percent: percent)
+    }
+
+    private func pauseAllAudioPlayers() {
+        for (_, subtree) in subtrees {
+            subtree.pauseAllAudioPlayers()
+        }
+    }
+
+    private func resumeAllAudioPlayers() {
+        for (_, subtree) in subtrees {
+            subtree.resumeAllAudioPlayers()
+        }
+    }
+
+    func stopAllAudioPlayers() {
+        for (_, subtree) in subtrees {
+            subtree.stopAllAudioPlayers()
+        }
+    }
+
+    private func getSubtree(key: String) -> AudioSubtree {
+        subtreeCreationQueue.sync {
+            if subtrees[key] == nil {
+                _ = createNewAudioSubtree(key: key)
+            }
+        }
+        return subtrees[key]!
+    }
+
+    internal func createNewAudioSubtree(key: String) -> AudioSubtree {
+        let subtree = AudioSubtree(audioPlayerFactory: audioPlayerFactory)
+        subtree.setup(engineOut: engineOutputMixer)
+        subtrees[key] = subtree
+        return subtree
+    }
 }

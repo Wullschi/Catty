@@ -27,13 +27,13 @@ import XCTest
 
 final class AudioSubtreeTests: XCTestCase {
 
-    var audioEngine: AudioEngineMain!
+    var audioEngine: AudioEngine!
     var audioSubtree: AudioSubtree!
 
     override func setUp() {
         super.setUp()
         audioSubtree = AudioSubtree(audioPlayerFactory: MockAudioPlayerFactory())
-        audioEngine = AudioEngineMain(audioPlayerFactory: MockAudioPlayerFactory())
+        audioEngine = AudioEngine(audioPlayerFactory: MockAudioPlayerFactory())
     }
 
     override func tearDown() {

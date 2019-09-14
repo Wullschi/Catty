@@ -31,7 +31,7 @@ final class CBScene: SKScene {
     private final let backend: CBBackendProtocol
     private final let broadcastHandler: CBBroadcastHandlerProtocol
     private final let formulaManager: FormulaManagerProtocol
-    private final let soundEngine: AudioEngine
+    private final let soundEngine: AudioEngineProtocol
     private final let logger: CBLogger
 
     init(size: CGSize,
@@ -41,7 +41,7 @@ final class CBScene: SKScene {
          backend: CBBackendProtocol,
          broadcastHandler: CBBroadcastHandlerProtocol,
          formulaManager: FormulaManagerProtocol,
-         soundEngine: AudioEngine) {
+         soundEngine: AudioEngineProtocol) {
         self.logger = logger
         self.scheduler = scheduler
         self.frontend = frontend
@@ -224,7 +224,7 @@ final class CBScene: SKScene {
         formulaManager.resume()
     }
 
-    @objc func getSoundEngine() -> AudioEngine {
+    @objc func getSoundEngine() -> AudioEngineProtocol {
         return self.soundEngine
     }
 

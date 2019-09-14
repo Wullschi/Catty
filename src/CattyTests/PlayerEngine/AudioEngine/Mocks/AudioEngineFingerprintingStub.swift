@@ -25,7 +25,7 @@ import XCTest
 
 @testable import Pocket_Code
 
-class AudioEngineFingerprintingStub: AudioEngineMain {
+class AudioEngineFingerprintingStub: AudioEngine {
     var recorder: AKNodeRecorder?
     var tape: AKAudioFile?
 

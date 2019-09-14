@@ -30,7 +30,7 @@
     private var backend: CBBackendProtocol?
     private var broadcastHandler: CBBroadcastHandler?
     private var formulaManager: FormulaManagerProtocol?
-    private var audioEngine: AudioEngine?
+    private var audioEngine: AudioEngineProtocol?
 
     @objc init(project: Project) {
         self.project = project
@@ -65,7 +65,7 @@
         return self
     }
 
-    func withAudioEngine(audioEngine: AudioEngine) -> Self {
+    func withAudioEngine(audioEngine: AudioEngineProtocol) -> Self {
         self.audioEngine = audioEngine
         return self
     }
@@ -107,9 +107,9 @@
         return formulaManager
     }
 
-    internal func getAudioEngine() -> AudioEngine {
+    internal func getAudioEngine() -> AudioEngineProtocol {
         guard let engine = self.audioEngine else {
-            return AudioEngineMain()
+            return AudioEngine()
         }
         return engine
     }
@@ -140,7 +140,7 @@
         return backend
     }
 
-    private func getScheduler(broadcastHandler: CBBroadcastHandler, formulaInterpreter: FormulaInterpreterProtocol, audioEngine: AudioEngine) -> CBSchedulerProtocol {
+    private func getScheduler(broadcastHandler: CBBroadcastHandler, formulaInterpreter: FormulaInterpreterProtocol, audioEngine: AudioEngineProtocol) -> CBSchedulerProtocol {
         guard let scheduler = self.scheduler else {
             guard let schedulerLogger = Swell.getLogger(LoggerConfig.PlayerSchedulerID) else { preconditionFailure() }
             let scheduler = CBScheduler(logger: schedulerLogger, broadcastHandler: broadcastHandler, formulaInterpreter: formulaInterpreter, audioEngine: audioEngine)

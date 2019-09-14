@@ -28,7 +28,7 @@ final class CBScheduler: CBSchedulerProtocol {
     var running = false
     private let _broadcastHandler: CBBroadcastHandlerProtocol
     private let _formulaInterpreter: FormulaInterpreterProtocol
-    private let _audioEngine: AudioEngine
+    private let _audioEngine: AudioEngineProtocol
 
     private var _spriteNodes = [String: CBSpriteNode]()
     private var _contexts = [CBScriptContextProtocol]()
@@ -49,7 +49,7 @@ final class CBScheduler: CBSchedulerProtocol {
     static let vibrateSerialQueue = OperationQueue()
 
     // MARK: - Initializers
-    init(logger: CBLogger, broadcastHandler: CBBroadcastHandlerProtocol, formulaInterpreter: FormulaInterpreterProtocol, audioEngine: AudioEngine) {
+    init(logger: CBLogger, broadcastHandler: CBBroadcastHandlerProtocol, formulaInterpreter: FormulaInterpreterProtocol, audioEngine: AudioEngineProtocol) {
         self.logger = logger
         //        self.schedulingAlgorithm = nil // default scheduling behaviour
         _broadcastHandler = broadcastHandler
@@ -419,7 +419,7 @@ final class CBScheduler: CBSchedulerProtocol {
         }
     }
 
-    func getAudioEngine() -> AudioEngine {
+    func getAudioEngine() -> AudioEngineProtocol {
         return _audioEngine
     }
 }
