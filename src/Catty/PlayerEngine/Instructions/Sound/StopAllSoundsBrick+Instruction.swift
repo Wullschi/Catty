@@ -25,7 +25,7 @@
     @nonobjc func instruction() -> CBInstruction {
 
         return CBInstruction.execClosure { context, scheduler in
-            let audioEngine = (scheduler as! CBScheduler).getAudioEngine()
+            let audioEngine = scheduler.getAudioEngine()
             audioEngine.stopAllAudioPlayers()
             context.state = .runnable
         }

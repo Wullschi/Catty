@@ -29,7 +29,7 @@
         let spriteObjectName = spriteObject.name
 
         return CBInstruction.execClosure { context, scheduler in
-            let audioEngine = (scheduler as! CBScheduler).getAudioEngine()
+            let audioEngine = scheduler.getAudioEngine()
             let volume = context.formulaInterpreter.interpretDouble(self.volume, for: spriteObject)
 
             if let name = spriteObjectName {

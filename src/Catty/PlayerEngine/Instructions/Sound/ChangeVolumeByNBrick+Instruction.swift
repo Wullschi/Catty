@@ -30,7 +30,7 @@
         let spriteObjectName = spriteObject.name
 
         return CBInstruction.execClosure { context, scheduler in
-            let audioEngine = (scheduler as! CBScheduler).getAudioEngine()
+            let audioEngine = scheduler.getAudioEngine()
             guard let volumeFormula = volumeFormula else { return }
 
             let volumeChange = context.formulaInterpreter.interpretDouble(volumeFormula, for: spriteObject)

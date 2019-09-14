@@ -35,7 +35,7 @@
         let filePath = projectPath + kProjectSoundsDirName
 
         return CBInstruction.execClosure { context, scheduler in
-            let audioEngine = (scheduler as! CBScheduler).getAudioEngine()
+            let audioEngine = scheduler.getAudioEngine()
             audioEngine.playSound(fileName: fileName, key: objectName, filePath: filePath, expectation: nil)
             context.state = .runnable
         }
