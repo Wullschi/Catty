@@ -69,7 +69,8 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
             return 0
         }
 
-        guard let (simHashString, duration) = generateFingerprint(fromSongAtUrl: readTape.url) else {
+        let fingerprinter = ChromaprintFingerprinter()
+        guard let (simHashString, duration) = fingerprinter.generateFingerprint(fromSongAtUrl: readTape.url) else {
             print("No fingerprint was generated")
             return 0
         }
