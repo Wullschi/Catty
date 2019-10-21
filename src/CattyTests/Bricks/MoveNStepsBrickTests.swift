@@ -38,7 +38,7 @@ final class MoveNStepsBrickTests: AbstractBrickTest {
 
     override func setUp() {
         super.setUp()
-        self.scene = SceneBuilderMock(project: ProjectMock.init(width: CGFloat(SCREEN_WIDTH), andHeight: CGFloat(SCREEN_HEIGHT))).build()
+        self.scene = SceneBuilder(project: ProjectMock.init(width: CGFloat(SCREEN_WIDTH), andHeight: CGFloat(SCREEN_HEIGHT))).build()
         let spriteObject = SpriteObject()
 
         self.spriteNode = CBSpriteNode(spriteObject: spriteObject)

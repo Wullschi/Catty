@@ -58,21 +58,21 @@ final class SceneTests: XCTestCase {
     }
 
     func testTouchConversionCenter() {
-        let scaledScene = SceneBuilderMock(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
+        let scaledScene = SceneBuilder(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
         let scaledSceneCenter = CGPoint(x: self.screenSize.width / 2, y: self.screenSize.height / 2)
         let convertedCenter = CBSceneHelper.convertTouchCoordinateToPoint(coordinate: scaledSceneCenter, sceneSize: scaledScene.size)
         XCTAssertEqual(convertedCenter, self.pocketCodeCenter, "The Scene Center is not correctly calculated")
     }
 
     func testTouchConversionCenterNoScale() {
-        let scaledScene = SceneBuilderMock(project: ProjectMock(width: self.screenSize.width, andHeight: self.screenSize.height)).build()
+        let scaledScene = SceneBuilder(project: ProjectMock(width: self.screenSize.width, andHeight: self.screenSize.height)).build()
         let scaledSceneCenter = CGPoint(x: self.screenSize.width / 2, y: self.screenSize.height / 2)
         let convertedCenter = CBSceneHelper.convertTouchCoordinateToPoint(coordinate: scaledSceneCenter, sceneSize: scaledScene.size)
         XCTAssertEqual(convertedCenter, self.pocketCodeCenter, "The Scene Center is not correctly calculated")
     }
 
     func testTouchConversionBottomLeft() {
-        let scaledScene = SceneBuilderMock(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
+        let scaledScene = SceneBuilder(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
         let scaledSceneBottomLeft = CGPoint(x: 0, y: self.screenSize.height)
         let pocketCodeBottomLeft = CGPoint(x: scaledScene.size.width / 2 * -1, y: scaledScene.size.height / 2 * -1)
 
@@ -81,7 +81,7 @@ final class SceneTests: XCTestCase {
     }
 
     func testTouchConversionBottomRight() {
-        let scaledScene = SceneBuilderMock(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
+        let scaledScene = SceneBuilder(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
         let scaledSceneBottomRight = CGPoint(x: self.screenSize.width, y: self.screenSize.height)
         let pocketCodeBottomRight = CGPoint(x: scaledScene.size.width / 2, y: scaledScene.size.height / 2 * -1)
 
@@ -90,7 +90,7 @@ final class SceneTests: XCTestCase {
     }
 
     func testTouchConversionTopLeft() {
-        let scaledScene = SceneBuilderMock(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
+        let scaledScene = SceneBuilder(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
         let scaledSceneTopLeft = CGPoint(x: 0, y: 0)
         let pocketCodeTopLeft = CGPoint(x: scaledScene.size.width / 2 * -1, y: scaledScene.size.height / 2)
 
@@ -99,7 +99,7 @@ final class SceneTests: XCTestCase {
     }
 
     func testTouchConversionTopRight() {
-        let scaledScene = SceneBuilderMock(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
+        let scaledScene = SceneBuilder(project: ProjectMock(width: self.screenSize.width * 2, andHeight: self.screenSize.height * 2)).build()
         let scaledSceneTopRight = CGPoint(x: self.screenSize.width, y: 0)
         let pocketCodeTopRight = CGPoint(x: scaledScene.size.width / 2, y: scaledScene.size.height / 2)
 
@@ -109,7 +109,7 @@ final class SceneTests: XCTestCase {
 
     func testVariableLabel() {
         let project = ProjectMock(width: self.screenSize.width, andHeight: self.screenSize.height)!
-        let scene = SceneBuilderMock(project: project).build()
+        let scene = SceneBuilder(project: project).build()
 
         let userVariable = UserVariable()
         project.variables.programVariableList.add(userVariable)

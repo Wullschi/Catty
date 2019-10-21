@@ -46,7 +46,7 @@ final class IfOnEdgeBounceBrickTests: AbstractBrickTest {
 
     override func setUp() {
         super.setUp()
-        self.scene = SceneBuilderMock(project: ProjectMock(width: IfOnEdgeBounceBrickTests.SCREEN_WIDTH, andHeight: IfOnEdgeBounceBrickTests.SCREEN_HEIGHT)).build()
+        self.scene = SceneBuilder(project: ProjectMock(width: IfOnEdgeBounceBrickTests.SCREEN_WIDTH, andHeight: IfOnEdgeBounceBrickTests.SCREEN_HEIGHT)).build()
 
         self.spriteObject = SpriteObject()
         let spriteNode = CBSpriteNode(spriteObject: self.spriteObject)

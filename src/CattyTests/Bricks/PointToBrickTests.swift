@@ -32,7 +32,7 @@ final class PointToBrickTests: AbstractBrickTest {
     var brick: PointToBrick!
 
     override func setUp() {
-        self.scene = SceneBuilderMock(project: ProjectMock()).build()
+        self.scene = SceneBuilder(project: ProjectMock()).build()
 
         let firstObject = SpriteObject()
         firstSpriteNode = CBSpriteNode(spriteObject: firstObject)

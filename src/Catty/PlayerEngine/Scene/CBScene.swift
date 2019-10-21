@@ -210,6 +210,7 @@ final class CBScene: SKScene {
         }
 
         formulaManager.setup(for: project, and: self)
+        soundEngine.start()
         scheduler.run()
         return true
     }
@@ -236,6 +237,6 @@ final class CBScene: SKScene {
         frontend.project?.removeReferences() // remove all references in project hierarchy
         formulaManager.stop()
         logger.info("All SpriteObjects and Scripts have been removed from Scene!")
+        soundEngine.shutdown()
     }
-
 }

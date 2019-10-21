@@ -34,7 +34,6 @@ import Foundation
     init(audioPlayerFactory: AudioPlayerFactory = StandardAudioPlayerFactory()) {
         self.audioPlayerFactory = audioPlayerFactory
         super.init()
-        self.start()
     }
 
     @objc func start() {
@@ -43,7 +42,9 @@ import Foundation
         do {
             try AudioKit.start()
         } catch {
-            print("could not start audio engine")
+            print("COULD NOT START AUDIO ENGINE! MAKE SURE TO ALWAYS SHUT DOWN AUDIO ENGINE BEFORE" +
+                "INSTANTIATING IT AGAIN (AFTER EVERY TEST CASE)! USE AN AUDIOENGINEMOCK IN TESTS" +
+                "WHEN A SCENE DOES NOT NEED THE AUDIO ENGINE.")
         }
     }
 

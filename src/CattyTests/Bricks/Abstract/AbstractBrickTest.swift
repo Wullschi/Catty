@@ -33,7 +33,7 @@ class AbstractBrickTest: XCTestCase {
     override func setUp() {
         super.setUp()
         formulaInterpreter = FormulaManager(sceneSize: Util.screenSize(true))
-        scene = SceneBuilderMock(project: ProjectMock()).build()
+        scene = SceneBuilder(project: ProjectMock()).build()
     }
 
     override func tearDown() {

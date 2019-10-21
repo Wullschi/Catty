@@ -883,7 +883,6 @@
 		9E24D7092326ED6C00608203 /* SetYBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E24D7082326ED6C00608203 /* SetYBrickTests.swift */; };
 		9E2C2D862325673C004B66C6 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C2D852325673C004B66C6 /* AudioEngine.swift */; };
 		9E2C2D8A23256901004B66C6 /* AudioEngineMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C2D8923256901004B66C6 /* AudioEngineMock.swift */; };
-		9E2C2D8C23256C92004B66C6 /* SceneBuilderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C2D8B23256C92004B66C6 /* SceneBuilderMock.swift */; };
 		9E2C2D8E23257387004B66C6 /* AbstractBrickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C2D8D23257387004B66C6 /* AbstractBrickTest.swift */; };
 		9E2C2D9023257704004B66C6 /* ChangeBrightnessByNBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C2D8F23257704004B66C6 /* ChangeBrightnessByNBrickTests.swift */; };
 		9E2C2D9223258F3F004B66C6 /* TurnRightBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2C2D9123258F3F004B66C6 /* TurnRightBrickTests.swift */; };
@@ -2570,7 +2569,6 @@
 		9E24D7082326ED6C00608203 /* SetYBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYBrickTests.swift; sourceTree = "<group>"; };
 		9E2C2D852325673C004B66C6 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		9E2C2D8923256901004B66C6 /* AudioEngineMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineMock.swift; sourceTree = "<group>"; };
-		9E2C2D8B23256C92004B66C6 /* SceneBuilderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilderMock.swift; sourceTree = "<group>"; };
 		9E2C2D8D23257387004B66C6 /* AbstractBrickTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractBrickTest.swift; sourceTree = "<group>"; };
 		9E2C2D8F23257704004B66C6 /* ChangeBrightnessByNBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBrightnessByNBrickTests.swift; sourceTree = "<group>"; };
 		9E2C2D9123258F3F004B66C6 /* TurnRightBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnRightBrickTests.swift; sourceTree = "<group>"; };
@@ -4848,7 +4846,6 @@
 			children = (
 				4CE1D430213E5C130014DAF9 /* CBSpriteNodeMock.swift */,
 				4CE1D432213E5C6E0014DAF9 /* SpriteObjectMock.swift */,
-				9E2C2D8B23256C92004B66C6 /* SceneBuilderMock.swift */,
 			);
 			name = Mocks;
 			path = PlayerEngine/Mocks;
@@ -8817,7 +8814,6 @@
 				4C0F9FD3204BD3B400E71B2D /* BubbleBrickTests.swift in Sources */,
 				4C822672213FA7A400F3D750 /* InclinationYSensorTest.swift in Sources */,
 				4C822657213FA7A400F3D750 /* MotionManagerMock.swift in Sources */,
-				9E2C2D8C23256C92004B66C6 /* SceneBuilderMock.swift in Sources */,
 				4CA6DFC123069337003A729B /* FormulaManagerCacheTests.swift in Sources */,
 				4C822658213FA7A400F3D750 /* FaceDetectionManagerMock.swift in Sources */,
 				4C1F6FA5213CF6BE00C20BEB /* SingleParameterStringFunctionMock.swift in Sources */,
