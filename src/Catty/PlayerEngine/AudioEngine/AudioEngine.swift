@@ -48,25 +48,22 @@ import Foundation
         }
     }
 
-    @objc func shutdown() {
+    @objc func pause() {
+        pauseAllAudioPlayers()
+    }
+
+    @objc func resume() {
+        resumeAllAudioPlayers()
+    }
+
+    @objc func stop() {
+        stopAllAudioPlayers()
         do {
             try AudioKit.stop()
             try AudioKit.shutdown()
         } catch {
             print("Something went wrong when stopping the audio engine!")
         }
-    }
-
-    @objc func pauseAudioEngine() {
-        pauseAllAudioPlayers()
-    }
-
-    @objc func resumeAudioEngine() {
-        resumeAllAudioPlayers()
-    }
-
-    @objc func stopAudioEngine() {
-        stopAllAudioPlayers()
     }
 
     func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?) {

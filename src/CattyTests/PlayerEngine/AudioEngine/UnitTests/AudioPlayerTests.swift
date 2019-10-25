@@ -54,7 +54,7 @@ final class AudioPlayerTests: XCTestCase {
     override func tearDown() {
         do {
             try AudioKit.stop()
-            try AudioKit.shutdown()
+            try AudioKit.stop()
         } catch {
             print("Something went wrong when stopping the audio engine!")
         }

@@ -61,7 +61,7 @@ final class SetBackgroundBrickTests: AbstractBrickTest {
         brick.look = look1
 
         object.lookList.add(look!)
-        object.lookList.add(look!)
+        object.lookList.add(look1!)
 
         let action = brick.actionBlock()
         action()

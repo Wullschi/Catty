@@ -36,7 +36,7 @@ final class AudioEngineTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
-        audioEngine.shutdown()
+        audioEngine.stop()
     }
 
     func testGetSubtreeAndCreateNewSubtree() {
@@ -115,19 +115,19 @@ final class AudioEngineTests: XCTestCase {
 
     func testPauseAudioEngine_expectAllPlayersPaused() {
         createPauseStopResumeExpectationSetup(methodUnderTest: "pause")
-        audioEngine.pauseAudioEngine()
+        audioEngine.pause()
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 
     func testStopAudioEngine_expectAllPlayersStopped() {
         createPauseStopResumeExpectationSetup(methodUnderTest: "stop")
-        audioEngine.stopAudioEngine()
+        audioEngine.stop()
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 
     func testResumeAudioEngine_expectAllPlayersResumed() {
         createPauseStopResumeExpectationSetup(methodUnderTest: "resume")
-        audioEngine.resumeAudioEngine()
+        audioEngine.resume()
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
 

@@ -26,13 +26,11 @@ import Foundation
 @objc protocol AudioEngineProtocol {
     @objc func start()
 
-    @objc func shutdown()
+    @objc func pause()
 
-    @objc func pauseAudioEngine()
+    @objc func resume()
 
-    @objc func resumeAudioEngine()
-
-    @objc func stopAudioEngine()
+    @objc func stop()
 
     func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?)
 

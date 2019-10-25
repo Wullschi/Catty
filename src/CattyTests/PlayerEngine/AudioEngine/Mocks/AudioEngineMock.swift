@@ -29,13 +29,11 @@ import Foundation
 
     func start() {}
 
-    func shutdown() {}
+    func pause() {}
 
-    func pauseAudioEngine() {}
+    func resume() {}
 
-    func resumeAudioEngine() {}
-
-    func stopAudioEngine() {}
+    func stop() {}
 
     func playSound(fileName: String, key: String, filePath: String, expectation: Expectation?) {}
 

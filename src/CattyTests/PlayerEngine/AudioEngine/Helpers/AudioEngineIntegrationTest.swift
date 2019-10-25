@@ -45,7 +45,7 @@ class AudioEngineIntegrationTest: XMLAbstractTest {
 
     override func tearDown() {
         super.tearDown()
-        audioEngine.shutdown()
+        audioEngine.stop()
     }
 
     func runAndRecord(duration: Int, scene: CBScene, muted: Bool) {

@@ -38,7 +38,7 @@ final class AudioSubtreeTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
-        audioEngine.shutdown()
+        audioEngine.stop()
     }
 
     func testInitialVolume_expectMax() {
