@@ -28,7 +28,7 @@
         return CBInstruction.execClosure { context, scheduler in
             let audioEngine = (scheduler as! CBScheduler).getAudioEngine()
             let tempo = context.formulaInterpreter.interpretDouble(self.tempo, for: spriteObject)
-            audioEngine.bpm = tempo
+            audioEngine.setTempoTo(tempo)
             context.state = .runnable
         }
     }

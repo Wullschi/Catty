@@ -113,6 +113,16 @@ import Foundation
         let subtree = getSubtree(key: key)
         subtree.clearSoundEffects()
     }
+    
+    func setTempoTo(_ bpm: Double) {
+        self.bpm = moveValueIntoRange(bpm, min: 20, max: 500)
+    }
+    
+    func changeTempoBy(_ bpmChange: Double) {
+        let newBpm = self.bpm + bpmChange
+        self.bpm = moveValueIntoRange(newBpm, min: 20, max: 500)
+    }
+
 
     @objc func pauseAllAudioPlayers() {
         for (_, subtree) in subtrees {
@@ -211,5 +221,17 @@ import Foundation
         }
 
         return condition
+    }
+    
+    
+    // ist bereits in MathUtil von PocketCode auf Master branch.
+    func moveValueIntoRange(_ value: Double, min: Double, max: Double) -> Double {
+        if value > max {
+            return max
+        } else if value < min {
+            return min
+        } else {
+            return value
+        }
     }
 }
