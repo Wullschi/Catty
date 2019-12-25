@@ -932,6 +932,9 @@
 		9E78D88722A9AFB400948AC3 /* AudioSubtree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E78D88622A9AFB400948AC3 /* AudioSubtree.swift */; };
 		9E78D88922A9B16200948AC3 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E78D88822A9B16200948AC3 /* AudioPlayer.swift */; };
 		9E78D88B22A9B1D400948AC3 /* IterableCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E78D88A22A9B1D400948AC3 /* IterableCache.swift */; };
+		9E79254523AC6C75001A100F /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E79254423AC6C75001A100F /* test.swift */; };
+		9E79254923AC7089001A100F /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E79254823AC7089001A100F /* CryptoSwift.framework */; };
+		9E79254B23AC70B4001A100F /* CryptoSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9E79254A23AC70B4001A100F /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E8176E32389AEAC00A4912B /* SpeakAndWaitBrickWithSoundBrick.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E8176E22389AEAB00A4912B /* SpeakAndWaitBrickWithSoundBrick.xml */; };
 		9E8176E52389BA4800A4912B /* SpeakAndWaitInterruptedBySpeak.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E8176E42389BA4800A4912B /* SpeakAndWaitInterruptedBySpeak.xml */; };
 		9E8176E72389C14B00A4912B /* SpeakAndWaitTwoInterruptingSpeakBricks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E8176E62389C14A00A4912B /* SpeakAndWaitTwoInterruptingSpeakBricks.xml */; };
@@ -942,6 +945,9 @@
 		9E929E3B239D7966002D8F96 /* kontrabass_jazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E929E3A239D7965002D8F96 /* kontrabass_jazz.mp3 */; };
 		9E929E3D239D7E2B002D8F96 /* PlaySoundAndWaitBrickContinueWhenFinished.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E929E3C239D7E2A002D8F96 /* PlaySoundAndWaitBrickContinueWhenFinished.xml */; };
 		9E929E3F239D7EFB002D8F96 /* PlaySoundAndWaitBrickContinueWhenInterrupted.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E929E3E239D7EFB002D8F96 /* PlaySoundAndWaitBrickContinueWhenInterrupted.xml */; };
+		9EA33CD223B00E0E0075434A /* AudioEngineRenderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA33CD123B00E0E0075434A /* AudioEngineRenderingTests.swift */; };
+		9EA33CD623B0159A0075434A /* RenderingAudioPlayerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA33CD523B0159A0075434A /* RenderingAudioPlayerMock.swift */; };
+		9EA33CD823B016130075434A /* RenderingAudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA33CD723B016130075434A /* RenderingAudioPlayerFactory.swift */; };
 		9EA3FD812327089900551B6C /* SceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA3FD802327089900551B6C /* SceneTests.swift */; };
 		9EA6DCB02329A9E1007E837A /* MoveNStepsBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6DCAF2329A9E1007E837A /* MoveNStepsBrickTests.swift */; };
 		9EAE57E823A19B0400E76229 /* PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE57E523A19B0400E76229 /* PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml */; };
@@ -1386,6 +1392,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9E79254B23AC70B4001A100F /* CryptoSwift.framework in Copy Frameworks */,
 				9ECCA3A82395C10600FE8323 /* Nimble.framework in Copy Frameworks */,
 				9ECCA3A92395C10600FE8323 /* Quick.framework in Copy Frameworks */,
 				59D9EC672061171F0019EC10 /* DVR.framework in Copy Frameworks */,
@@ -2659,6 +2666,9 @@
 		9E78D88622A9AFB400948AC3 /* AudioSubtree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSubtree.swift; sourceTree = "<group>"; };
 		9E78D88822A9B16200948AC3 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		9E78D88A22A9B1D400948AC3 /* IterableCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterableCache.swift; sourceTree = "<group>"; };
+		9E79254423AC6C75001A100F /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		9E79254823AC7089001A100F /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		9E79254A23AC70B4001A100F /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		9E8176E22389AEAB00A4912B /* SpeakAndWaitBrickWithSoundBrick.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SpeakAndWaitBrickWithSoundBrick.xml; sourceTree = "<group>"; };
 		9E8176E42389BA4800A4912B /* SpeakAndWaitInterruptedBySpeak.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SpeakAndWaitInterruptedBySpeak.xml; sourceTree = "<group>"; };
 		9E8176E62389C14A00A4912B /* SpeakAndWaitTwoInterruptingSpeakBricks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SpeakAndWaitTwoInterruptingSpeakBricks.xml; sourceTree = "<group>"; };
@@ -2669,6 +2679,9 @@
 		9E929E3A239D7965002D8F96 /* kontrabass_jazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kontrabass_jazz.mp3; sourceTree = "<group>"; };
 		9E929E3C239D7E2A002D8F96 /* PlaySoundAndWaitBrickContinueWhenFinished.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySoundAndWaitBrickContinueWhenFinished.xml; sourceTree = "<group>"; };
 		9E929E3E239D7EFB002D8F96 /* PlaySoundAndWaitBrickContinueWhenInterrupted.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySoundAndWaitBrickContinueWhenInterrupted.xml; sourceTree = "<group>"; };
+		9EA33CD123B00E0E0075434A /* AudioEngineRenderingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineRenderingTests.swift; sourceTree = "<group>"; };
+		9EA33CD523B0159A0075434A /* RenderingAudioPlayerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingAudioPlayerMock.swift; sourceTree = "<group>"; };
+		9EA33CD723B016130075434A /* RenderingAudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingAudioPlayerFactory.swift; sourceTree = "<group>"; };
 		9EA3FD802327089900551B6C /* SceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTests.swift; sourceTree = "<group>"; };
 		9EA6DCAF2329A9E1007E837A /* MoveNStepsBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNStepsBrickTests.swift; sourceTree = "<group>"; };
 		9EAE57E523A19B0400E76229 /* PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml; sourceTree = "<group>"; };
@@ -3291,6 +3304,7 @@
 				59A0599F1F7513CF00EB696D /* Siren.framework in Frameworks */,
 				593624C21F76F36F008A588D /* TTTAttributedLabel.framework in Frameworks */,
 				9ECCA3A62395C0D900FE8323 /* Nimble.framework in Frameworks */,
+				9E79254923AC7089001A100F /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3329,6 +3343,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				9E79254A23AC70B4001A100F /* CryptoSwift.framework */,
 				CD0CCE54170CB39600B70036 /* Catty */,
 				92FF32C11A24E33B00093DA7 /* Storyboard+XIB */,
 				29B97315FDCFA39411CA2CEA /* Supporting Files */,
@@ -3360,6 +3375,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E79254823AC7089001A100F /* CryptoSwift.framework */,
 				9ECCA3A42395C0D900FE8323 /* Nimble.framework */,
 				9ECCA3A52395C0D900FE8323 /* Quick.framework */,
 				4C36D6D623374FA200670D58 /* ZipArchive.framework */,
@@ -6822,6 +6838,7 @@
 				9E445887230A021100222B14 /* ChromaprintFingerprinter.swift */,
 				9E1ED58C231332E000E36DED /* AudioEngineAbstractTest.swift */,
 				9E22CC922323FFEF00BA4CBA /* ChromaprintAudioDecoder.swift */,
+				9EA33CD123B00E0E0075434A /* AudioEngineRenderingTests.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -6844,6 +6861,7 @@
 			children = (
 				9E445889230A024600222B14 /* AudioPlayerIntegrationTests.swift */,
 				9E544D34238754C500935C17 /* SpeechSynthesizerIntegrationTests.swift */,
+				9E79254423AC6C75001A100F /* test.swift */,
 			);
 			path = IntegrationTests;
 			sourceTree = "<group>";
@@ -6892,6 +6910,8 @@
 				9EBED5FC230C8E4800049BBC /* FingerprintingAudioPlayerFactory.swift */,
 				9E22CC8C2323FC6700BA4CBA /* AudioEngineFingerprintingStub.swift */,
 				9E2C2D8923256901004B66C6 /* AudioEngineMock.swift */,
+				9EA33CD523B0159A0075434A /* RenderingAudioPlayerMock.swift */,
+				9EA33CD723B016130075434A /* RenderingAudioPlayerFactory.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -9057,6 +9077,7 @@
 				4C6FE15B212D2D2E0067B7D5 /* CeilFunctionTest.swift in Sources */,
 				AA3BD9091BBF4BFB002B34A0 /* WaitBrickTests.swift in Sources */,
 				4C68FC8B1B25A00B00AB3EE8 /* FormulaFunctionsTest.m in Sources */,
+				9EA33CD223B00E0E0075434A /* AudioEngineRenderingTests.swift in Sources */,
 				4C822660213FA7A400F3D750 /* FaceDetectionSensorTest.swift in Sources */,
 				4C6FE176212D2D2E0067B7D5 /* LetterFunctionTest.swift in Sources */,
 				4CEB22511B95E47500B3BE2F /* BrickMoveManagerRepeatTests.m in Sources */,
@@ -9194,6 +9215,7 @@
 				BC35168C231D00B90090872A /* SpriteBubbleConstraintsTests.swift in Sources */,
 				4C6FE15E212D2D2E0067B7D5 /* MaxFunctionTest.swift in Sources */,
 				4C822674213FA7A400F3D750 /* InclinationXSensorTest.swift in Sources */,
+				9EA33CD823B016130075434A /* RenderingAudioPlayerFactory.swift in Sources */,
 				4C68FC8F1B25A00B00AB3EE8 /* FormulaParserTest.m in Sources */,
 				4C6FE16B212D2D2E0067B7D5 /* SqrtFunctionTest.swift in Sources */,
 				4CBF5F9E21AF1D390079C834 /* UIGestureRecognizerMock.swift in Sources */,
@@ -9233,6 +9255,7 @@
 				4C822665213FA7A400F3D750 /* AltitudeSensorTest.swift in Sources */,
 				9E445888230A021100222B14 /* ChromaprintFingerprinter.swift in Sources */,
 				4CC50A5C213BBD7D004BC914 /* FormulaManagerInterpreterTests.swift in Sources */,
+				9EA33CD623B0159A0075434A /* RenderingAudioPlayerMock.swift in Sources */,
 				4C5AEEF722F6F3EA00280F8B /* NextLookBrickCellTests.swift in Sources */,
 				4C82265E213FA7A400F3D750 /* LastFingerIndexSensorTest.swift in Sources */,
 				4C6FE168212D2D2E0067B7D5 /* TanFunctionTest.swift in Sources */,
@@ -9242,6 +9265,7 @@
 				4C82268F213FB2C600F3D750 /* MultiFingerYFunctionTests.swift in Sources */,
 				4C6FE16D212D2D2E0067B7D5 /* PowFunctionTest.swift in Sources */,
 				4C68FC911B25A00B00AB3EE8 /* InternFormulaParserStringFunctionsTest.m in Sources */,
+				9E79254523AC6C75001A100F /* test.swift in Sources */,
 				4C6FE160212D2D2E0067B7D5 /* RandFunctionTest.swift in Sources */,
 				4C6FE173212D2D2E0067B7D5 /* NumberOfItemsFunctionTest.swift in Sources */,
 			);
@@ -10322,6 +10346,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -10383,6 +10408,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (

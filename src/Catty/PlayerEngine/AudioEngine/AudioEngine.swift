@@ -127,4 +127,13 @@ import Foundation
         subtrees[key] = subtree
         return subtree
     }
+
+    func renderToFile(_ audioFile: AVAudioFile, duration: Double, prerender: (() -> Void)? = nil) {
+        if #available(iOS 11, *) {
+            try? AudioKit.renderToFile(audioFile, duration: duration, prerender: prerender)
+        }
+        else {
+
+        }
+    }
 }

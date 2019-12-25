@@ -37,7 +37,6 @@ class AudioEngineAbstractTest: XMLAbstractTest {
             tape = try AKAudioFile()
             audioEngine = AudioEngineFingerprintingStub(audioPlayerFactory: FingerprintingAudioPlayerFactory())
             recorder = audioEngine.addNodeRecorderAtEngineOut(tape: tape)
-
         } catch {
             XCTFail("Could not set up audio engine integration test")
         }
@@ -56,6 +55,7 @@ class AudioEngineAbstractTest: XMLAbstractTest {
             _ = scene.startProject()
             RunLoop.current.run(until: Date(timeIntervalSinceNow: duration))
             recorder.stop()
+            scene.stopProject()
         } catch {
             XCTFail("Error occured")
         }

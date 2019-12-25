@@ -21,21 +21,13 @@
  */
 
 import AudioKit
+import Foundation
 import XCTest
 
 @testable import Pocket_Code
 
-class AudioEngineFingerprintingStub: AudioEngine {
-    var recorder: AKNodeRecorder?
-
-    func addNodeRecorderAtEngineOut(tape: AKAudioFile) -> AKNodeRecorder {
-        do {
-            postProcessingMixer.volume = 0
-            recorder = try AKNodeRecorder(node: engineOutputMixer, file: tape)
-        } catch {
-            print("Should not happen")
-        }
-
-        return recorder!
+class RenderingAudioPlayerMock: AudioPlayer {
+    override func play(expectation: CBExpectation?) {
+        //do nothing
     }
 }

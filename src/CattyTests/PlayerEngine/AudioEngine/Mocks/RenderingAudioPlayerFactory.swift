@@ -21,21 +21,26 @@
  */
 
 import AudioKit
-import XCTest
+import Foundation
 
 @testable import Pocket_Code
 
-class AudioEngineFingerprintingStub: AudioEngine {
-    var recorder: AKNodeRecorder?
+class RenderingAudioPlayerFactory: AudioPlayerFactory {
 
-    func addNodeRecorderAtEngineOut(tape: AKAudioFile) -> AKNodeRecorder {
+    func createAudioPlayer(fileName: String, filePath: String) -> AudioPlayer? {
+        var audioPlayer: AudioPlayer?
+        let bundle = Bundle.init(for: RenderingAudioPlayerFactory.self)
+        let path = bundle.path(forResource: fileName, ofType: nil)
+        let audioFileURL = URL.init(fileURLWithPath: path!)
+
         do {
-            postProcessingMixer.volume = 0
-            recorder = try AKNodeRecorder(node: engineOutputMixer, file: tape)
+            let file = try AKAudioFile(forReading: audioFileURL)
+            audioPlayer = RenderingAudioPlayerMock(soundFile: file)
         } catch {
-            print("Should not happen")
+            print("Could not load audio file with url \(audioFileURL.absoluteString)")
         }
 
-        return recorder!
+        return audioPlayer
     }
+
 }
