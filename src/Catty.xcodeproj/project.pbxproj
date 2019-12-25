@@ -919,6 +919,7 @@
 		9E4458862309FC7A00222B14 /* chromaprint.license in Resources */ = {isa = PBXBuildFile; fileRef = 9E4458852309FC7A00222B14 /* chromaprint.license */; };
 		9E445888230A021100222B14 /* ChromaprintFingerprinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E445887230A021100222B14 /* ChromaprintFingerprinter.swift */; };
 		9E44588A230A024600222B14 /* AudioPlayerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E445889230A024600222B14 /* AudioPlayerIntegrationTests.swift */; };
+		9E4B8EB523B3F192004FB6D7 /* VolumeRenderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B8EB423B3F192004FB6D7 /* VolumeRenderingTests.swift */; };
 		9E4D2386232AE9E5009D0C3C /* GoNStepsBackBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D2385232AE9E5009D0C3C /* GoNStepsBackBrickTests.swift */; };
 		9E4D238A232AF24B009D0C3C /* SetBrightnessBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D2389232AF24B009D0C3C /* SetBrightnessBrickTests.swift */; };
 		9E4D238C232AF688009D0C3C /* SetColorBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D238B232AF688009D0C3C /* SetColorBrickTests.swift */; };
@@ -2653,6 +2654,7 @@
 		9E4458852309FC7A00222B14 /* chromaprint.license */ = {isa = PBXFileReference; lastKnownFileType = text; path = chromaprint.license; sourceTree = "<group>"; };
 		9E445887230A021100222B14 /* ChromaprintFingerprinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaprintFingerprinter.swift; sourceTree = "<group>"; };
 		9E445889230A024600222B14 /* AudioPlayerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerIntegrationTests.swift; sourceTree = "<group>"; };
+		9E4B8EB423B3F192004FB6D7 /* VolumeRenderingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeRenderingTests.swift; sourceTree = "<group>"; };
 		9E4D2385232AE9E5009D0C3C /* GoNStepsBackBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoNStepsBackBrickTests.swift; sourceTree = "<group>"; };
 		9E4D2389232AF24B009D0C3C /* SetBrightnessBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBrightnessBrickTests.swift; sourceTree = "<group>"; };
 		9E4D238B232AF688009D0C3C /* SetColorBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorBrickTests.swift; sourceTree = "<group>"; };
@@ -6866,6 +6868,14 @@
 			path = IntegrationTests;
 			sourceTree = "<group>";
 		};
+		9E4B8EB323B3F152004FB6D7 /* RenderingTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E4B8EB423B3F192004FB6D7 /* VolumeRenderingTests.swift */,
+			);
+			path = RenderingTests;
+			sourceTree = "<group>";
+		};
 		9E8F729A22E12795005CDABE /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -6893,6 +6903,7 @@
 		9E8F729B22E12820005CDABE /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
+				9E4B8EB323B3F152004FB6D7 /* RenderingTests */,
 				9E22CC912323FD3200BA4CBA /* IntegrationTests */,
 				9E22CC902323FD0B00BA4CBA /* UnitTests */,
 				9E1ED5892313327200E36DED /* Helpers */,
@@ -9120,6 +9131,7 @@
 				9E2C2D8E23257387004B66C6 /* AbstractBrickTest.swift in Sources */,
 				4CD487761ED2C2A3001BB80A /* ChangeVariableBrickTests.swift in Sources */,
 				4C82267B213FA7A400F3D750 /* BackgroundNumberSensorTest.swift in Sources */,
+				9E4B8EB523B3F192004FB6D7 /* VolumeRenderingTests.swift in Sources */,
 				59A58D83202C714A008B1A8F /* MediaLibraryDownloaderTests.swift in Sources */,
 				BA3807FF21A1C1250075B831 /* XMLParserBlackBoxTests095.swift in Sources */,
 				9E24D7072326EBC300608203 /* ShowBrickTests.swift in Sources */,

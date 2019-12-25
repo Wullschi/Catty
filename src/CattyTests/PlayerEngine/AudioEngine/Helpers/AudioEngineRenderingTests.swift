@@ -27,26 +27,18 @@ import XCTest
 
 @testable import Pocket_Code
 
-class AudioEngineRenderingTest: XCTestCase {
+class AudioEngineRenderingTests: XCTestCase {
 
     var tape: AKAudioFile!
     var audioEngine: AudioEngine!
-    var recorder: AKNodeRecorder!
 
     override func setUp() {
         super.setUp()
 
-        do {
-            tape = try AKAudioFile()
-            audioEngine = AudioEngine(audioPlayerFactory: RenderingAudioPlayerFactory())
-            audioEngine.postProcessingMixer.volume = 1
-            audioEngine.start()
-            audioEngine.playSound(fileName: "guitar_chords.mp3", key: "Background", filePath: "egal", expectation: nil)
-            audioEngine.playSound(fileName: "bling_short.mp3", key: "Background", filePath: "egal", expectation: nil)
-            expect(self.audioEngine.subtrees.count).toEventually(be(1))
-        } catch {
-            XCTFail("Could not set up audio engine integration test")
-        }
+        tape = try? AKAudioFile()
+        audioEngine = AudioEngine(audioPlayerFactory: RenderingAudioPlayerFactory())
+        audioEngine.postProcessingMixer.volume = 1
+        audioEngine.start()
     }
 
     override func tearDown() {
@@ -54,42 +46,25 @@ class AudioEngineRenderingTest: XCTestCase {
         audioEngine.stop()
     }
 
-    public func test1() {
-        do {
-            let akPlayer1 = self.audioEngine.subtrees["Background"]!.audioPlayerCache.object(forKey: "guitar_chords.mp3")?.akPlayer
-            let akPlayer2 = self.audioEngine.subtrees["Background"]!.audioPlayerCache.object(forKey: "bling_short.mp3")?.akPlayer
-
-            audioEngine.renderToFile(tape, duration: 2) {
-                let dspTime = AVAudioTime(sampleTime: AVAudioFramePosition(1.96 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
-                akPlayer2?.play(at: dspTime)
-                akPlayer1?.play()
-            }
-
-            audioEngine.stop()
-            let readTape = try AKAudioFile(forReading: tape.url)
-            let player2 = try? AVAudioPlayer(contentsOf: tape.url)
-            player2?.play()
-            RunLoop.current.run(until: Date(timeIntervalSinceNow: 4))
-
-            let hashString = getHashString(tape: readTape)
-            print("The hash is \(hashString)")
-
-        } catch {
-            print("error")
-        }
-    }
-
-    private func getHashString(tape: AKAudioFile) -> String {
-        let totalFloatCount = Int(tape.pcmBuffer.frameCapacity * tape.pcmBuffer.format.streamDescription.pointee.mBytesPerFrame / 4)
-
-        let data1 = Data(buffer: UnsafeBufferPointer(start: tape.pcmBuffer.floatChannelData![0], count: totalFloatCount)).bytes
-        let data2 = Data(buffer: UnsafeBufferPointer(start: tape.pcmBuffer.floatChannelData![1], count: totalFloatCount)).bytes
+    public func getTapeHash() -> String {
+        let readTape = try? AKAudioFile(forReading: tape.url)
+        let totalFloatCount = Int(readTape!.pcmBuffer.frameCapacity * readTape!.pcmBuffer.format.streamDescription.pointee.mBytesPerFrame / 4)
+        let data1 = Data(buffer: UnsafeBufferPointer(start: readTape!.pcmBuffer.floatChannelData![0], count: totalFloatCount)).bytes
+        let data2 = Data(buffer: UnsafeBufferPointer(start: readTape!.pcmBuffer.floatChannelData![1], count: totalFloatCount)).bytes
 
         var digest = MD5()
         _ = try? digest.update(withBytes: data1)
         _ = try? digest.update(withBytes: data2)
+        let hashArray = try? digest.finish()
+        let tapeHash = hashArray!.toHexString()
+        print("The hash is \(tapeHash)")
 
-        let result = try? digest.finish()
-        return result!.toHexString()
+        return tapeHash
+    }
+
+    public func playRenderedTape(tape: AKAudioFile, duration: Double) {
+        let tapePlayer = try? AVAudioPlayer(contentsOf: tape.url)
+        tapePlayer!.play()
+        RunLoop.current.run(until: Date(timeIntervalSinceNow: duration + 0.5))
     }
 }
