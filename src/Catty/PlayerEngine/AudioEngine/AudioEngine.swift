@@ -22,6 +22,8 @@
 
 import AudioKit
 import Foundation
+import CryptoSwift
+
 
 @objc class AudioEngine: NSObject, AudioEngineProtocol {
     var speechSynth = SpeechSynthesizer()
@@ -42,7 +44,7 @@ import Foundation
         AudioKit.output = postProcessingMixer
         engineOutputMixer.connect(to: postProcessingMixer)
         do {
-            try AudioKit.start()
+            //try AudioKit.start()
         } catch {
             print("COULD NOT START AUDIO ENGINE! MAKE SURE TO ALWAYS SHUT DOWN AUDIO ENGINE BEFORE" +
                 "INSTANTIATING IT AGAIN (AFTER EVERY TEST CASE)! USE AN AUDIOENGINEMOCK IN TESTS" +
@@ -128,12 +130,75 @@ import Foundation
         return subtree
     }
 
-    func renderToFile(_ audioFile: AVAudioFile, duration: Double, prerender: (() -> Void)? = nil) {
+    func renderToFile(_ audioFile: AVAudioFile, duration: Double, prerender: (() -> Void)? = nil) -> String {
         if #available(iOS 11, *) {
-            try? AudioKit.renderToFile(audioFile, duration: duration, prerender: prerender)
+            //try? AudioKit.renderToFile(audioFile, duration: duration, prerender: prerender)
+
+            var digest = MD5()
+
+            let format = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16, sampleRate: 44100, channels: 1, interleaved: true)!
+
+            let maximumFrameCount: AVAudioFrameCount = 4_096
+            try? AKTry {
+                try? AudioKit.engine.enableManualRenderingMode(.offline, format: format, maximumFrameCount: 1)
+                try? AudioKit.engine.start()
+            }
+
+            prerender!()
+
+            let buffer: AVAudioPCMBuffer = AVAudioPCMBuffer(pcmFormat: AudioKit.engine.manualRenderingFormat,
+                                                            frameCapacity: AudioKit.engine.manualRenderingMaximumFrameCount)!
+
+            while AudioKit.engine.manualRenderingSampleTime < 44100 {
+                let framesToRender = buffer.frameCapacity
+                let status = try? AudioKit.engine.renderOffline(framesToRender, to: buffer)
+                switch status {
+                case .success:
+                    //print("success")
+                    //print(buffer.frameCapacity)
+                    //print(buffer.frameLength)
+                    let byteArray = toData(buffer: buffer)
+                    _ = try? digest.update(withBytes: byteArray)
+                    let array : [UInt8] = [byteArray[0], byteArray[1]]
+                    let data = Data(bytes: array)
+                    let value = Int16(littleEndian: data.withUnsafeBytes { $0.pointee })
+                    print(Float(value)/32768)
+                    //print("\(byteArray[0])  \(byteArray[1])")
+
+                case .insufficientDataFromInputNode:
+                    // applicable only if using the input node as one of the sources
+                    break
+
+                case .cannotDoInCurrentContext:
+                    // engine could not render in the current render call, retry in next iteration
+                    break
+
+                case .error:
+                    // error occurred while rendering
+                    fatalError("render failed")
+                case .none:
+                    fatalError("none")
+                case .some(_):
+                    fatalError("some")
+                }
+            }
+            stop()
+
+            let hashArray = try? digest.finish()
+            let tapeHash = hashArray!.toHexString()
+            print("The hash is \(tapeHash)")
+            return tapeHash
         }
         else {
 
         }
+        return ""
+    }
+
+    func toData(buffer: AVAudioPCMBuffer) -> Array<UInt8> {
+        let channelCount = 1  // given PCMBuffer channel count is 1
+        var channels = UnsafeBufferPointer(start: buffer.int16ChannelData, count: channelCount)
+        var ch0Data = Data(bytes: channels[0], count:Int(buffer.frameCapacity * buffer.format.streamDescription.pointee.mBytesPerFrame))
+        return ch0Data.bytes
     }
 }

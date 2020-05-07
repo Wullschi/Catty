@@ -165,56 +165,6 @@ func isValidLicense(_ license: License) -> Bool {
 
 func checkLicenseOfFile(_ filePath: String) {
 
-    var isExternalLibrary = false
-    var libraryName = ""
-    do {
-        let content = try String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
-        let range = content.range(of: licenseSearchStringCurrentYear)
-        if range == nil {
-            isExternalLibrary = true
-            //let removedFileName = (filePath as NSString).stringByDeletingLastPathComponent
-            //libraryName = (removedFileName as NSString).lastPathComponent
-            libraryName = (filePath as NSString).lastPathComponent
-            libraryName = (libraryName as NSString).deletingPathExtension
-        }
-    } catch let error as NSError {
-        printErrorAndExitIfFailed("Could not open file \(error)")
-    }
-
-    if isExternalLibrary {
-        for excludeDir in checkDirs {
-            let range = filePath.range(of: excludeDir)
-            if range != nil {
-                libraryName = excludeDir
-                guard let license = licenseCheckDirs[libraryName] else {
-                    printErrorAndExitIfFailed("No license specified for library: \(libraryName). Please add the license also to our license folder", withFilePath: filePath)
-                    return
-                }
-
-                if license == .Unknown {
-                    printWarning("Unknown License found. Not sure if compatible with PocketCode", withFilePath: filePath)
-                } else {
-                    if !isValidLicense(license) {
-                        printErrorAndExitIfFailed("License (\(license)) is not compatible with PockedCode.", withFilePath: filePath)
-                    }
-                }
-                return
-            }
-        }
-
-        guard let license = license3rdPartyDict[libraryName] else {
-            printErrorAndExitIfFailed("No license specified for library: \(libraryName).Please add the license also to our license folder", withFilePath: filePath)
-            return
-        }
-
-        if license == .Unknown {
-            printWarning("Unknown License found. Not sure if compatible with PocketCode", withFilePath: filePath)
-        } else {
-            if !isValidLicense(license) {
-                printErrorAndExitIfFailed("License (\(license)) is not compatible with PockedCode.", withFilePath: filePath)
-            }
-        }
-    }
 }
 
 func checkLicenses() {

@@ -897,6 +897,7 @@
 		9E169FE02383556C0004311D /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E169FDF2383556B0004311D /* SpeechSynthesizer.swift */; };
 		9E169FE4238361030004311D /* AudioEngineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E169FE3238361030004311D /* AudioEngineHelper.swift */; };
 		9E1BB3CD22BE515800CBC0B6 /* AudioEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */; };
+		9E1DF79724635F1700C9EF31 /* rechteck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E1DF79424635F1700C9EF31 /* rechteck.mp3 */; };
 		9E1ED58D231332E000E36DED /* AudioEngineAbstractTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ED58C231332E000E36DED /* AudioEngineAbstractTest.swift */; };
 		9E22655F22BFB3FC00898052 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */; };
 		9E22CC8D2323FC6700BA4CBA /* AudioEngineFingerprintingStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22CC8C2323FC6700BA4CBA /* AudioEngineFingerprintingStub.swift */; };
@@ -940,6 +941,16 @@
 		9E8176E52389BA4800A4912B /* SpeakAndWaitInterruptedBySpeak.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E8176E42389BA4800A4912B /* SpeakAndWaitInterruptedBySpeak.xml */; };
 		9E8176E72389C14B00A4912B /* SpeakAndWaitTwoInterruptingSpeakBricks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E8176E62389C14A00A4912B /* SpeakAndWaitTwoInterruptingSpeakBricks.xml */; };
 		9E8176E92389C60F00A4912B /* guitar_chords.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E8176E82389C60F00A4912B /* guitar_chords.mp3 */; };
+		9E82A37C2464165A00EA3707 /* bling_short.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A3782464165900EA3707 /* bling_short.wav */; };
+		9E82A37D2464165A00EA3707 /* piano_jazz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A3792464165900EA3707 /* piano_jazz.wav */; };
+		9E82A37E2464165A00EA3707 /* rechteck.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A37A2464165900EA3707 /* rechteck.wav */; };
+		9E82A37F2464165A00EA3707 /* kontrabass_jazz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A37B2464165900EA3707 /* kontrabass_jazz.wav */; };
+		9E82A381246426E000EA3707 /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A380246426DF00EA3707 /* silence.wav */; };
+		9E82A383246428AA00EA3707 /* silence1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A382246428AA00EA3707 /* silence1.wav */; };
+		9E82A3852464426800EA3707 /* sinus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A3842464426800EA3707 /* sinus.wav */; };
+		9E82A3872464468B00EA3707 /* sine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A3862464468B00EA3707 /* sine.wav */; };
+		9E82A38924644B9900EA3707 /* sine_low.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E82A38824644B9800EA3707 /* sine_low.wav */; };
+		9E82A38A24646A7C00EA3707 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E79254823AC7089001A100F /* CryptoSwift.framework */; };
 		9E929E35239D732B002D8F96 /* bling_short.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E929E34239D732B002D8F96 /* bling_short.mp3 */; };
 		9E929E37239D738E002D8F96 /* PlaySoundAndWaitBrickStopUntilFinished.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9E929E36239D738E002D8F96 /* PlaySoundAndWaitBrickStopUntilFinished.xml */; };
 		9E929E39239D7942002D8F96 /* piano_jazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E929E38239D7942002D8F96 /* piano_jazz.mp3 */; };
@@ -951,6 +962,8 @@
 		9EA33CD823B016130075434A /* RenderingAudioPlayerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA33CD723B016130075434A /* RenderingAudioPlayerFactory.swift */; };
 		9EA3FD812327089900551B6C /* SceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA3FD802327089900551B6C /* SceneTests.swift */; };
 		9EA6DCB02329A9E1007E837A /* MoveNStepsBrickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6DCAF2329A9E1007E837A /* MoveNStepsBrickTests.swift */; };
+		9EACF71E24639F7D003AD9DD /* DistortionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EACF71D24639F7D003AD9DD /* DistortionTest.swift */; };
+		9EACF72224639FA8003AD9DD /* AKTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EACF72124639FA8003AD9DD /* AKTestCase.swift */; };
 		9EAE57E823A19B0400E76229 /* PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE57E523A19B0400E76229 /* PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml */; };
 		9EBAC31122A9B91C002E198D /* AudioKit.license in Resources */ = {isa = PBXBuildFile; fileRef = 9EBAC30E22A9B91B002E198D /* AudioKit.license */; };
 		9EBAC31422A9BF47002E198D /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBAC31222A9BE5A002E198D /* AudioKit.framework */; };
@@ -2631,6 +2644,7 @@
 		9E169FDF2383556B0004311D /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		9E169FE3238361030004311D /* AudioEngineHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineHelper.swift; sourceTree = "<group>"; };
 		9E1BB3C922BE4EC200CBC0B6 /* AudioEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineTests.swift; sourceTree = "<group>"; };
+		9E1DF79424635F1700C9EF31 /* rechteck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = rechteck.mp3; path = ../../../../../../../Desktop/rechteck.mp3; sourceTree = "<group>"; };
 		9E1ED58C231332E000E36DED /* AudioEngineAbstractTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineAbstractTest.swift; sourceTree = "<group>"; };
 		9E22655E22BFB3FC00898052 /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
 		9E22CC8C2323FC6700BA4CBA /* AudioEngineFingerprintingStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngineFingerprintingStub.swift; sourceTree = "<group>"; };
@@ -2675,6 +2689,15 @@
 		9E8176E42389BA4800A4912B /* SpeakAndWaitInterruptedBySpeak.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SpeakAndWaitInterruptedBySpeak.xml; sourceTree = "<group>"; };
 		9E8176E62389C14A00A4912B /* SpeakAndWaitTwoInterruptingSpeakBricks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SpeakAndWaitTwoInterruptingSpeakBricks.xml; sourceTree = "<group>"; };
 		9E8176E82389C60F00A4912B /* guitar_chords.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guitar_chords.mp3; sourceTree = "<group>"; };
+		9E82A3782464165900EA3707 /* bling_short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bling_short.wav; sourceTree = "<group>"; };
+		9E82A3792464165900EA3707 /* piano_jazz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano_jazz.wav; sourceTree = "<group>"; };
+		9E82A37A2464165900EA3707 /* rechteck.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rechteck.wav; sourceTree = "<group>"; };
+		9E82A37B2464165900EA3707 /* kontrabass_jazz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kontrabass_jazz.wav; sourceTree = "<group>"; };
+		9E82A380246426DF00EA3707 /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence.wav; sourceTree = "<group>"; };
+		9E82A382246428AA00EA3707 /* silence1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence1.wav; sourceTree = "<group>"; };
+		9E82A3842464426800EA3707 /* sinus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sinus.wav; sourceTree = "<group>"; };
+		9E82A3862464468B00EA3707 /* sine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sine.wav; sourceTree = "<group>"; };
+		9E82A38824644B9800EA3707 /* sine_low.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sine_low.wav; sourceTree = "<group>"; };
 		9E929E34239D732B002D8F96 /* bling_short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bling_short.mp3; sourceTree = "<group>"; };
 		9E929E36239D738E002D8F96 /* PlaySoundAndWaitBrickStopUntilFinished.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySoundAndWaitBrickStopUntilFinished.xml; sourceTree = "<group>"; };
 		9E929E38239D7942002D8F96 /* piano_jazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano_jazz.mp3; sourceTree = "<group>"; };
@@ -2686,6 +2709,8 @@
 		9EA33CD723B016130075434A /* RenderingAudioPlayerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderingAudioPlayerFactory.swift; sourceTree = "<group>"; };
 		9EA3FD802327089900551B6C /* SceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTests.swift; sourceTree = "<group>"; };
 		9EA6DCAF2329A9E1007E837A /* MoveNStepsBrickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveNStepsBrickTests.swift; sourceTree = "<group>"; };
+		9EACF71D24639F7D003AD9DD /* DistortionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionTest.swift; sourceTree = "<group>"; };
+		9EACF72124639FA8003AD9DD /* AKTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKTestCase.swift; sourceTree = "<group>"; };
 		9EAE57E523A19B0400E76229 /* PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PlaySoundAndWaitBrickSoundNotInterruptedByDifferentSound.xml; sourceTree = "<group>"; };
 		9EBAC30E22A9B91B002E198D /* AudioKit.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AudioKit.license; sourceTree = "<group>"; };
 		9EBAC31222A9BE5A002E198D /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
@@ -3314,6 +3339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E82A38A24646A7C00EA3707 /* CryptoSwift.framework in Frameworks */,
 				9ED1150E22C56DEF0035DB63 /* AudioKit.framework in Frameworks */,
 				CADBD7EE19B0E8C200C62836 /* libz.dylib in Frameworks */,
 				59473A6A1F76F05000BD634F /* Bohr.framework in Frameworks */,
@@ -6872,6 +6898,8 @@
 			isa = PBXGroup;
 			children = (
 				9E4B8EB423B3F192004FB6D7 /* VolumeRenderingTests.swift */,
+				9EACF71D24639F7D003AD9DD /* DistortionTest.swift */,
+				9EACF72124639FA8003AD9DD /* AKTestCase.swift */,
 			);
 			path = RenderingTests;
 			sourceTree = "<group>";
@@ -6957,13 +6985,23 @@
 		9EE674CC23252F510029D153 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				9E82A3862464468B00EA3707 /* sine.wav */,
+				9E82A3782464165900EA3707 /* bling_short.wav */,
+				9E82A37B2464165900EA3707 /* kontrabass_jazz.wav */,
+				9E82A3792464165900EA3707 /* piano_jazz.wav */,
+				9E82A37A2464165900EA3707 /* rechteck.wav */,
 				9EE674E12325447C0029D153 /* half_seconds_patchwork.mp3 */,
 				9E8176E82389C60F00A4912B /* guitar_chords.mp3 */,
 				9E929E34239D732B002D8F96 /* bling_short.mp3 */,
+				9E1DF79424635F1700C9EF31 /* rechteck.mp3 */,
 				9E929E3A239D7965002D8F96 /* kontrabass_jazz.mp3 */,
 				9E929E38239D7942002D8F96 /* piano_jazz.mp3 */,
 				9EE674E22325447C0029D153 /* short_drum_long_sax.mp3 */,
+				9E82A380246426DF00EA3707 /* silence.wav */,
+				9E82A382246428AA00EA3707 /* silence1.wav */,
+				9E82A3842464426800EA3707 /* sinus.wav */,
 				9EE674CE23252F510029D153 /* silence.mp3 */,
+				9E82A38824644B9800EA3707 /* sine_low.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -8581,6 +8619,7 @@
 				CAE3E53D1B4C50B300CC88BD /* Demonstration_09.xml in Resources */,
 				4CEF0CD41B9C63F3003C9B20 /* Minecraft_Work_In_Progress_096.xml in Resources */,
 				4C0FA004204BD4FF00E71B2D /* Rock_paper_scissors_0991.xml in Resources */,
+				9E82A3852464426800EA3707 /* sinus.wav in Resources */,
 				2DCB4922212EA251005E8E3D /* StoreProjectDownloader.fetchFeaturedProjects.fail.request.json in Resources */,
 				9EE674D123252F510029D153 /* silence.mp3 in Resources */,
 				4C994DD9207A26D700C415FD /* AddItemToUserListBrick0991.xml in Resources */,
@@ -8609,6 +8648,7 @@
 				CAE3E5491B4C50B300CC88BD /* Memory_09.xml in Resources */,
 				4CE2D3FF1C29500F00938B5E /* Galaxy_War_097.xml in Resources */,
 				9EE674E42325447C0029D153 /* short_drum_long_sax.mp3 in Resources */,
+				9E82A37C2464165A00EA3707 /* bling_short.wav in Resources */,
 				4C6D15FA1D7AC63400CE53CD /* ValidHeader098.xml in Resources */,
 				9E929E3B239D7966002D8F96 /* kontrabass_jazz.mp3 in Resources */,
 				4CE2D3F31C294F1700938B5E /* Airplane_with_shadow_097.xml in Resources */,
@@ -8619,15 +8659,19 @@
 				4CE2D4131C29506E00938B5E /* Skydiving_Steve_097.xml in Resources */,
 				4CE2D41D1C2950AB00938B5E /* ValidProject097.xml in Resources */,
 				4C0F9FF6204BD4B000E71B2D /* Memory_0991.xml in Resources */,
+				9E82A37E2464165A00EA3707 /* rechteck.wav in Resources */,
 				9E8176E32389AEAC00A4912B /* SpeakAndWaitBrickWithSoundBrick.xml in Resources */,
 				4C6D15FE1D7AC64000CE53CD /* ValidProjectAllBricks098.xml in Resources */,
 				9E929E35239D732B002D8F96 /* bling_short.mp3 in Resources */,
 				4CEF0CC61B9C637D003C9B20 /* Demonstration_096.xml in Resources */,
+				9E82A381246426E000EA3707 /* silence.wav in Resources */,
+				9E82A37F2464165A00EA3707 /* kontrabass_jazz.wav in Resources */,
 				CAE3E53F1B4C50B300CC88BD /* Drink_more_water_09.xml in Resources */,
 				4CA1574D1C4695E50019D319 /* Encapsulated_097.xml in Resources */,
 				4CE2D4031C29502300938B5E /* Memory_097.xml in Resources */,
 				4CEF0CD01B9C63DB003C9B20 /* Gossip_Girl_096.xml in Resources */,
 				2DCB4938212EAB36005E8E3D /* StoreProjectDownloader.downloadData.fail.request.json in Resources */,
+				9E82A3872464468B00EA3707 /* sine.wav in Resources */,
 				CAE3E5441B4C50B300CC88BD /* Flappy_v3.0_093.xml in Resources */,
 				4C6D15D01D7AC5A500CE53CD /* Compass_0.1_098.xml in Resources */,
 				4CEF0CCE1B9C63C2003C9B20 /* Galaxy_War_096.xml in Resources */,
@@ -8713,6 +8757,7 @@
 				4C15FE7F1D168C0D009C1A2B /* transparency-rgb.png in Resources */,
 				CAE3E5591B4C50B300CC88BD /* Rock_paper_scissors_093.xml in Resources */,
 				4CE2D41F1C2950B500938B5E /* ValidProjectAllBricks097.xml in Resources */,
+				9E1DF79724635F1700C9EF31 /* rechteck.mp3 in Resources */,
 				4CEF0CD81B9C6413003C9B20 /* Nyancat_1.0_096.xml in Resources */,
 				CAE3E55B1B4C50B300CC88BD /* Skydiving_Steve_093.xml in Resources */,
 				2D7BE51E21441DE500F78A10 /* StoreProjectDownloader.searchProjects.success.json in Resources */,
@@ -8740,9 +8785,11 @@
 				4CEF0CDA1B9C641E003C9B20 /* Piano_096.xml in Resources */,
 				4C0FA00F204BD54200E71B2D /* ValidHeader0991.xml in Resources */,
 				4CC85CE71B9C717C0097E470 /* ValidProject095.xml in Resources */,
+				9E82A38924644B9900EA3707 /* sine_low.wav in Resources */,
 				CAE3E5471B4C50B300CC88BD /* Gossip_Girl_091.xml in Resources */,
 				4C6D15E01D7AC5E700CE53CD /* Memory_098.xml in Resources */,
 				4C994DDF207A26E400C415FD /* ReplaceItemInUserListBrick0991.xml in Resources */,
+				9E82A37D2464165A00EA3707 /* piano_jazz.wav in Resources */,
 				4CE2D4111C29506600938B5E /* Rock_paper_scissors_097.xml in Resources */,
 				4C2EE4051B5557F3006DE9B8 /* Pong_Starter_095.xml in Resources */,
 				4CE2D3EF1C294F0D00938B5E /* Air_fight_0.5_097.xml in Resources */,
@@ -8752,6 +8799,7 @@
 				CAE3E5581B4C50B300CC88BD /* Rock_paper_scissors_091.xml in Resources */,
 				CAE3E5461B4C50B300CC88BD /* Galaxy_War_093.xml in Resources */,
 				9E544D392387562400935C17 /* SpeakBrickWithSoundBrick.xml in Resources */,
+				9E82A383246428AA00EA3707 /* silence1.wav in Resources */,
 				CAE3E5401B4C50B300CC88BD /* Drink_more_water_093.xml in Resources */,
 				CAE3E5431B4C50B300CC88BD /* Flappy_v3.0_092.xml in Resources */,
 				4CE2D40F1C29505A00938B5E /* Pythagorean_Theorem_097.xml in Resources */,
@@ -8870,6 +8918,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TTTAttributedLabel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ZipArchive.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			name = "Carthage Copy Frameworks Run Script";
 			outputPaths = (
@@ -9015,6 +9064,7 @@
 				9E24D7092326ED6C00608203 /* SetYBrickTests.swift in Sources */,
 				4C6FE15C212D2D2E0067B7D5 /* FloorFunctionTest.swift in Sources */,
 				4C5AEEF322F6F22700280F8B /* MoveNStepsBrickCellTests.swift in Sources */,
+				9EACF71E24639F7D003AD9DD /* DistortionTest.swift in Sources */,
 				4CBF5F9C21AF1D200079C834 /* TouchManagerTests.swift in Sources */,
 				BACD947D219E1F2F0061D81C /* XMLAbstractTest.swift in Sources */,
 				4C2732A91CE4F30F00CA61AC /* CBSpriteNodeTests.swift in Sources */,
@@ -9056,6 +9106,7 @@
 				4C0F9FD5204BD3C200E71B2D /* ChooseCameraBrickTests.swift in Sources */,
 				CA7698C21B0E4B3F000D0340 /* CBStackTests.m in Sources */,
 				4C822679213FA7A400F3D750 /* SizeSensorTest.swift in Sources */,
+				9EACF72224639FA8003AD9DD /* AKTestCase.swift in Sources */,
 				4CFAD35E1CFAB3EC0019C636 /* CustomExtensionsTests.m in Sources */,
 				9E2C2D9023257704004B66C6 /* ChangeBrightnessByNBrickTests.swift in Sources */,
 				4CC50A5E213BE036004BC914 /* ZeroParameterDoubleFunctionMock.swift in Sources */,
@@ -10476,6 +10527,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = "Catty/App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -10523,6 +10575,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = "Catty/App-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (

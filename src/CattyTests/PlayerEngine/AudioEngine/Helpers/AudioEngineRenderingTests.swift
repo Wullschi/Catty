@@ -48,9 +48,27 @@ class AudioEngineRenderingTests: XCTestCase {
 
     public func getTapeHash() -> String {
         let readTape = try? AKAudioFile(forReading: tape.url)
+        //var readTape2 = AVAudioFile(forReading: tape.url)
         let totalFloatCount = Int(readTape!.pcmBuffer.frameCapacity * readTape!.pcmBuffer.format.streamDescription.pointee.mBytesPerFrame / 4)
         let data1 = Data(buffer: UnsafeBufferPointer(start: readTape!.pcmBuffer.floatChannelData![0], count: totalFloatCount)).bytes
         let data2 = Data(buffer: UnsafeBufferPointer(start: readTape!.pcmBuffer.floatChannelData![1], count: totalFloatCount)).bytes
+
+//        for n in 0...(data1.count/4) - 1 {
+//            let array : [UInt8] = [data1[(n*4)], data1[(n*4)+1], data1[(n*4)+2], data1[(n*4)+3]]
+//            let data = Data(bytes: array)
+//            let value = UInt32(littleEndian: data.withUnsafeBytes { $0.pointee })
+//
+//            print("Binary : \(String(value, radix: 2))")
+//            //print(value)
+//        }
+
+//        for item in data1 {
+//            print(item)
+//        }
+
+        //var dings = AVAudioPCMBuffer(pcmFormat: <#T##AVAudioFormat#>, frameCapacity: <#T##AVAudioFrameCount#>)
+
+        //var readTape2 = try? AVAudioFile(forReading: tape.url)
 
         var digest = MD5()
         _ = try? digest.update(withBytes: data1)
@@ -63,7 +81,8 @@ class AudioEngineRenderingTests: XCTestCase {
     }
 
     public func playRenderedTape(tape: AKAudioFile, duration: Double) {
-        let tapePlayer = try? AVAudioPlayer(contentsOf: tape.url)
+        let readTape2 = try? AVAudioFile(forReading: tape.url)
+        let tapePlayer = try? AVAudioPlayer(contentsOf: readTape2!.url)
         tapePlayer!.play()
         RunLoop.current.run(until: Date(timeIntervalSinceNow: duration + 0.5))
     }
