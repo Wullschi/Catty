@@ -53,10 +53,10 @@ class VolumeRenderingTests: AudioEngineRenderingTests {
     }
 
     public func testSetVolumeToExpectOnlyPlayersOfObject1ToChangeVolume() {
-        let referenceHash = "d40709c1b18b1fed8f321f5c6058f47b"
+        let referenceHash = "5ab7a3d6071769f5309e2a6b474f94b2"
         let renderDuration = 3.0
 
-        audioEngine.setVolumeTo(percent: 50.0, key: "Background")
+        audioEngine.setVolumeTo(percent: 40.0, key: "Background")
         let hash = audioEngine.renderToFile(tape, duration: renderDuration) {
             let dspTime = AVAudioTime(sampleTime: AVAudioFramePosition(0.0 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
             let dspTime1 = AVAudioTime(sampleTime: AVAudioFramePosition(0.4 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
@@ -74,25 +74,26 @@ class VolumeRenderingTests: AudioEngineRenderingTests {
         expect(hash) == referenceHash
     }
 
-//    public func testChangeVolumeByExpectOnlyPlayersOfObject1ToChangeVolume() {
-//        let referenceHash = "60f59489880f27fb0804ca697a848bbe"
-//        let renderDuration = 2.0
-//
-//        audioEngine.changeVolumeBy(percent: -60.0, key: "Object1")
-//        audioEngine.renderToFile(tape, duration: renderDuration) {
-//            let dspTime = AVAudioTime(sampleTime: AVAudioFramePosition(0.1 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
-//            let dspTime1 = AVAudioTime(sampleTime: AVAudioFramePosition(0.1 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
-//            let dspTime2 = AVAudioTime(sampleTime: AVAudioFramePosition(0.1 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
-//            let dspTime3 = AVAudioTime(sampleTime: AVAudioFramePosition(0.1 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
-//            self.player1.play(at: dspTime)
-//            self.player2.play(at: dspTime1)
-//            self.player3.play(at: dspTime2)
-//            self.player4.play(at: dspTime3)
-//        }
-//
-//        playRenderedTape(tape: tape, duration: renderDuration)
-//        let tapeHash = getTapeHash()
-//
-//        expect(tapeHash) == referenceHash
-//    }
+    public func testChangeVolumeByExpectOnlyPlayersOfObject1ToChangeVolume() {
+        let referenceHash = "5ab7a3d6071769f5309e2a6b474f94b2"
+        let renderDuration = 2.0
+
+        audioEngine.changeVolumeBy(percent: -60.0, key: "Background")
+        let hash = audioEngine.renderToFile(tape, duration: renderDuration) {
+            let dspTime = AVAudioTime(sampleTime: AVAudioFramePosition(0.0 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
+            let dspTime1 = AVAudioTime(sampleTime: AVAudioFramePosition(0.4 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
+            let dspTime2 = AVAudioTime(sampleTime: AVAudioFramePosition(0.6 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
+            let dspTime3 = AVAudioTime(sampleTime: AVAudioFramePosition(0.8 * AKSettings.sampleRate), atRate: AKSettings.sampleRate)
+            self.player1.play(at: dspTime)
+            self.player2.play(at: dspTime1)
+            self.player3.play(at: dspTime2)
+            self.player4.play(at: dspTime3)
+        }
+
+        //playRenderedTape(tape: tape, duration: renderDuration)
+        //let tapeHash = getTapeHash()
+
+        expect(hash) == referenceHash
+
+    }
 }
